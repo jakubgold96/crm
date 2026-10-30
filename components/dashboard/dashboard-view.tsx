@@ -13,7 +13,7 @@ import { LiveClock } from '@/components/dashboard/live-clock';
 import { QuickSearch } from '@/components/dashboard/quick-search';
 import { salesKpiLabels, salesStageLabels } from '@/lib/enums';
 import { computeSalesKpis, toLocalDate, type StageChange } from '@/lib/dashboard/sales-kpis';
-import { formatDate } from '@/lib/utils';
+import { formatDate, greetingName } from '@/lib/utils';
 import type { Inquiry, Profile } from '@/lib/types/database';
 import { ArrowRight, ChevronRight, Plus } from 'lucide-react';
 import Link from 'next/link';
@@ -72,7 +72,7 @@ export function DashboardView({
 
   const kpis = computeSalesKpis(all, stageChanges, today, TZ);
   // Imię z profilu (pierwsze słowo pola imię i nazwisko) — decyzja właściciela produktu.
-  const firstName = (profile.full_name.split(' ')[0] || 'operatorze').toUpperCase();
+  const firstName = (greetingName(profile.full_name) || 'operatorze').toUpperCase();
   const waiting = overdue.length + dueToday.length;
   const summary = waiting === 0 ? 'nic nie czeka na dziś' : `${waiting} ${pluralZadanie(waiting)} dziś`;
 

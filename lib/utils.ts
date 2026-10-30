@@ -46,3 +46,15 @@ export function isDueToday(dueDate: string | null | undefined): boolean {
   if (!dueDate) return false;
   return dueDate.slice(0, 10) === localToday();
 }
+
+/**
+ * Imię do powitania: pierwsze słowo pola "imię i nazwisko" z profilu.
+ * Gdy w profilu jest jeszcze e-mail (domyślne przy zakładaniu konta), bierze
+ * pierwszy człon loginu przed "@" ("sprzedaz.test@..." -> "sprzedaz").
+ */
+export function greetingName(fullName: string | null | undefined): string {
+  const raw = (fullName ?? '').trim();
+  if (!raw) return '';
+  const base = raw.includes('@') ? raw.split('@')[0] : raw;
+  return base.split(/[\s._-]+/).filter(Boolean)[0] ?? '';
+}

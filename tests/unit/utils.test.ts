@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
-import { isDueToday, isOverdue } from '@/lib/utils';
+import { greetingName, isDueToday, isOverdue } from '@/lib/utils';
 
 describe('isOverdue', () => {
   beforeEach(() => {
@@ -60,5 +60,19 @@ describe('isOverdue i isDueToday są spójne', () => {
       expect(isDueToday('2026-10-30')).toBe(true);
       expect(isOverdue('2026-10-29')).toBe(true);
     }
+  });
+});
+
+describe('greetingName', () => {
+  it('bierze pierwsze słowo imienia i nazwiska', () => {
+    expect(greetingName('Jakub Gołaszewski')).toBe('Jakub');
+  });
+  it('gdy w profilu jest e-mail, bierze pierwszy człon loginu', () => {
+    expect(greetingName('sprzedaz.test@inndes.local')).toBe('sprzedaz');
+    expect(greetingName('jakubgolaszewski96@gmail.com')).toBe('jakubgolaszewski96');
+  });
+  it('pusty profil daje pusty napis', () => {
+    expect(greetingName('')).toBe('');
+    expect(greetingName(null)).toBe('');
   });
 });
