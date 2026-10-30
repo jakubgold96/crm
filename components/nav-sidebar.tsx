@@ -12,7 +12,7 @@ const NAV_ITEMS: { href: string; label: string; disabled?: boolean }[] = [
   { href: '/zapytania', label: 'Zapytania' },
   { href: '/firmy', label: 'Firmy' },
   { href: '/kontakty', label: 'Kontakty' },
-  { href: '/archiwum', label: 'Archiwum', disabled: true },
+  { href: '/archiwum', label: 'Archiwum' },
   { href: '/leady', label: 'Leady', disabled: true },
   { href: '/agent', label: 'Agent INNDES', disabled: true },
   { href: '/raporty', label: 'Raporty', disabled: true },
