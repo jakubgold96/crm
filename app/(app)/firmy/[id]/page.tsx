@@ -1,9 +1,9 @@
+import { GroupBadge } from '@/components/ui/group-badge';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   companySegmentLabels,
-  operationalGroupLabels,
   relationshipStatusLabels,
   salesStageLabels,
 } from '@/lib/enums';
@@ -101,7 +101,7 @@ export default async function CompanyDetailPage({ params }: { params: Promise<{ 
                           </span>
                         </div>
                         <div className="mt-1 flex gap-1.5">
-                          <Badge tone="accent">{operationalGroupLabels[inq.operational_group]}</Badge>
+                          <GroupBadge group={inq.operational_group} />
                           <Badge tone="neutral">{salesStageLabels[inq.sales_stage]}</Badge>
                           {inq.is_archived && <Badge tone="neutral">Zarchiwizowane</Badge>}
                         </div>

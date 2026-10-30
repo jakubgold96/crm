@@ -25,16 +25,24 @@ export function formatDateTime(dateStr: string | null | undefined): string {
   });
 }
 
-/** Czy termin jest po terminie (przed dzisiaj), dla sekcji "Dzisiaj" na dashboardzie. */
+/**
+ * Dzisiejsza data (YYYY-MM-DD) w LOKALNEJ strefie urządzenia. Oba helpery
+ * poniżej porównują na niej — wcześniej isDueToday brał datę UTC, a isOverdue
+ * lokalną, więc tuż po północy (PL: do 1:00/2:00) to samo zapytanie było
+ * jednocześnie "po terminie" i "na dziś".
+ */
+export function localToday(now: Date = new Date()): string {
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+}
+
+/** Czy termin jest po terminie (przed dzisiaj). */
 export function isOverdue(dueDate: string | null | undefined): boolean {
   if (!dueDate) return false;
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  return new Date(dueDate) < today;
+  return dueDate.slice(0, 10) < localToday();
 }
 
 export function isDueToday(dueDate: string | null | undefined): boolean {
   if (!dueDate) return false;
-  const today = new Date().toISOString().slice(0, 10);
-  return dueDate === today;
+  return dueDate.slice(0, 10) === localToday();
 }

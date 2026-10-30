@@ -46,3 +46,19 @@ describe('isDueToday', () => {
     expect(isDueToday('2026-10-31')).toBe(false);
   });
 });
+
+describe('isOverdue i isDueToday są spójne', () => {
+  afterEach(() => vi.useRealTimers());
+
+  it('ten sam termin nigdy nie jest jednocześnie po terminie i na dziś (o każdej porze doby)', () => {
+    vi.useFakeTimers();
+    for (const iso of ['2026-10-30T00:05:00', '2026-10-30T00:59:00', '2026-10-30T12:00:00', '2026-10-30T23:59:00']) {
+      vi.setSystemTime(new Date(iso)); // czas lokalny urządzenia
+      for (const due of ['2026-10-29', '2026-10-30', '2026-10-31']) {
+        expect(isOverdue(due) && isDueToday(due)).toBe(false);
+      }
+      expect(isDueToday('2026-10-30')).toBe(true);
+      expect(isOverdue('2026-10-29')).toBe(true);
+    }
+  });
+});

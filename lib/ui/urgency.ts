@@ -1,6 +1,7 @@
 /**
  * Kolor neonu grupy na listach — wg pilności, nie dekoracji:
- * wymaga działania = magenta/czerwień (alarm), do przypomnienia = żółty,
+ * wymaga działania = magenta/czerwień (alarm), do przypomnienia = bursztyn (żółty jest
+ * zarezerwowany dla akcji),
  * czekamy na klienta = cyjan; w widoku sprzedaży: wygrane = zieleń,
  * przegrane = czerwień, pozostałe etapy = indygo.
  */
@@ -10,7 +11,7 @@ export function groupNeon(key: string): string {
     case 'przegrane':
       return 'var(--danger)';
     case 'do_przypomnienia':
-      return 'var(--accent)';
+      return 'var(--terracotta)';
     case 'czekamy_na_klienta':
       return 'var(--neon-cyan)';
     case 'wygrane':

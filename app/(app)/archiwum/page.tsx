@@ -1,5 +1,6 @@
+import { GroupBadge } from '@/components/ui/group-badge';
 import { Badge } from '@/components/ui/badge';
-import { companySegmentLabels, operationalGroupLabels, salesStageLabels } from '@/lib/enums';
+import { companySegmentLabels, salesStageLabels } from '@/lib/enums';
 import { createClient } from '@/lib/supabase/server';
 import { formatDate } from '@/lib/utils';
 import type { Company, Inquiry } from '@/lib/types/database';
@@ -88,7 +89,7 @@ export default async function ArchivePage() {
                     <p className="mt-1 text-sm text-foreground">{inq.archived_reason}</p>
                   )}
                   <div className="mt-2 flex gap-1.5">
-                    <Badge tone="accent">{operationalGroupLabels[inq.operational_group]}</Badge>
+                    <GroupBadge group={inq.operational_group} />
                     <Badge tone="neutral">{salesStageLabels[inq.sales_stage]}</Badge>
                   </div>
                 </Link>

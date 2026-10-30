@@ -3,6 +3,7 @@
  * `now` jest parametrem (nie `new Date()` w środku), żeby widok był
  * deterministyczny dla danej chwili.
  */
+import { GroupBadge } from '@/components/ui/group-badge';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -10,7 +11,7 @@ import { Count } from '@/components/dashboard/count';
 import { KpiTile } from '@/components/dashboard/kpi-tile';
 import { LiveClock } from '@/components/dashboard/live-clock';
 import { QuickSearch } from '@/components/dashboard/quick-search';
-import { operationalGroupLabels, salesKpiLabels, salesStageLabels } from '@/lib/enums';
+import { salesKpiLabels, salesStageLabels } from '@/lib/enums';
 import { computeSalesKpis, toLocalDate, type StageChange } from '@/lib/dashboard/sales-kpis';
 import { formatDate } from '@/lib/utils';
 import type { Inquiry, Profile } from '@/lib/types/database';
@@ -344,7 +345,7 @@ function InquiryMiniList({
               </span>
             </div>
             <div className="mt-1.5 flex flex-wrap gap-1.5">
-              {showGroup && <Badge tone="accent">{operationalGroupLabels[inq.operational_group]}</Badge>}
+              {showGroup && <GroupBadge group={inq.operational_group} />}
               <Badge tone="neutral">{salesStageLabels[inq.sales_stage]}</Badge>
             </div>
           </Link>

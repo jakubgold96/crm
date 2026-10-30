@@ -1,5 +1,6 @@
 'use client';
 
+import { GroupBadge } from '@/components/ui/group-badge';
 import { PageTitle } from '@/components/ui/page-title';
 
 /** Neon grupy zadań wg pilności: po terminie = czerwień, dziś = bursztyn, reszta = cyjan. */
@@ -8,7 +9,7 @@ const TONE_NEON = { danger: 'var(--danger)', terracotta: 'var(--terracotta)', ne
 import { Badge } from '@/components/ui/badge';
 import { Select } from '@/components/ui/input';
 import { createClient } from '@/lib/supabase/client';
-import { operationalGroupLabels, salesStageLabels, taskStatusLabels } from '@/lib/enums';
+import { salesStageLabels, taskStatusLabels } from '@/lib/enums';
 import type { Inquiry, Profile, TaskStatus } from '@/lib/types/database';
 import { cn, formatDate, isDueToday, isOverdue } from '@/lib/utils';
 import Link from 'next/link';
@@ -192,7 +193,7 @@ function TaskGroup({
               <p className="mt-1 text-sm text-foreground-muted">{inq.companies?.name ?? '—'}</p>
               {inq.next_step && <p className="mt-1 text-sm text-foreground">{inq.next_step}</p>}
               <div className="mt-2 flex gap-1.5">
-                <Badge tone="accent">{operationalGroupLabels[inq.operational_group]}</Badge>
+                <GroupBadge group={inq.operational_group} />
                 <Badge tone="neutral">{salesStageLabels[inq.sales_stage]}</Badge>
               </div>
             </Link>

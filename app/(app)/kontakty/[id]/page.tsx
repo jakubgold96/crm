@@ -1,7 +1,8 @@
+import { GroupBadge } from '@/components/ui/group-badge';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { contactConsentLabels, contactRoleLabels, operationalGroupLabels, salesStageLabels } from '@/lib/enums';
+import { contactConsentLabels, contactRoleLabels, salesStageLabels } from '@/lib/enums';
 import { createClient } from '@/lib/supabase/server';
 import type { Contact, Inquiry } from '@/lib/types/database';
 import Link from 'next/link';
@@ -95,7 +96,7 @@ export default async function ContactDetailPage({ params }: { params: Promise<{ 
                       {inq.number} — {inq.short_description || 'Bez opisu'}
                     </span>
                     <div className="mt-1 flex gap-1.5">
-                      <Badge tone="accent">{operationalGroupLabels[inq.operational_group]}</Badge>
+                      <GroupBadge group={inq.operational_group} />
                       <Badge tone="neutral">{salesStageLabels[inq.sales_stage]}</Badge>
                     </div>
                   </Link>
