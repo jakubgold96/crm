@@ -115,15 +115,17 @@ Luki względem PRD (wyszukiwanie: numer/firma/kontakt/kraj/opis/następny krok; 
 - Testy: `tests/unit/inquiry-list-filters.test.ts` — 11 nowych, całość Vitest 45/45; `tsc`, `lint`, `build` czyste.
 - Niezrobione: manualny przegląd na viewporcie mobilnym (kryterium #7 tego wymaga) — do zrobienia przez właściciela produktu w przeglądarce.
 
-#### Nowy wygląd całej aplikacji + pulpit (na żądanie właściciela, 2026-10-30)
+#### Wygląd: świat „nocny HUD” (cyberpunk), na żądanie właściciela, 2026-10-30/31
 
-Kierunek przypięty zrzutem referencyjnym („1:1”): prawie czarna powłoka, sidebar w sekcjach (Praca / Baza / Dane / Wkrótce) z ikonami lucide, jasna płyta powitalna na pulpicie i 4 nasycone tafle KPI. Zapis decyzji: `PRODUCT.md`, `.impeccable/surfaces/app-app-page-tsx.md`.
-- Tokeny w `app/globals.css` (nazwy bez zmian, więc wszystkie ekrany przeszły na nowy świat); font Geist serwowany z repo (`app/fonts/`, licencja OFL obok).
-- Pulpit (`components/dashboard/`): „Dzień dobry/Dobry wieczór, {imię}”, po terminie / na dziś / aktywne, wyszukiwarka → `/zapytania?q=`, lista „Dzisiaj” (4 najpilniejsze kroki), tafle **Nowe zapytania / Oferty wysłane / Wygrane / Przegrane** — bieżący miesiąc vs te same dni poprzedniego + 8 tygodni historii. Liczone z prawdziwych danych: wejścia w etap z `audit_log` (etap początkowy z `old_value` pierwszej zmiany). Żadnych kwot w zł (brak ofert w systemie).
-- Logika KPI: `lib/dashboard/sales-kpis.ts`, testy `tests/unit/sales-kpis.test.ts` (8, w tym strefa czasowa Warszawy i przełom miesięcy).
-- Pozostałe ekrany: tabele/karty/formularze w nowej palecie, kolumny tabel zapytań wyrównane między grupami, mobilny pasek z ikonami (+ Zadania), na telefonie wylogowanie na stronie „Mój profil”.
-- Weryfikacja: zrzuty 1440/1280/390 z tymczasowej trasy podglądu na danych syntetycznych (usunięta przed commitem; prawdziwe trasy wymagają logowania), detektor impeccable bez uwag, niezależny przegląd (fix → poprawki → ocena).
-- Otwarte: rzut oka na żywe dane po zalogowaniu (zwłaszcza aktywna pozycja w sidebarze i tafle KPI przy małej liczbie danych).
+Zastąpił jasną płytę z pierwszej przeróbki tego samego dnia. Decyzje: `PRODUCT.md` (Brand Commitments), kontrakt `.impeccable/surfaces/app-app-page-tsx.md`, system: `DESIGN.md`.
+- Paleta neonowa, kolory tafli KPI ze zdjęcia referencyjnego; żółty tylko dla akcji/aktywnej nawigacji; kolory pilności grup wspólne w całej aplikacji (`lib/ui/urgency.ts`, `components/ui/group-badge.tsx`).
+- Fonty z repo (OFL, `app/fonts/`): Chakra Petch, JetBrains Mono, Geist.
+- Efekty na wszystkich ekranach (glitch, skanlinie, wejście ekranu, rysowanie wykresów, liczby nabijane w CSS) — wyłączane przy `prefers-reduced-motion`.
+- Pulpit: pasek statusu z zegarem i taśmą odczytów, „HEY, {IMIĘ}” (imię z profilu), siatka perspektywiczna, lista „Dzisiaj”, 4 tafle KPI sprzedaży z prawdziwych danych (`lib/dashboard/sales-kpis.ts`, 8 testów).
+- Naprawiony błąd z Fazy 1: `isDueToday` (UTC) vs `isOverdue` (lokalnie) — tuż po północy zapytanie było i „po terminie”, i „na dziś”. Teraz oba na `localToday()`, test w trzech strefach.
+- Middleware: `/login-*` nie jest już publiczne bez sesji (dokładne dopasowanie `/login` lub `/login/...`).
+- Weryfikacja: zrzuty 1440/1280/390 (pulpit, zapytania, zadania, logowanie, reduced-motion) z lokalnego podglądu na danych syntetycznych; niezależny przegląd: fix → fix → ship. Testy jednostkowe 54/54, tsc/lint/build czyste.
+- Otwarte: przegląd na żywych danych po zalogowaniu; ekrany niesprawdzone zrzutami: /archiwum, /firmy, /kontakty, karty firmy/kontaktu, /eksport (dziedziczą tokeny i komponenty).
 
 ### Następny krok (Faza 2)
 
