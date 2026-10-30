@@ -53,9 +53,9 @@ describe('paleta 6 kolorów', () => {
     expect(offenders).toEqual([]);
   });
 
-  it('brak wbudowanych kolorów Tailwinda (white, black, red-500 itd.)', () => {
+  it('brak wbudowanych kolorów Tailwinda (white, black, red-500 itd.); tokeny palety jak text-amber są OK', () => {
     const builtins =
-      /\b(?:bg|text|border|ring|shadow|from|to|via|fill|stroke|outline|decoration|caret|divide|placeholder)-(?:white|black|gray|slate|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)\b/g;
+      /\b(?:bg|text|border|ring|shadow|from|to|via|fill|stroke|outline|decoration|caret|divide|placeholder)-(?:white|black|(?:gray|slate|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-\d{2,3})\b/g;
     const offenders = sources.flatMap(({ file, text }) => [...text.matchAll(builtins)].map((m) => `${file}: ${m[0]}`));
     expect(offenders).toEqual([]);
   });

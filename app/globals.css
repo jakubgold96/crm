@@ -101,9 +101,6 @@
   --accent-hover: var(--cobalt);
   --accent-foreground: var(--pearl);
 
-  --neon-cyan: var(--cobalt); /* dawny cyjan -> kobalt */
-  --neon-magenta: var(--magenta);
-
   --terracotta: var(--amber); /* na dziś / do przypomnienia */
   --terracotta-bg: rgb(255 138 30 / 0.12);
   --sage: var(--pearl); /* sukces / wygrane */
