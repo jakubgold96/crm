@@ -18,6 +18,7 @@
   --sidebar: #0b0d12;
   --surface: #12151c;
   --surface-raised: #191d27;
+  --surface-hover: #20252f;
   --foreground: #e9ecf2;
   --foreground-muted: #939bab;
   --border: #232835;
@@ -35,6 +36,7 @@
   --sage-bg: rgb(110 219 154 / 0.12);
   --danger: #ff7b6e; /* po terminie, przegrane, błędy */
   --danger-bg: rgb(255 123 110 / 0.12);
+  --danger-foreground: #1a0806;
   --warning-bg: rgb(255 210 110 / 0.12);
   --warning-fg: #ffd36e;
 
@@ -78,6 +80,7 @@
   --color-sidebar: var(--sidebar);
   --color-surface: var(--surface);
   --color-surface-raised: var(--surface-raised);
+  --color-surface-hover: var(--surface-hover);
   --color-foreground: var(--foreground);
   --color-foreground-muted: var(--foreground-muted);
   --color-border: var(--border);
@@ -91,6 +94,7 @@
   --color-sage-bg: var(--sage-bg);
   --color-danger: var(--danger);
   --color-danger-bg: var(--danger-bg);
+  --color-danger-foreground: var(--danger-foreground);
   --color-warning-bg: var(--warning-bg);
   --color-warning-fg: var(--warning-fg);
   --color-hero-bg: var(--hero-bg);

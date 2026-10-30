@@ -224,10 +224,12 @@ Chłodna, niemal achromatyczna powłoka z jednym błękitnym akcentem akcji, trz
 ### Secondary
 - **Ciepły pomarańcz „na dziś”** (`terracotta` / `terracotta-bg`): termin przypada dziś, miękkie ostrzeżenie. Nazwa historyczna.
 - **Miętowa zieleń sukcesu** (`sage` / `sage-bg`): zrobione, wygrane, potwierdzenia. Nazwa historyczna.
-- **Koralowa czerwień** (`danger` / `danger-bg`): po terminie, przegrane, błędy walidacji.
+- **Koralowa czerwień** (`danger` / `danger-bg`): po terminie, przegrane, błędy walidacji. Na przycisku „danger” zawsze z ciemnym `danger-foreground`.
 - **Złoto ostrzeżenia** (`warning-fg` / `warning-bg`): ostrzeżenia nie związane z terminem.
 
 Tła stanów to ten sam odcień na 12% krycia — chip czyta się kolorem tekstu, nie plamą.
+
+`surface-hover` to stan hover przycisku drugorzędnego (o stopień jaśniej niż `surface-raised`).
 
 ### Tertiary
 - **Perłowa płyta** (`hero-bg` → `hero-bg-2`, tekst `hero-fg`, drugorzędny `hero-muted`, linie `hero-line`, pole `hero-field`): wyłącznie wewnątrz płyty powitalnej. Ma własne warianty stanów o ciemnym tekście na jasnym tle: `hero-danger` / `hero-danger-bg` (po terminie), `hero-today` / `hero-today-bg` (dziś).
