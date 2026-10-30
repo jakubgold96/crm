@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
+/*
+ * Paleta INNDES CRM — zgodnie z briefem: jasne tło, granatowa typografia,
+ * kobaltowy kolor akcji, subtelny terakotowy i szałwiowy akcent. Profesjonalne
+ * narzędzie B2B dla architektury/produkcji mebli, nie generyczny "AI dashboard".
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f7f5; /* ciepła jasna szarość, nie czysta biel — spokojniejsza */
+  --surface: #ffffff;
+  --foreground: #1b2a41; /* granat tekstu */
+  --foreground-muted: #4a5a72;
+
+  --border: #e2e4e0;
+
+  --accent: #2f5fa8; /* kobalt — akcje, linki, primary buttons */
+  --accent-hover: #244a85;
+  --accent-foreground: #ffffff;
+
+  --terracotta: #c06a4b; /* subtelny akcent: ostrzeżenia miękkie, oznaczenia "po terminie" */
+  --terracotta-bg: #fbeee8;
+
+  --sage: #7d9a7f; /* subtelny akcent: sukces, "zrobione", pozytywne statusy */
+  --sage-bg: #edf3ec;
+
+  --danger: #b3432f;
+  --danger-bg: #fbe9e6;
+
+  --warning-bg: #fdf3e3;
+  --warning-fg: #8a5a12;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-bg: var(--terracotta-bg);
+  --color-sage: var(--sage);
+  --color-sage-bg: var(--sage-bg);
+  --color-danger: var(--danger);
+  --color-danger-bg: var(--danger-bg);
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-fg: var(--warning-fg);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
