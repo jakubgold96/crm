@@ -61,12 +61,12 @@ export function CompanyPicker({
         placeholder="Szukaj firmy po nazwie…"
       />
       {open && results.length > 0 && (
-        <ul className="absolute z-10 mt-1 w-full border border-border-strong bg-surface-raised py-1 shadow-[0_16px_40px_-12px_rgb(0_0_0/0.7)]">
+        <ul className="absolute z-10 mt-1 w-full border border-border-strong bg-surface-raised py-1 shadow-[0_16px_40px_-12px_rgb(6_7_10/0.7)]">
           {results.map((c) => (
             <li key={c.id}>
               <button
                 type="button"
-                className="block w-full px-3 py-2 text-left text-sm transition-colors hover:bg-white/[0.04]"
+                className="block w-full px-3 py-2 text-left text-sm transition-colors hover:bg-pearl/[0.04]"
                 onClick={() => {
                   onChange(c.id, c.name);
                   setQuery(c.name);

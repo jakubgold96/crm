@@ -10,7 +10,7 @@ const buttonVariants = cva(
         primary:
           'bg-accent text-accent-foreground hover:bg-accent-hover',
         secondary:
-          'bg-surface-raised text-foreground shadow-[inset_0_0_0_1px_var(--border-strong)] hover:bg-surface-hover hover:text-cyan hover:shadow-[inset_0_0_0_1px_rgb(0_225_255/0.6)]',
+          'bg-surface-raised text-foreground shadow-[inset_0_0_0_1px_var(--border-strong)] hover:bg-surface-hover hover:text-pearl hover:shadow-[inset_0_0_0_1px_rgb(61_90_254/0.6)]',
         ghost: 'text-foreground-muted hover:bg-surface-raised hover:text-foreground',
         danger: 'bg-danger text-danger-foreground',
       },

@@ -40,7 +40,7 @@ export function UsersTable({ profiles, currentUserId }: { profiles: Profile[]; c
           </thead>
           <tbody className="divide-y divide-border">
             {rows.map((p) => (
-              <tr key={p.id} className="transition-colors hover:bg-white/[0.04]">
+              <tr key={p.id} className="transition-colors hover:bg-pearl/[0.04]">
                 <td className="px-4 py-2.5">
                   <span className="font-medium text-foreground">{p.full_name}</span>
                   {p.id === currentUserId && <span className="ml-1 text-xs text-foreground-muted">(Ty)</span>}

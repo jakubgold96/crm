@@ -20,7 +20,7 @@ export function NavMobile() {
   return (
     <nav
       aria-label="Nawigacja"
-      className="fixed inset-x-0 bottom-0 z-40 flex border-t border-accent/40 bg-sidebar/95 pb-[env(safe-area-inset-bottom)] shadow-[0_-10px_30px_-12px_rgb(245_228_0/0.35)] backdrop-blur md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 flex border-t border-accent/40 bg-sidebar/95 pb-[env(safe-area-inset-bottom)] shadow-[0_-10px_30px_-12px_rgb(61_90_254/0.35)] backdrop-blur md:hidden"
     >
       {MOBILE_NAV_ITEMS.map((item) => {
         const active = isNavActive(pathname, item.href);
@@ -32,7 +32,7 @@ export function NavMobile() {
             aria-current={active ? 'page' : undefined}
             className={cn(
               'flex flex-1 flex-col items-center gap-1 py-2.5 font-display text-[10.5px] font-semibold uppercase tracking-[0.06em] transition-colors',
-              active ? 'text-accent' : 'text-foreground-muted'
+              active ? 'text-pearl' : 'text-foreground-muted'
             )}
           >
             <span

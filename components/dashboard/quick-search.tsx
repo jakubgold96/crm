@@ -20,7 +20,7 @@ export function QuickSearch() {
         const query = q.trim();
         router.push(query ? `/zapytania?q=${encodeURIComponent(query)}` : '/zapytania');
       }}
-      className="group flex w-full max-w-lg items-stretch border-b-2 border-border-strong bg-black/50 shadow-[inset_0_0_0_1px_var(--border)] transition-[border-color,box-shadow] focus-within:border-accent focus-within:shadow-[inset_0_0_0_1px_rgb(245_228_0/0.3),0_10px_30px_-16px_rgb(245_228_0/0.8)]"
+      className="group flex w-full max-w-lg items-stretch border-b-2 border-border-strong bg-void/50 shadow-[inset_0_0_0_1px_var(--border)] transition-[border-color,box-shadow] focus-within:border-accent focus-within:shadow-[inset_0_0_0_1px_rgb(61_90_254/0.3),0_10px_30px_-16px_rgb(61_90_254/0.8)]"
     >
       <span className="flex items-center pl-3.5 pr-2 font-data text-sm text-accent" aria-hidden>
         <Search className="size-4" strokeWidth={2} />

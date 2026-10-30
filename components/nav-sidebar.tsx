@@ -89,7 +89,7 @@ export function NavSidebar({ profile }: { profile: Profile }) {
           >
             INNDES
           </span>
-          <span className="font-data text-[11px] text-cyan">{'//CRM'}</span>
+          <span className="font-data text-[11px] text-fog">{'//CRM'}</span>
         </Link>
       </div>
 
@@ -121,7 +121,7 @@ export function NavSidebar({ profile }: { profile: Profile }) {
                     {active && (
                       <span
                         aria-hidden
-                        className="absolute -left-3 top-1/2 h-6 w-[3px] -translate-y-1/2 bg-accent shadow-[0_0_12px_rgb(245_228_0/0.9)]"
+                        className="absolute -left-3 top-1/2 h-6 w-[3px] -translate-y-1/2 bg-accent shadow-[0_0_12px_rgb(61_90_254/0.9)]"
                       />
                     )}
                     <Link
@@ -131,7 +131,7 @@ export function NavSidebar({ profile }: { profile: Profile }) {
                         'notch flex items-center gap-3 px-3 py-2 font-display text-[13.5px] font-semibold uppercase tracking-[0.06em] transition-[background-color,color,box-shadow] duration-150',
                         active
                           ? 'bg-accent text-accent-foreground'
-                          : 'hover-glitch text-foreground-muted hover:bg-cyan/[0.07] hover:text-cyan'
+                          : 'hover-glitch text-foreground-muted hover:bg-cobalt/[0.07] hover:text-pearl'
                       )}
                     >
                       <Icon className="size-4" strokeWidth={1.75} aria-hidden />
@@ -151,8 +151,8 @@ export function NavSidebar({ profile }: { profile: Profile }) {
           className={cn(
             'flex items-center gap-3 px-3 py-2 font-display text-[13px] font-semibold uppercase tracking-[0.06em] transition-colors',
             pathname.startsWith('/ustawienia/profil')
-              ? 'bg-cyan/[0.08] text-cyan'
-              : 'text-foreground-muted hover:bg-cyan/[0.06] hover:text-cyan'
+              ? 'bg-cobalt/[0.12] text-pearl'
+              : 'text-foreground-muted hover:bg-cobalt/[0.06] hover:text-pearl'
           )}
         >
           <UserRound className="size-4" strokeWidth={1.75} aria-hidden />
@@ -164,8 +164,8 @@ export function NavSidebar({ profile }: { profile: Profile }) {
             className={cn(
               'flex items-center gap-3 px-3 py-2 font-display text-[13px] font-semibold uppercase tracking-[0.06em] transition-colors',
               pathname.startsWith('/ustawienia/uzytkownicy')
-                ? 'bg-white/[0.06] text-foreground'
-                : 'text-foreground-muted hover:bg-white/[0.04] hover:text-foreground'
+                ? 'bg-pearl/[0.06] text-foreground'
+                : 'text-foreground-muted hover:bg-pearl/[0.04] hover:text-foreground'
             )}
           >
             <UserCog className="size-4" strokeWidth={1.75} aria-hidden />
@@ -183,7 +183,7 @@ export function NavSidebar({ profile }: { profile: Profile }) {
         </span>
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-medium text-foreground">{profile.full_name}</p>
-          <p className="truncate font-data text-[11px] uppercase tracking-[0.06em] text-cyan/80">{userRoleLabels[profile.role]}</p>
+          <p className="truncate font-data text-[11px] uppercase tracking-[0.06em] text-fog">{userRoleLabels[profile.role]}</p>
         </div>
         <button
           type="button"

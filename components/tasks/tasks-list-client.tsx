@@ -4,7 +4,7 @@ import { GroupBadge } from '@/components/ui/group-badge';
 import { PageTitle } from '@/components/ui/page-title';
 
 /** Neon grupy zadań wg pilności: po terminie = czerwień, dziś = bursztyn, reszta = cyjan. */
-const TONE_NEON = { danger: 'var(--danger)', terracotta: 'var(--terracotta)', neutral: 'var(--neon-cyan)' } as const;
+const TONE_NEON = { danger: 'var(--danger)', terracotta: 'var(--terracotta)', neutral: 'var(--cobalt)' } as const;
 
 import { Badge } from '@/components/ui/badge';
 import { Select } from '@/components/ui/input';
@@ -84,8 +84,8 @@ export function TasksListClient({
             className={cn(
               'px-4 py-2 font-display text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors',
               scope === s
-                ? 'border-b-2 border-accent text-accent'
-                : 'border-b-2 border-transparent text-foreground-muted hover:text-cyan'
+                ? 'border-b-2 border-accent text-pearl'
+                : 'border-b-2 border-transparent text-foreground-muted hover:text-pearl'
             )}
           >
             {s === 'moje' ? 'Moje' : 'Wszystkie'}
@@ -125,7 +125,7 @@ function TaskGroup({
   return (
     <div>
       <h2
-        className="neon-text mb-2 flex items-center gap-2 font-display text-[15px] font-bold uppercase tracking-[0.08em]"
+        className="neon-text mb-2 flex items-center gap-2 font-display text-lg font-bold uppercase tracking-[0.08em]"
         style={{ color: TONE_NEON[tone] }}
       >
         <span aria-hidden className="size-2 rotate-45" style={{ background: TONE_NEON[tone], boxShadow: `0 0 10px ${TONE_NEON[tone]}` }} />
@@ -150,9 +150,9 @@ function TaskGroup({
           </thead>
           <tbody className="divide-y divide-border">
             {items.map((inq) => (
-              <tr key={inq.id} className="transition-colors hover:bg-white/[0.04]">
+              <tr key={inq.id} className="transition-colors hover:bg-pearl/[0.04]">
                 <td className="px-4 py-2.5">
-                  <Link href={`/zapytania/${inq.id}`} className="font-data font-semibold text-foreground hover:text-accent">
+                  <Link href={`/zapytania/${inq.id}`} className="font-data font-semibold text-foreground hover:underline decoration-cobalt decoration-2 underline-offset-4">
                     {inq.number}
                   </Link>
                 </td>

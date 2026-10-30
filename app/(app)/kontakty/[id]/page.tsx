@@ -40,7 +40,7 @@ export default async function ContactDetailPage({ params }: { params: Promise<{ 
           </h1>
           <p className="mt-1 text-sm text-foreground-muted">
             {typedContact.companies && (
-              <Link href={`/firmy/${typedContact.companies.id}`} className="hover:text-accent hover:underline">
+              <Link href={`/firmy/${typedContact.companies.id}`} className="hover:underline decoration-cobalt decoration-2 underline-offset-4">
                 {typedContact.companies.name}
               </Link>
             )}
@@ -91,7 +91,7 @@ export default async function ContactDetailPage({ params }: { params: Promise<{ 
             <ul className="divide-y divide-border">
               {typedInquiries.map((inq) => (
                 <li key={inq.id} className="py-2.5">
-                  <Link href={`/zapytania/${inq.id}`} className="block hover:text-accent">
+                  <Link href={`/zapytania/${inq.id}`} className="block hover:underline decoration-cobalt decoration-2 underline-offset-4">
                     <span className="text-sm font-medium text-foreground">
                       {inq.number} — {inq.short_description || 'Bez opisu'}
                     </span>

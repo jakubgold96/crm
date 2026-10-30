@@ -48,13 +48,13 @@ export function KpiTile({
 
       <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 font-data text-[11px] text-foreground-muted">
         {kpi.changePct === null ? (
-          <span className="bg-white/[0.06] px-1.5 py-0.5 uppercase text-foreground/80">
+          <span className="bg-pearl/[0.06] px-1.5 py-0.5 uppercase text-foreground/80">
             {kpi.current > 0 ? 'nowe' : 'bez zmian'}
           </span>
         ) : (
           <span
-            className="inline-flex items-center gap-0.5 bg-black/40 px-1.5 py-0.5 font-semibold tabular"
-            style={{ color: good ? 'var(--kpi-up)' : bad ? 'var(--kpi-down)' : 'var(--foreground)' }}
+            className="inline-flex items-center gap-0.5 bg-void/60 px-1.5 py-0.5 font-semibold tabular"
+            style={{ color: good ? 'var(--pearl)' : bad ? 'var(--magenta)' : 'var(--fog)' }}
           >
             {up && <ArrowUpRight className="size-3.5" aria-hidden />}
             {down && <ArrowDownRight className="size-3.5" aria-hidden />}

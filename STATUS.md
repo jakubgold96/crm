@@ -117,6 +117,8 @@ Luki względem PRD (wyszukiwanie: numer/firma/kontakt/kraj/opis/następny krok; 
 
 #### Wygląd: świat „nocny HUD” (cyberpunk), na żądanie właściciela, 2026-10-30/31
 
+**Paleta 6 kolorów (2026-10-31):** cała aplikacja używa wyłącznie Void Black / Electric Cobalt / Synth Magenta / Toxic Amber / Titanium Fog / Holographic Pearl (+ przezroczystość). Test `tests/unit/palette.test.ts` blokuje każdy inny hex/rgb i wbudowane kolory Tailwinda (sprawdzone: podłożony `#ffffff`/`text-white` = czerwony test). Kobalt na czarnym ma ~3,9:1, więc drobny tekst jest perłowy/mglisty, a kobalt niosą tła, ramki, ikony i duże liczby.
+
 Zastąpił jasną płytę z pierwszej przeróbki tego samego dnia. Decyzje: `PRODUCT.md` (Brand Commitments), kontrakt `.impeccable/surfaces/app-app-page-tsx.md`, system: `DESIGN.md`.
 - Paleta neonowa, kolory tafli KPI ze zdjęcia referencyjnego; żółty tylko dla akcji/aktywnej nawigacji; kolory pilności grup wspólne w całej aplikacji (`lib/ui/urgency.ts`, `components/ui/group-badge.tsx`).
 - Fonty z repo (OFL, `app/fonts/`): Chakra Petch, JetBrains Mono, Geist.

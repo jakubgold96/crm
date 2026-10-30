@@ -58,9 +58,9 @@ export default async function ArchivePage() {
                 </thead>
                 <tbody className="divide-y divide-border">
                   {inquiries.map((inq) => (
-                    <tr key={inq.id} className="transition-colors hover:bg-white/[0.04]">
+                    <tr key={inq.id} className="transition-colors hover:bg-pearl/[0.04]">
                       <td className="px-4 py-2.5">
-                        <Link href={`/zapytania/${inq.id}`} className="font-data font-semibold text-foreground hover:text-accent">
+                        <Link href={`/zapytania/${inq.id}`} className="font-data font-semibold text-foreground hover:underline decoration-cobalt decoration-2 underline-offset-4">
                           {inq.number}
                         </Link>
                       </td>
@@ -79,7 +79,7 @@ export default async function ArchivePage() {
                 <Link
                   key={inq.id}
                   href={`/zapytania/${inq.id}`}
-                  className="hud hud-sm block bg-surface/90 p-4 transition-colors hover:bg-cyan/[0.05] active:bg-surface-raised"
+                  className="hud hud-sm block bg-surface/90 p-4 transition-colors hover:bg-cobalt/[0.05] active:bg-surface-raised"
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-medium text-foreground">{inq.number}</span>
@@ -119,9 +119,9 @@ export default async function ArchivePage() {
                 </thead>
                 <tbody className="divide-y divide-border">
                   {companies.map((c) => (
-                    <tr key={c.id} className="transition-colors hover:bg-white/[0.04]">
+                    <tr key={c.id} className="transition-colors hover:bg-pearl/[0.04]">
                       <td className="px-4 py-2.5">
-                        <Link href={`/firmy/${c.id}`} className="font-data font-semibold text-foreground hover:text-accent">
+                        <Link href={`/firmy/${c.id}`} className="font-data font-semibold text-foreground hover:underline decoration-cobalt decoration-2 underline-offset-4">
                           {c.name}
                         </Link>
                       </td>
@@ -141,7 +141,7 @@ export default async function ArchivePage() {
                 <Link
                   key={c.id}
                   href={`/firmy/${c.id}`}
-                  className="hud hud-sm block bg-surface/90 p-4 transition-colors hover:bg-cyan/[0.05] active:bg-surface-raised"
+                  className="hud hud-sm block bg-surface/90 p-4 transition-colors hover:bg-cobalt/[0.05] active:bg-surface-raised"
                 >
                   <p className="font-medium text-foreground">{c.name}</p>
                   <p className="mt-0.5 text-sm text-foreground-muted">

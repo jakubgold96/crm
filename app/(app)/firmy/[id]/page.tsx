@@ -95,7 +95,7 @@ export default async function CompanyDetailPage({ params }: { params: Promise<{ 
                 <ul className="divide-y divide-border">
                   {typedInquiries.map((inq) => (
                     <li key={inq.id} className="py-2.5">
-                      <Link href={`/zapytania/${inq.id}`} className="block hover:text-accent">
+                      <Link href={`/zapytania/${inq.id}`} className="block hover:underline decoration-cobalt decoration-2 underline-offset-4">
                         <div className="flex items-center justify-between gap-2">
                           <span className="text-sm font-medium text-foreground">
                             {inq.number} — {inq.short_description || 'Bez opisu'}
@@ -111,7 +111,7 @@ export default async function CompanyDetailPage({ params }: { params: Promise<{ 
                   ))}
                 </ul>
               )}
-              <Link href={`/zapytania/nowe?firma=${id}`} className="mt-3 inline-block text-sm text-accent hover:underline">
+              <Link href={`/zapytania/nowe?firma=${id}`} className="mt-3 inline-block text-sm text-pearl underline decoration-cobalt decoration-2 underline-offset-4 hover:decoration-magenta">
                 + Nowe zapytanie dla tej firmy
               </Link>
             </CardContent>
@@ -130,7 +130,7 @@ export default async function CompanyDetailPage({ params }: { params: Promise<{ 
                 <ul className="space-y-3">
                   {typedContacts.map((c) => (
                     <li key={c.id}>
-                      <Link href={`/kontakty/${c.id}`} className="block hover:text-accent">
+                      <Link href={`/kontakty/${c.id}`} className="block hover:underline decoration-cobalt decoration-2 underline-offset-4">
                         <p className="text-sm font-medium text-foreground">
                           {c.first_name} {c.last_name}
                         </p>
@@ -142,7 +142,7 @@ export default async function CompanyDetailPage({ params }: { params: Promise<{ 
               )}
               <Link
                 href={`/kontakty/nowy?firma=${id}`}
-                className="mt-3 inline-block text-sm text-accent hover:underline"
+                className="mt-3 inline-block text-sm text-pearl underline decoration-cobalt decoration-2 underline-offset-4 hover:decoration-magenta"
               >
                 + Nowy kontakt
               </Link>

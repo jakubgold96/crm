@@ -179,7 +179,7 @@ export function InquiryDetailClient({
           </div>
           <p className="mt-1 text-sm text-foreground-muted">
             {company ? (
-              <Link href={`/firmy/${company.id}`} className="hover:text-accent hover:underline">
+              <Link href={`/firmy/${company.id}`} className="hover:underline decoration-cobalt decoration-2 underline-offset-4">
                 {company.name}
               </Link>
             ) : (
@@ -381,7 +381,7 @@ export function InquiryDetailClient({
               <CardTitle>Historia zmian</CardTitle>
               <button
                 type="button"
-                className="text-xs text-accent hover:underline"
+                className="text-xs text-pearl underline decoration-cobalt decoration-2 underline-offset-4 hover:decoration-magenta"
                 onClick={() => setShowHistory((s) => !s)}
               >
                 {showHistory ? 'Zwiń' : `Pokaż (${auditLog.length})`}
@@ -472,12 +472,12 @@ export function InquiryDetailClient({
             </CardHeader>
             <CardContent className="space-y-2 text-sm">
               {contact && (
-                <Link href={`/kontakty/${contact.id}`} className="block text-accent hover:underline">
+                <Link href={`/kontakty/${contact.id}`} className="block text-pearl underline decoration-cobalt decoration-2 underline-offset-4 hover:decoration-magenta">
                   Kontakt: {[contact.first_name, contact.last_name].filter(Boolean).join(' ')}
                 </Link>
               )}
               {company && (
-                <Link href={`/firmy/${company.id}`} className="block text-accent hover:underline">
+                <Link href={`/firmy/${company.id}`} className="block text-pearl underline decoration-cobalt decoration-2 underline-offset-4 hover:decoration-magenta">
                   Firma: {company.name}
                 </Link>
               )}

@@ -91,7 +91,7 @@ export function DashboardView({
   return (
     <div className="space-y-5">
       {/* Pasek statusu: stałe odczyty + przewijana taśma z bieżącymi liczbami */}
-      <div className="hud hud-sm flex flex-wrap items-stretch overflow-hidden bg-black/60 font-data text-[11px] uppercase tracking-[0.08em] sm:flex-nowrap">
+      <div className="hud hud-sm flex flex-wrap items-stretch overflow-hidden bg-void/60 font-data text-[11px] uppercase tracking-[0.08em] sm:flex-nowrap">
         <div className="flex shrink-0 items-center gap-2 bg-accent px-3 py-2 font-semibold text-accent-foreground sm:py-0">
           <span aria-hidden className="size-1.5 bg-accent-foreground" />
           <LiveClock initial={clock} />
@@ -129,7 +129,7 @@ export function DashboardView({
         <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="grid-floor" />
           <div className="absolute -right-20 -top-24 size-[28rem] rounded-full bg-magenta/20 blur-3xl" />
-          <div className="absolute -bottom-32 left-1/4 size-[22rem] rounded-full bg-cyan/10 blur-3xl" />
+          <div className="absolute -bottom-32 left-1/4 size-[22rem] rounded-full bg-cobalt/10 blur-3xl" />
           <div className="hazard absolute right-10 top-0 h-2 w-40 opacity-70 [clip-path:polygon(0_0,100%_0,calc(100%-8px)_100%,8px_100%)]" />
         </div>
 
@@ -146,13 +146,13 @@ export function DashboardView({
               <span aria-hidden className="caret" />
             </h1>
             <p className="mt-4 font-data text-[13px] text-foreground-muted">
-              <span className="text-cyan">&gt;</span> {dateLabel} · {summary}
+              <span className="text-magenta">&gt;</span> {dateLabel} · {summary}
             </p>
 
             <dl className="mt-7 grid max-w-md grid-cols-3 gap-px bg-border">
               <Readout label="Po terminie" value={overdue.length} color={overdue.length > 0 ? 'var(--danger)' : undefined} />
               <Readout label="Na dziś" value={dueToday.length} color={dueToday.length > 0 ? 'var(--terracotta)' : undefined} />
-              <Readout label="Aktywne" value={active.length} color="var(--neon-cyan)" />
+              <Readout label="Aktywne" value={active.length} color="var(--cobalt)" />
             </dl>
 
             <div className="mt-7">
@@ -179,7 +179,7 @@ export function DashboardView({
               </h2>
               <Link
                 href="/zadania"
-                className="font-data text-[11px] uppercase tracking-[0.08em] text-cyan hover:text-accent"
+                className="font-data text-[11px] uppercase tracking-[0.08em] text-fog hover:text-pearl"
               >
                 Wszystkie zadania <ArrowRight className="ml-1 inline size-3" strokeWidth={2.25} aria-hidden />
               </Link>
@@ -195,13 +195,13 @@ export function DashboardView({
                   <li key={inq.id}>
                     <Link
                       href={`/zapytania/${inq.id}`}
-                      className="group -mx-3 flex items-center gap-3 px-3 py-3 transition-colors hover:bg-cyan/[0.06]"
+                      className="group -mx-3 flex items-center gap-3 px-3 py-3 transition-colors hover:bg-cobalt/[0.06]"
                     >
                       <DueChip due={due(inq)} today={today} className="hidden sm:inline-flex" />
                       <div className="min-w-0 flex-1">
                         <DueChip due={due(inq)} today={today} className="mb-1.5 sm:hidden" />
                         <p className="truncate text-sm">
-                          <span className="font-data font-semibold text-foreground group-hover:text-accent">
+                          <span className="font-data font-semibold text-foreground group-hover:underline decoration-cobalt decoration-2 underline-offset-4">
                             {inq.number}
                           </span>
                           <span className="text-foreground-muted"> · {inq.companies?.name ?? 'bez firmy'}</span>
@@ -209,7 +209,7 @@ export function DashboardView({
                         <p className="line-clamp-2 text-sm text-foreground/85 sm:truncate">{inq.next_step}</p>
                       </div>
                       <ChevronRight
-                        className="size-4 shrink-0 text-foreground-muted transition-[transform,color] duration-150 group-hover:translate-x-0.5 group-hover:text-accent"
+                        className="size-4 shrink-0 text-foreground-muted transition-[transform,color] duration-150 group-hover:translate-x-0.5 group-hover:underline decoration-cobalt decoration-2 underline-offset-4"
                         aria-hidden
                       />
                     </Link>
@@ -280,7 +280,7 @@ function pluralZadanie(n: number) {
 
 function Readout({ label, value, color }: { label: string; value: number; color?: string }) {
   return (
-    <div className="bg-black/70 px-3 py-3 sm:px-4">
+    <div className="bg-void/70 px-3 py-3 sm:px-4">
       <dt className="font-data text-[10.5px] uppercase tracking-[0.1em] text-foreground-muted">{label}</dt>
       <dd
         className="neon-text mt-1 font-display text-3xl font-bold leading-none sm:text-4xl"
@@ -337,7 +337,7 @@ function InquiryMiniList({
           <Link href={`/zapytania/${inq.id}`} className="group block py-3">
             <div className="flex items-center justify-between gap-3">
               <span className="truncate text-sm">
-                <span className="font-data font-semibold text-foreground group-hover:text-accent">{inq.number}</span>
+                <span className="font-data font-semibold text-foreground group-hover:underline decoration-cobalt decoration-2 underline-offset-4">{inq.number}</span>
                 <span className="text-foreground-muted"> · {inq.short_description || 'bez opisu'}</span>
               </span>
               <span className="shrink-0 font-data text-xs text-foreground-muted tabular">

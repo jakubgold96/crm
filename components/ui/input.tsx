@@ -6,7 +6,7 @@ export const Input = forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTML
     <input
       ref={ref}
       className={cn(
-        'h-10 w-full border-0 border-b border-border-strong bg-surface-raised/80 shadow-[inset_0_0_0_1px_var(--border)] px-3.5 text-sm text-foreground placeholder:text-foreground-muted/80 transition-colors hover:border-cyan/50 focus:border-accent focus:bg-surface-raised focus:shadow-[inset_0_0_0_1px_rgb(245_228_0/0.35),0_6px_20px_-12px_rgb(245_228_0/0.8)] focus:outline-none disabled:opacity-50 aria-[invalid=true]:border-danger',
+        'h-10 w-full border-0 border-b border-border-strong bg-surface-raised/80 shadow-[inset_0_0_0_1px_var(--border)] px-3.5 text-sm text-foreground placeholder:text-foreground-muted/80 transition-colors hover:border-cobalt/50 focus:border-accent focus:bg-surface-raised focus:shadow-[inset_0_0_0_1px_rgb(61_90_254/0.35),0_6px_20px_-12px_rgb(61_90_254/0.8)] focus:outline-none disabled:opacity-50 aria-[invalid=true]:border-danger',
         className
       )}
       {...props}
@@ -20,7 +20,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, React.TextareaHTMLAttrib
     <textarea
       ref={ref}
       className={cn(
-        'w-full border-0 border-b border-border-strong bg-surface-raised/80 shadow-[inset_0_0_0_1px_var(--border)] px-3.5 py-2.5 text-sm text-foreground placeholder:text-foreground-muted/80 transition-colors hover:border-cyan/50 focus:border-accent focus:bg-surface-raised focus:shadow-[inset_0_0_0_1px_rgb(245_228_0/0.35),0_6px_20px_-12px_rgb(245_228_0/0.8)] focus:outline-none disabled:opacity-50',
+        'w-full border-0 border-b border-border-strong bg-surface-raised/80 shadow-[inset_0_0_0_1px_var(--border)] px-3.5 py-2.5 text-sm text-foreground placeholder:text-foreground-muted/80 transition-colors hover:border-cobalt/50 focus:border-accent focus:bg-surface-raised focus:shadow-[inset_0_0_0_1px_rgb(61_90_254/0.35),0_6px_20px_-12px_rgb(61_90_254/0.8)] focus:outline-none disabled:opacity-50',
         className
       )}
       {...props}
@@ -38,7 +38,7 @@ export const Select = forwardRef<HTMLSelectElement, React.SelectHTMLAttributes<H
     <select
       ref={ref}
       className={cn(
-        'h-10 w-full border-0 border-b border-border-strong bg-surface-raised/80 shadow-[inset_0_0_0_1px_var(--border)] px-3.5 text-sm text-foreground transition-colors hover:border-cyan/50 focus:border-accent focus:bg-surface-raised focus:shadow-[inset_0_0_0_1px_rgb(245_228_0/0.35),0_6px_20px_-12px_rgb(245_228_0/0.8)] focus:outline-none disabled:opacity-50',
+        'h-10 w-full border-0 border-b border-border-strong bg-surface-raised/80 shadow-[inset_0_0_0_1px_var(--border)] px-3.5 text-sm text-foreground transition-colors hover:border-cobalt/50 focus:border-accent focus:bg-surface-raised focus:shadow-[inset_0_0_0_1px_rgb(61_90_254/0.35),0_6px_20px_-12px_rgb(61_90_254/0.8)] focus:outline-none disabled:opacity-50',
         className
       )}
       {...props}

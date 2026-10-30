@@ -47,9 +47,9 @@ export default async function ContactsPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 {contacts.map((c) => (
-                  <tr key={c.id} className="transition-colors hover:bg-white/[0.04]">
+                  <tr key={c.id} className="transition-colors hover:bg-pearl/[0.04]">
                     <td className="px-4 py-2.5">
-                      <Link href={`/kontakty/${c.id}`} className="font-medium text-foreground hover:text-accent">
+                      <Link href={`/kontakty/${c.id}`} className="font-medium text-foreground hover:underline decoration-cobalt decoration-2 underline-offset-4">
                         {[c.first_name, c.last_name].filter(Boolean).join(' ') || '(bez nazwiska)'}
                       </Link>
                     </td>
@@ -72,7 +72,7 @@ export default async function ContactsPage() {
               <Link
                 key={c.id}
                 href={`/kontakty/${c.id}`}
-                className="hud hud-sm block bg-surface/90 p-4 transition-colors hover:bg-cyan/[0.05] active:bg-surface-raised"
+                className="hud hud-sm block bg-surface/90 p-4 transition-colors hover:bg-cobalt/[0.05] active:bg-surface-raised"
               >
                 <p className="font-medium text-foreground">
                   {[c.first_name, c.last_name].filter(Boolean).join(' ') || '(bez nazwiska)'}

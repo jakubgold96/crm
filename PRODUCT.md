@@ -33,7 +33,8 @@ Codzienny rytm: poranny przegląd pulpitu → lista zapytań/zadań → karta za
 
 - Nazwa: INNDES CRM.
 - Kierunek wizualny przypięty przez właściciela produktu (2026-10-30, druga decyzja tego dnia): cyberpunk w klimacie Edgerunners, „abstract hardcore”, kolory ze zrzutu referencyjnego podbite do neonu; ciemniej i bardziej immersyjnie; efekty (glitch, skanlinie, neon) na wszystkich ekranach. Kolory INNDES (granat/kobalt/terakota/szałwia) — nie używać.
-- Powitanie na pulpicie: „HEY, {imię}” — imię z profilu użytkownika (pierwsze słowo pola imię i nazwisko).
+- **Paleta: wyłącznie 6 kolorów** (decyzja właściciela, 2026-10-31): Void Black `#06070A`, Electric Cobalt `#3D5AFE`, Synth Magenta `#FF2FA3`, Toxic Amber `#FF8A1E`, Titanium Fog `#AEB6C2`, Holographic Pearl `#F5F7FF`. Dozwolona tylko ich przezroczystość i gradienty między nimi. Pilnuje tego `tests/unit/palette.test.ts`. Układ i efekty „nocnego HUD” (zrzut zaakceptowany przez właściciela) zostają.
+- Powitanie na pulpicie: „HEY, {imię}” — imię z profilu użytkownika (pierwsze słowo pola imię i nazwisko; gdy w profilu jest e-mail — pierwszy człon loginu).
 - Granica: tylko klimat gatunku; żadnych logotypów, postaci, nazw ani elementów interfejsu z gry/anime Cyberpunk 2077 / Edgerunners.
 
 ## Evidence on Hand

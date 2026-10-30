@@ -16,7 +16,7 @@ export function PageTitle({ children, count, className }: { children: string; co
       <span data-text={children} className="glitch rgb-split">
         {children}
       </span>
-      {count !== undefined && <span className="font-data text-sm font-normal text-cyan tabular">[{count}]</span>}
+      {count !== undefined && <span className="font-data text-sm font-normal text-fog tabular">[{count}]</span>}
     </h1>
   );
 }

@@ -18,12 +18,12 @@ export default async function AppLayout({ children }: { children: React.ReactNod
             <span data-text="INNDES" className="glitch font-display text-base font-bold uppercase tracking-[0.12em] text-foreground">
               INNDES
             </span>
-            <span className="font-data text-[11px] text-cyan">{'//CRM'}</span>
+            <span className="font-data text-[11px] text-fog">{'//CRM'}</span>
           </Link>
           <Link
             href="/ustawienia/profil"
             aria-label="Mój profil"
-            className="p-2 text-foreground-muted hover:text-cyan"
+            className="p-2 text-foreground-muted hover:text-pearl"
           >
             <UserRound className="size-5" strokeWidth={1.75} aria-hidden />
           </Link>

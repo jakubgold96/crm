@@ -88,8 +88,8 @@ export function InquiriesListClient({
             className={cn(
               'px-4 py-2 font-display text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors',
               view === v
-                ? 'border-b-2 border-accent text-accent'
-                : 'border-b-2 border-transparent text-foreground-muted hover:text-cyan'
+                ? 'border-b-2 border-accent text-pearl'
+                : 'border-b-2 border-transparent text-foreground-muted hover:text-pearl'
             )}
           >
             {v === 'operacyjne' ? 'Operacyjne' : v === 'sprzedaz' ? 'Sprzedaż' : 'Moje'}
@@ -173,7 +173,7 @@ export function InquiriesListClient({
           <button
             type="button"
             onClick={() => setFilters(emptyFilters)}
-            className="text-sm text-accent hover:underline"
+            className="text-sm text-pearl underline decoration-cobalt decoration-2 underline-offset-4 hover:decoration-magenta"
           >
             Wyczyść filtry
           </button>
@@ -184,7 +184,7 @@ export function InquiriesListClient({
         {groups.map(([key, label, items]) => (
           <div key={key}>
             <h2
-              className="neon-text mb-2 flex items-center gap-2 font-display text-[15px] font-bold uppercase tracking-[0.08em]"
+              className="neon-text mb-2 flex items-center gap-2 font-display text-lg font-bold uppercase tracking-[0.08em]"
               style={{ color: groupNeon(key) }}
             >
               <span
@@ -221,9 +221,9 @@ export function InquiriesListClient({
                 </thead>
                 <tbody className="divide-y divide-border">
                   {items.map((inq) => (
-                    <tr key={inq.id} className="transition-colors hover:bg-white/[0.04]">
+                    <tr key={inq.id} className="transition-colors hover:bg-pearl/[0.04]">
                       <td className="px-4 py-2.5">
-                        <Link href={`/zapytania/${inq.id}`} className="font-data font-semibold text-foreground hover:text-accent">
+                        <Link href={`/zapytania/${inq.id}`} className="font-data font-semibold text-foreground hover:underline decoration-cobalt decoration-2 underline-offset-4">
                           {inq.number}
                         </Link>
                       </td>
@@ -247,7 +247,7 @@ export function InquiriesListClient({
                 <Link
                   key={inq.id}
                   href={`/zapytania/${inq.id}`}
-                  className="hud hud-sm block bg-surface/90 p-4 transition-colors hover:bg-cyan/[0.05] active:bg-surface-raised"
+                  className="hud hud-sm block bg-surface/90 p-4 transition-colors hover:bg-cobalt/[0.05] active:bg-surface-raised"
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-medium text-foreground">{inq.number}</span>

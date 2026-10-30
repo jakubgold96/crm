@@ -66,7 +66,7 @@ export function LoginForm({
   return (
     <div className="hud hud-lg bg-surface/90 p-6">
       {deactivated && (
-        <div className="mb-4 bg-danger-bg shadow-[inset_0_0_0_1px_rgb(255_42_109/0.45)] px-3 py-2 text-sm text-danger">
+        <div className="mb-4 bg-danger-bg shadow-[inset_0_0_0_1px_rgb(255_47_163/0.45)] px-3 py-2 text-sm text-danger">
           Twoje konto zostało dezaktywowane. Skontaktuj się z administratorem.
         </div>
       )}
@@ -111,7 +111,7 @@ export function LoginForm({
           setMode(mode === 'password' ? 'magic-link' : 'password');
           setError(null);
         }}
-        className="mt-4 w-full text-center text-sm text-accent hover:underline"
+        className="mt-4 w-full text-center text-sm text-pearl underline decoration-cobalt decoration-2 underline-offset-4 hover:decoration-magenta"
       >
         {mode === 'password' ? 'Zaloguj się linkiem e-mail (bez hasła)' : 'Zaloguj się hasłem'}
       </button>

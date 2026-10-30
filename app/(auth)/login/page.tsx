@@ -16,7 +16,7 @@ export default function LoginPage({
             <span data-text="INNDES" className="glitch rgb-split font-display text-4xl font-bold uppercase tracking-[0.14em] text-foreground">
               INNDES
             </span>
-            <span className="font-data text-sm text-cyan">{'//CRM'}</span>
+            <span className="font-data text-sm text-fog">{'//CRM'}</span>
           </h1>
           <p className="mt-3 font-data text-[13px] text-foreground-muted">
             <span className="text-magenta">&gt;</span> zaloguj się do swojego konta<span aria-hidden className="caret" />
