@@ -25,10 +25,17 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      // mobile-cards.spec.ts sprawdza zachowanie specyficzne dla viewportu
+      // mobilnego (tabela ukryta, karty widoczne) — uruchamiane tylko w
+      // projekcie mobile-chromium, nie tutaj (patrz testMatch poniżej).
+      testIgnore: /mobile-cards\.spec\.ts$/,
     },
     {
       name: 'mobile-chromium',
       use: { ...devices['Pixel 7'] },
+      // Tylko ten jeden plik — resztę testów e2e pokrywa już projekt `chromium`,
+      // nie trzeba uruchamiać każdego testu dwa razy na dwóch urządzeniach.
+      testMatch: /mobile-cards\.spec\.ts$/,
     },
   ],
   webServer: {
