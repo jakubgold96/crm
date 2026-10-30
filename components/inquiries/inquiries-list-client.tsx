@@ -4,12 +4,28 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input, Select } from '@/components/ui/input';
 import { cn, formatDate, isDueToday, isOverdue } from '@/lib/utils';
-import { operationalGroupLabels, salesStageLabels } from '@/lib/enums';
-import type { Inquiry, Profile } from '@/lib/types/database';
+import {
+  dueFilterLabels,
+  inquirySortLabels,
+  inquirySourceLabels,
+  operationalGroupLabels,
+  salesStageLabels,
+} from '@/lib/enums';
+import {
+  activeFilterCount,
+  emptyFilters,
+  filterInquiries,
+  sortInquiries,
+  type DueFilter,
+  type InquiryListFilters,
+  type InquiryListItem,
+  type SortKey,
+} from '@/lib/inquiries/list-filters';
+import type { Profile } from '@/lib/types/database';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 
-type InquiryWithCompany = Inquiry & { companies: { name: string } | null };
+type InquiryWithCompany = InquiryListItem;
 type View = 'operacyjne' | 'sprzedaz' | 'moje';
 
 export function InquiriesListClient({
@@ -22,35 +38,22 @@ export function InquiriesListClient({
   currentUserId: string;
 }) {
   const [view, setView] = useState<View>('operacyjne');
-  const [search, setSearch] = useState('');
-  const [ownerFilter, setOwnerFilter] = useState('');
-  const [countryFilter, setCountryFilter] = useState('');
-  const [sourceFilter, setSourceFilter] = useState('');
+  const [filters, setFilters] = useState<InquiryListFilters>(emptyFilters);
+  const [sortKey, setSortKey] = useState<SortKey>('termin');
+  const [showFilters, setShowFilters] = useState(false);
+
+  const setFilter = <K extends keyof InquiryListFilters>(key: K, value: InquiryListFilters[K]) =>
+    setFilters((prev) => ({ ...prev, [key]: value }));
 
   const filtered = useMemo(() => {
-    let list = inquiries;
+    const base = view === 'moje' ? inquiries.filter((i) => i.owner_id === currentUserId) : inquiries;
+    // Lokalna data użytkownika (YYYY-MM-DD) — nie UTC, żeby "dziś" po północy w PL było dzisiaj.
+    const now = new Date();
+    const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    return sortInquiries(filterInquiries(base, filters, today), sortKey);
+  }, [inquiries, view, filters, sortKey, currentUserId]);
 
-    if (view === 'moje') {
-      list = list.filter((i) => i.owner_id === currentUserId);
-    }
-
-    if (search.trim()) {
-      const q = search.trim().toLowerCase();
-      list = list.filter(
-        (i) =>
-          i.number.toLowerCase().includes(q) ||
-          (i.companies?.name ?? '').toLowerCase().includes(q) ||
-          (i.country ?? '').toLowerCase().includes(q) ||
-          (i.short_description ?? '').toLowerCase().includes(q) ||
-          (i.next_step ?? '').toLowerCase().includes(q)
-      );
-    }
-    if (ownerFilter) list = list.filter((i) => i.owner_id === ownerFilter);
-    if (countryFilter) list = list.filter((i) => (i.country ?? '').toLowerCase() === countryFilter.toLowerCase());
-    if (sourceFilter) list = list.filter((i) => i.source === sourceFilter);
-
-    return list;
-  }, [inquiries, view, search, ownerFilter, countryFilter, sourceFilter, currentUserId]);
+  const extraFilterCount = activeFilterCount({ ...filters, search: '' });
 
   // W widoku "Sprzedaż" grupujemy po etapie sprzedaży zamiast grupy operacyjnej.
   const groups =
@@ -84,35 +87,86 @@ export function InquiriesListClient({
         ))}
       </div>
 
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-4">
-        <Input placeholder="Szukaj…" value={search} onChange={(e) => setSearch(e.target.value)} />
-        <Select value={ownerFilter} onChange={(e) => setOwnerFilter(e.target.value)}>
-          <option value="">Wszyscy właściciele</option>
-          {profiles.map((p) => (
-            <option key={p.id} value={p.id}>
-              {p.full_name}
-            </option>
-          ))}
-        </Select>
-        <Select value={countryFilter} onChange={(e) => setCountryFilter(e.target.value)}>
-          <option value="">Wszystkie kraje</option>
-          {countries.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
-        </Select>
-        <Select value={sourceFilter} onChange={(e) => setSourceFilter(e.target.value)}>
-          <option value="">Wszystkie źródła</option>
-          <option value="formularz">Formularz</option>
-          <option value="email">E-mail</option>
-          <option value="telefon">Telefon</option>
-          <option value="polecenie">Polecenie</option>
-          <option value="architekt">Architekt</option>
-          <option value="targi">Targi</option>
-          <option value="powrot_klienta">Powrót klienta</option>
-          <option value="inne">Inne</option>
-        </Select>
+      <div className="space-y-3">
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <Input
+            className="sm:flex-1"
+            placeholder="Szukaj: numer, firma, kontakt, kraj, opis, następny krok…"
+            value={filters.search}
+            onChange={(e) => setFilter('search', e.target.value)}
+          />
+          <div className="flex gap-2">
+            <Select className="flex-1" value={sortKey} onChange={(e) => setSortKey(e.target.value as SortKey)}>
+              {Object.entries(inquirySortLabels).map(([value, label]) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
+            </Select>
+            <Button
+              size="sm"
+              variant="secondary"
+              className="md:hidden"
+              onClick={() => setShowFilters((v) => !v)}
+              aria-expanded={showFilters}
+            >
+              Filtry{extraFilterCount > 0 ? ` (${extraFilterCount})` : ''}
+            </Button>
+          </div>
+        </div>
+
+        <div className={cn('grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid md:grid-cols-5', !showFilters && 'hidden')}>
+          <Select value={filters.due} onChange={(e) => setFilter('due', e.target.value as DueFilter)}>
+            <option value="">Każdy termin</option>
+            {Object.entries(dueFilterLabels).map(([value, label]) => (
+              <option key={value} value={value}>
+                {label}
+              </option>
+            ))}
+          </Select>
+          <Select value={filters.ownerId} onChange={(e) => setFilter('ownerId', e.target.value)}>
+            <option value="">Wszyscy właściciele</option>
+            {profiles.map((p) => (
+              <option key={p.id} value={p.id}>
+                {p.full_name}
+              </option>
+            ))}
+          </Select>
+          <Select value={filters.salesStage} onChange={(e) => setFilter('salesStage', e.target.value)}>
+            <option value="">Każdy etap</option>
+            {Object.entries(salesStageLabels).map(([value, label]) => (
+              <option key={value} value={value}>
+                {label}
+              </option>
+            ))}
+          </Select>
+          <Select value={filters.country} onChange={(e) => setFilter('country', e.target.value)}>
+            <option value="">Wszystkie kraje</option>
+            {countries.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </Select>
+          <Select value={filters.source} onChange={(e) => setFilter('source', e.target.value)}>
+            <option value="">Wszystkie źródła</option>
+            {Object.entries(inquirySourceLabels).map(([value, label]) => (
+              <option key={value} value={value}>
+                {label}
+              </option>
+            ))}
+          </Select>
+        </div>
+
+        {activeFilterCount(filters) > 0 && (
+          <button
+            type="button"
+            onClick={() => setFilters(emptyFilters)}
+            className="text-sm text-accent hover:underline"
+          >
+            Wyczyść filtry
+          </button>
+        )}
       </div>
 
       <div className="space-y-8">
@@ -204,16 +258,6 @@ function groupBy(
     if (!map.has(key)) map.set(key, []);
     map.get(key)!.push(item);
   }
-  // Zaległe/dzisiejsze na górze wewnątrz każdej grupy.
-  for (const [, list] of map) {
-    list.sort((a, b) => {
-      const aDue = a.next_step_due;
-      const bDue = b.next_step_due;
-      if (!aDue && !bDue) return 0;
-      if (!aDue) return 1;
-      if (!bDue) return -1;
-      return aDue.localeCompare(bDue);
-    });
-  }
+  // Kolejność wewnątrz grupy = kolejność wejścia (już posortowane przez sortInquiries).
   return order.filter((k) => map.has(k)).map((k) => [k, labels[k], map.get(k)!]);
 }

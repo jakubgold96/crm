@@ -1,9 +1,10 @@
 import { InquiriesListClient } from '@/components/inquiries/inquiries-list-client';
 import { createClient } from '@/lib/supabase/server';
 import { requireUser } from '@/lib/auth';
-import type { Inquiry, Profile } from '@/lib/types/database';
+import type { InquiryListItem } from '@/lib/inquiries/list-filters';
+import type { Profile } from '@/lib/types/database';
 
-type InquiryWithCompany = Inquiry & { companies: { name: string } | null };
+type InquiryWithCompany = InquiryListItem;
 
 export default async function InquiriesPage() {
   const { profile } = await requireUser();
@@ -11,7 +12,7 @@ export default async function InquiriesPage() {
 
   const { data: inquiries } = await supabase
     .from('inquiries')
-    .select('*, companies(name)')
+    .select('*, companies(name), contacts(first_name, last_name)')
     .eq('is_archived', false)
     .order('next_step_due', { ascending: true, nullsFirst: false });
 

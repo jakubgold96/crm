@@ -103,8 +103,20 @@ Nie zaimplementowano: leadów, poczty, agenta — zgodnie z poleceniem, czekają
   - Sekcja "Kopia zapasowa bazy" na `/eksport`, widoczna z przyciskiem pobierania tylko dla `profile.role === 'administrator'`, wyszarzona z wyjaśnieniem dla innych ról.
   - `npx tsc --noEmit`, `npm run lint`, `npm run build`, `bash -n scripts/verify-backup.sh` — czyste.
 
+#### Filtry i wyszukiwanie (#7) — ZROBIONE
+
+Luki względem PRD (wyszukiwanie: numer/firma/kontakt/kraj/opis/następny krok; filtry: termin/właściciel/etap/kraj/źródło; sortowanie) uzupełnione:
+- Logika wydzielona do czystej funkcji `lib/inquiries/list-filters.ts` (`filterInquiries`, `sortInquiries`, `matchesDue`) — bez Reacta, bez AI.
+- Wyszukiwanie obejmuje teraz też imię i nazwisko kontaktu (`/zapytania` dociąga `contacts(first_name, last_name)`; jeden FK `inquiries_contact_id_fkey`, sprawdzony na "CRM Test").
+- Nowe filtry: **termin** (po terminie / na dziś / najbliższe 7 dni / bez terminu) i **etap sprzedaży**. Filtry łączone warunkiem AND, przycisk „Wyczyść filtry”.
+- Wybór sortowania: termin (domyślnie, zaległe na górze) / najnowsze / numer (naturalne) / firma A–Z.
+- Mobile: wyszukiwarka + sortowanie zawsze widoczne, reszta filtrów zwinięta pod „Filtry (n)”; na desktopie wszystkie widoczne.
+- Etykiety źródeł przeniesione z komponentu do `lib/enums.ts` (były wpisane na sztywno); nowe etykiety `dueFilterLabels`, `inquirySortLabels` też tam.
+- Testy: `tests/unit/inquiry-list-filters.test.ts` — 11 nowych, całość Vitest 45/45; `tsc`, `lint`, `build` czyste.
+- Niezrobione: manualny przegląd na viewporcie mobilnym (kryterium #7 tego wymaga) — do zrobienia przez właściciela produktu w przeglądarce.
+
 ### Następny krok (Faza 2)
 
-Pozostało z `CLAUDE.md`:
-1. Przegląd filtrów/wyszukiwania (#7) pod kątem czy obecny zakres z Fazy 1 (`InquiriesListClient`: owner/country/source) wystarcza, czy coś dopisać — to zamyka listę punktów Fazy 2 z `CLAUDE.md`.
-2. Realna weryfikacja `/api/backup/snapshot` przez żywe konto administratora (w tej sesji sprawdzona tylko logika kodu + skrypt weryfikujący na syntetycznych danych — nie było konta admina na "CRM Test" do testu end-to-end przez UI).
+Wszystkie punkty Fazy 2 z `CLAUDE.md` mają implementację. Do zamknięcia fazy:
+1. Manualny przegląd `/zapytania` na telefonie (filtry, karty) — akceptacja właściciela.
+2. Realna weryfikacja `/api/backup/snapshot` przez żywe konto administratora (sprawdzona tylko logika kodu + skrypt weryfikujący na syntetycznych danych).

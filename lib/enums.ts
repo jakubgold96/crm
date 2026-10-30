@@ -127,3 +127,19 @@ export const salesStagesRequiringScope: SalesStage[] = [
 export function enumToOptions<T extends string>(labels: Record<T, string>): { value: T; label: string }[] {
   return (Object.keys(labels) as T[]).map((value) => ({ value, label: labels[value] }));
 }
+
+// Filtry/sortowanie listy zapytań (tylko UI, nie pola w bazie) —
+// logika w lib/inquiries/list-filters.ts.
+export const dueFilterLabels = {
+  po_terminie: 'Po terminie',
+  dzis: 'Na dziś',
+  tydzien: 'Najbliższe 7 dni',
+  bez_terminu: 'Bez terminu',
+} as const;
+
+export const inquirySortLabels = {
+  termin: 'Sortuj: termin (zaległe na górze)',
+  najnowsze: 'Sortuj: najnowsze zapytania',
+  numer: 'Sortuj: numer',
+  firma: 'Sortuj: firma A–Z',
+} as const;
