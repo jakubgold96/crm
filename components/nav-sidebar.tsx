@@ -10,6 +10,7 @@ import { createClient } from '@/lib/supabase/client';
 const NAV_ITEMS: { href: string; label: string; disabled?: boolean }[] = [
   { href: '/', label: 'Pulpit' },
   { href: '/zapytania', label: 'Zapytania' },
+  { href: '/zadania', label: 'Zadania' },
   { href: '/firmy', label: 'Firmy' },
   { href: '/kontakty', label: 'Kontakty' },
   { href: '/archiwum', label: 'Archiwum' },

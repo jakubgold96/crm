@@ -90,11 +90,11 @@ Nie zaimplementowano: leadów, poczty, agenta — zgodnie z poleceniem, czekają
 
 - **Widok Archiwum** (`/archiwum`, odblokowany w `nav-sidebar.tsx`): dwie sekcje — zarchiwizowane zapytania (numer, firma, powód archiwizacji, data) i zarchiwizowane firmy (nazwa, segment, kraj), każda z tabelą desktop + kartami mobile w tym samym stylu co `/firmy` i `/zapytania`. Linki prowadzą do istniejących kart szczegółów (karta zapytania już umożliwia podgląd zarchiwizowanego rekordu — kryterium #5: nic nie jest usuwane, tylko ukryte z głównej listy). `npx tsc --noEmit`, `npm run lint`, `npm run build` — czyste.
 - Nie dodano `/archiwum` do dolnej nawigacji mobilnej (`nav-mobile.tsx`) — zostawiona świadomie przy 4 głównych pozycjach (Pulpit/Zapytania/Firmy/Kontakty), zgodnie z testem `mobile-cards.spec.ts`; dostęp mobilny do archiwum na razie przez desktop/sidebar, do rewizji przy dalszej pracy nad #7.
+- **Widok Zadania** (`/zadania`, odblokowany w `nav-sidebar.tsx`): zapytania z niepustym `next_step` i `task_status != 'zrobione'`, pogrupowane Po terminie / Na dziś / Nadchodzące / Bez terminu, filtr Moje (domyślny) / Wszystkie. Inline zmiana `task_status` bezpośrednio z listy (desktop: dropdown w kolumnie, mobile: pod kartą) — przy ustawieniu na "Zrobione" pozycja znika z listy (optymistyczny update + `router.refresh()`). Reużywa wzorca `updateField`/RLS z karty zapytania — żadnej nowej logiki update po stronie bazy. `npx tsc --noEmit`, `npm run lint`, `npm run build` — czyste.
 
 ### Następny krok (Faza 2)
 
 Pozostało z `CLAUDE.md`/`docs/MIGRATIONS_BACKUP.md`:
-1. **Zadania** — dedykowany widok "moje zadania" grupujący `next_step`/`next_step_due` ze wszystkich aktywnych zapytań (poza sekcją na dashboardzie).
-2. **Eksport CSV/JSON** — ogólny (admin) i per firma/kontakt (RODO, `docs/MIGRATIONS_BACKUP.md` sekcja "RODO / eksport danych").
-3. **Backup** — przycisk/endpoint admina "Pobierz ostatni backup" + skrypt weryfikujący restore (kryterium #19).
-4. Przegląd filtrów/wyszukiwania (#7) pod kątem czy obecny zakres z Fazy 1 (`InquiriesListClient`: owner/country/source) wystarcza, czy coś dopisać.
+1. **Eksport CSV/JSON** — ogólny (admin) i per firma/kontakt (RODO, `docs/MIGRATIONS_BACKUP.md` sekcja "RODO / eksport danych").
+2. **Backup** — przycisk/endpoint admina "Pobierz ostatni backup" + skrypt weryfikujący restore (kryterium #19).
+3. Przegląd filtrów/wyszukiwania (#7) pod kątem czy obecny zakres z Fazy 1 (`InquiriesListClient`: owner/country/source) wystarcza, czy coś dopisać.
