@@ -1,3 +1,4 @@
+import { PageTitle } from '@/components/ui/page-title';
 import { GroupBadge } from '@/components/ui/group-badge';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -39,7 +40,7 @@ export default async function CompanyDetailPage({ params }: { params: Promise<{ 
     <div className="space-y-6">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h1 className="rgb-split font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">{typedCompany.name}</h1>
+          <PageTitle>{typedCompany.name}</PageTitle>
           <div className="mt-1 flex flex-wrap gap-1.5">
             {typedCompany.segment && <Badge tone="accent">{companySegmentLabels[typedCompany.segment]}</Badge>}
             <Badge tone="neutral">{relationshipStatusLabels[typedCompany.relationship_status]}</Badge>

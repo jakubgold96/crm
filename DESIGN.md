@@ -1,126 +1,120 @@
 ---
 name: INNDES CRM
-description: Ciemna konsola dnia dla zespołu INNDES — jedna jasna płyta powitalna, nasycone tafle sprzedaży, spokojna praca na listach.
+description: Nocny HUD dla zespołu INNDES — ciemna konsola ze ściętymi panelami, neonowymi kolorami pilności i jednym żółtym kolorem akcji.
 colors:
-  background: "#0b0d12"
-  sidebar: "#0b0d12"
-  surface: "#12151c"
-  surface-raised: "#191d27"
-  foreground: "#e9ecf2"
-  foreground-muted: "#939bab"
-  border: "#232835"
-  border-strong: "#353b4a"
-  accent: "#8199ff"
-  accent-hover: "#9bafff"
-  accent-foreground: "#0b0d12"
-  terracotta: "#ffb26b"
-  terracotta-bg: "rgb(255 178 107 / 0.12)"
-  sage: "#6edb9a"
-  sage-bg: "rgb(110 219 154 / 0.12)"
-  danger: "#ff7b6e"
-  danger-bg: "rgb(255 123 110 / 0.12)"
-  warning-fg: "#ffd36e"
-  warning-bg: "rgb(255 210 110 / 0.12)"
-  hero-bg: "#eceef1"
-  hero-bg-2: "#f8f9fa"
-  hero-fg: "#12141a"
-  hero-muted: "#5a6170"
-  hero-line: "#d9dce2"
-  hero-field: "#ffffff"
-  hero-ink-hover: "#262a33"
-  hero-danger: "#b22d1b"
-  hero-danger-bg: "#fde4df"
-  hero-today: "#8a4a0c"
-  hero-today-bg: "#ffecd6"
-  greet-1: "#2f7cf6"
-  greet-2: "#8b5cf6"
-  greet-3: "#e04fa0"
-  kpi-1-from: "#11155a"
-  kpi-1-to: "#2733c4"
-  kpi-1-line: "#8ff09c"
-  kpi-2-from: "#0c1f8f"
-  kpi-2-to: "#234ee6"
-  kpi-2-line: "#ffffff"
-  kpi-3-from: "#0a2722"
-  kpi-3-to: "#16584a"
-  kpi-3-line: "#e3fff3"
-  kpi-4-from: "#34092c"
-  kpi-4-to: "#7d1759"
-  kpi-4-line: "#c8f25c"
-  kpi-up: "#8ff09c"
-  kpi-down: "#ffb3b3"
+  background: "#05060b"
+  sidebar: "#07080f"
+  surface: "#0b0d16"
+  surface-raised: "#11141f"
+  surface-hover: "#181c2b"
+  foreground: "#e8f0ff"
+  foreground-muted: "#8b94ae"
+  border: "#1b2034"
+  border-strong: "#2c3352"
+  accent: "#f5e400"
+  accent-hover: "#fff35e"
+  accent-foreground: "#05060b"
+  neon-cyan: "#00e1ff"
+  neon-magenta: "#ff2a6d"
+  terracotta: "#ffb547"
+  terracotta-bg: "rgb(255 181 71 / 0.12)"
+  sage: "#39ff9c"
+  sage-bg: "rgb(57 255 156 / 0.1)"
+  danger: "#ff4d82"
+  danger-bg: "rgb(255 42 109 / 0.14)"
+  danger-foreground: "#05060b"
+  warning-fg: "#ffd23f"
+  warning-bg: "rgb(255 210 63 / 0.12)"
+  kpi-1: "#7867ff"
+  kpi-2: "#3d7bff"
+  kpi-3: "#2bffa8"
+  kpi-4: "#ff3fd2"
+  kpi-up: "#39ff9c"
+  kpi-down: "#ff4d82"
 typography:
   display:
-    fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "2.85rem"
-    fontWeight: 500
-    lineHeight: 1.25
-    letterSpacing: "-0.03em"
-  kpi-figure:
-    fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "2.25rem"
-    fontWeight: 600
-    lineHeight: 1.1
-    letterSpacing: "-0.025em"
-    fontFeature: "\"tnum\""
+    fontFamily: "Chakra Petch, Geist, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "4.5rem"
+    fontWeight: 700
+    lineHeight: 0.95
+    letterSpacing: "0.01em"
   headline:
-    fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1.25rem"
-    fontWeight: 600
-    lineHeight: 1.4
+    fontFamily: "Chakra Petch, Geist, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.875rem"
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: "0.06em"
+  numeric:
+    fontFamily: "Chakra Petch, Geist, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "3rem"
+    fontWeight: 700
+    lineHeight: 1
+    fontFeature: "tnum"
   title:
-    fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Chakra Petch, Geist, ui-sans-serif, system-ui, sans-serif"
     fontSize: "15px"
     fontWeight: 600
     lineHeight: 1.4
-    letterSpacing: "-0.025em"
+    letterSpacing: "0.06em"
+  control:
+    fontFamily: "Chakra Petch, Geist, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "13px"
+    fontWeight: 600
+    letterSpacing: "0.08em"
   body:
     fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif"
     fontSize: "0.875rem"
     fontWeight: 400
     lineHeight: 1.43
-    fontFeature: "\"ss01\", \"cv11\""
-  caption:
-    fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.75rem"
-    fontWeight: 500
-    lineHeight: 1.33
+  data:
+    fontFamily: "JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, monospace"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: 1.5
+    fontFeature: "tnum"
   label:
-    fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, monospace"
     fontSize: "11px"
     fontWeight: 500
     letterSpacing: "0.08em"
 rounded:
-  lg: "8px"
-  xl: "12px"
-  2xl: "16px"
-  plate: "1.75rem"
-  full: "9999px"
+  none: "0px"
 spacing:
-  xs: "6px"
-  sm: "12px"
-  md: "16px"
-  lg: "20px"
-  xl: "32px"
-  2xl: "48px"
+  chip-y: "2px"
+  chip-x: "8px"
+  field-x: "14px"
+  card-y: "16px"
+  card-x: "20px"
+  section-gap: "20px"
+  page-x-mobile: "16px"
+  page-x: "32px"
+  sidebar: "15rem"
+  content-max: "88rem"
 components:
   button-primary:
     backgroundColor: "{colors.accent}"
     textColor: "{colors.accent-foreground}"
-    rounded: "{rounded.full}"
+    typography: "{typography.control}"
+    rounded: "{rounded.none}"
     padding: "0 16px"
     height: "40px"
   button-primary-hover:
     backgroundColor: "{colors.accent-hover}"
+    textColor: "{colors.accent-foreground}"
   button-secondary:
     backgroundColor: "{colors.surface-raised}"
     textColor: "{colors.foreground}"
-    rounded: "{rounded.full}"
+    typography: "{typography.control}"
+    rounded: "{rounded.none}"
     padding: "0 16px"
     height: "40px"
+  button-secondary-hover:
+    backgroundColor: "{colors.surface-hover}"
+    textColor: "{colors.neon-cyan}"
   button-ghost:
+    backgroundColor: "transparent"
     textColor: "{colors.foreground-muted}"
-    rounded: "{rounded.full}"
+    typography: "{typography.control}"
     padding: "0 16px"
     height: "40px"
   button-ghost-hover:
@@ -128,233 +122,247 @@ components:
     textColor: "{colors.foreground}"
   button-danger:
     backgroundColor: "{colors.danger}"
-    rounded: "{rounded.full}"
+    textColor: "{colors.danger-foreground}"
+    typography: "{typography.control}"
     padding: "0 16px"
     height: "40px"
-  button-hero-ink:
-    backgroundColor: "{colors.hero-fg}"
-    textColor: "{colors.hero-field}"
-    rounded: "{rounded.full}"
-    padding: "0 16px"
-    height: "36px"
-  button-hero-ink-hover:
-    backgroundColor: "{colors.hero-ink-hover}"
   input:
     backgroundColor: "{colors.surface-raised}"
     textColor: "{colors.foreground}"
-    rounded: "{rounded.xl}"
+    typography: "{typography.body}"
+    rounded: "{rounded.none}"
     padding: "0 14px"
     height: "40px"
-  hero-search:
-    backgroundColor: "{colors.hero-field}"
-    textColor: "{colors.hero-fg}"
-    rounded: "{rounded.full}"
-    padding: "6px 6px 6px 16px"
-  card:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.foreground}"
-    rounded: "{rounded.2xl}"
-    padding: "16px 20px"
-  hero-plate:
-    backgroundColor: "{colors.hero-bg}"
-    textColor: "{colors.hero-fg}"
-    rounded: "{rounded.plate}"
-    padding: "48px"
-  kpi-tile:
-    backgroundColor: "{colors.kpi-1-to}"
-    textColor: "{colors.hero-field}"
-    rounded: "{rounded.2xl}"
-    padding: "20px"
   badge-neutral:
     backgroundColor: "{colors.surface-raised}"
     textColor: "{colors.foreground-muted}"
-    rounded: "{rounded.full}"
-    padding: "2px 10px"
-  badge-terracotta:
-    backgroundColor: "{colors.terracotta-bg}"
-    textColor: "{colors.terracotta}"
-    rounded: "{rounded.full}"
-    padding: "2px 10px"
-  badge-sage:
-    backgroundColor: "{colors.sage-bg}"
-    textColor: "{colors.sage}"
-    rounded: "{rounded.full}"
-    padding: "2px 10px"
+    typography: "{typography.label}"
+    padding: "2px 8px"
   badge-danger:
     backgroundColor: "{colors.danger-bg}"
     textColor: "{colors.danger}"
-    rounded: "{rounded.full}"
-    padding: "2px 10px"
+    typography: "{typography.label}"
+    padding: "2px 8px"
+  badge-terracotta:
+    backgroundColor: "{colors.terracotta-bg}"
+    textColor: "{colors.terracotta}"
+    typography: "{typography.label}"
+    padding: "2px 8px"
+  badge-sage:
+    backgroundColor: "{colors.sage-bg}"
+    textColor: "{colors.sage}"
+    typography: "{typography.label}"
+    padding: "2px 8px"
+  badge-accent:
+    textColor: "{colors.neon-cyan}"
+    typography: "{typography.label}"
+    padding: "2px 8px"
+  card:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.foreground}"
+    rounded: "{rounded.none}"
+    padding: "16px 20px"
   nav-item:
     textColor: "{colors.foreground-muted}"
-    rounded: "{rounded.xl}"
+    typography: "{typography.control}"
     padding: "8px 12px"
+  nav-item-hover:
+    textColor: "{colors.neon-cyan}"
   nav-item-active:
-    textColor: "{colors.foreground}"
-    rounded: "{rounded.xl}"
-    padding: "8px 12px"
+    backgroundColor: "{colors.accent}"
+    textColor: "{colors.accent-foreground}"
+  kpi-tile:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.foreground-muted}"
+    padding: "20px"
 ---
 
 # Design System: INNDES CRM
 
 ## Overview
 
-**Creative North Star: "Ciemna konsola dnia"**
+**Creative North Star: "Nocny HUD"**
 
-INNDES CRM to prawie czarna, chłodna powłoka (`background`), w której praca toczy się na spokojnych, ciemnych kartach i listach, a dwa miejsca dostają światło i kolor: jasna, perłowa płyta powitalna na pulpicie (dzień już rozpisany) i rząd czterech nasyconych tafli sprzedaży z ośmiotygodniową linią trendu. Kierunek przypiął właściciel produktu ze zrzutu referencyjnego (2026-10-30); zastępuje wcześniejszą jasną paletę granat/kobalt/terakota/szałwia.
+INNDES CRM to ciemna, gęsta konsola, do której zespół „loguje się” rano jak do systemu: prawie czarny grunt z zimnym błękitem, skanlinie nad całym interfejsem, panele ze ściętymi rogami obrysowane cienką linią, neon w kolorze pilności i jeden kwasowy żółty jako kolor akcji. Kierunek przypiął właściciel produktu: cyberpunk w klimacie gatunku, „abstract hardcore”, kolory zrzutu referencyjnego podbite do neonu, efekty (glitch, skanlinie, neon) na wszystkich ekranach — także na liście zapytań, zadaniach i logowaniu, nie tylko na pulpicie.
 
-Gęstość jest robocza, nie wystawowa: tekst 14px, wiersze tabeli ~42px, Geist jako jedyny krój z cyframi tabelarycznymi wszędzie, gdzie stoją liczby i daty. Kształty są miękkie i powtarzalne — pigułki dla akcji i statusów, zaokrąglenia 12–16px dla pól i kart. Głębia to głównie tonalne warstwy (background → surface → surface-raised) i cienkie obramowania; cień jest miękki i nisko pod kartą, nigdy twardy.
+Hałas wizualny jest podporządkowany pracy. Neon niesie znaczenie (po terminie, na dziś, czekamy na klienta, wygrane), dane siedzą w czcionce monospace z cyframi tabelarycznymi, a każdy efekt ruchu znika przy `prefers-reduced-motion`, zostawiając statyczny, w pełni czytelny ekran. Świat jest gatunkowy, nie licencjonowany: żadnych logotypów, postaci, nazw ani elementów interfejsu z gry/anime Cyberpunk 2077 / Edgerunners. Kolory marki INNDES (granat, kobalt, terakota, szałwia) nie wchodzą do tego świata.
 
-Konwencja nazw: tokeny zachowały nazwy z jasnej wersji, żeby każdy ekran przeszedł na nowy świat bez przepisywania klas. `--terracotta` znaczy dziś „na dziś / miękkie ostrzeżenie” (ciepły pomarańcz, nie terakota), `--sage` znaczy „sukces / zrobione / wygrane” (miętowa zieleń). Płyta powitalna ma własny jasny zestaw `--hero-*`, tafle KPI — `--kpi-N-from` / `--kpi-N-to` / `--kpi-N-line` (N = 1–4), gradient imienia — `--greet-1..3`.
+To jest pełna wymiana poprzedniego świata (ciemna powłoka z jasną perłową płytą powitalną, sam Geist). Jasna płyta i pastelowe akcenty są anty-wzorcem.
 
 **Key Characteristics:**
-- Prawie czarna, chłodna powłoka; sidebar w tym samym tonie co tło, bez ramki.
-- Jedna jasna wyspa (płyta powitalna) i cztery nasycone tafle KPI — jedyne duże pola koloru.
-- Chłodny błękit `accent` z ciemnym tekstem jako jedyny kolor akcji w powłoce.
-- Geist, jedna rodzina, cyfry tabelaryczne.
-- Pigułki dla przycisków, statusów i aktywnej nawigacji.
+- Grunt `#05060b` z dwiema rozmytymi poświatami (magenta z prawej u góry, cyjan z lewej u dołu) i skanliniami nad wszystkim.
+- Zero zaokrągleń; dwie sylwetki: panel HUD (jeden ścięty róg) i „notch” (dwa przeciwległe ścięte rogi).
+- Kolor = pilność. Żółty = akcja. Te dwa systemy się nie mieszają.
+- Trzy głosy pisma: Chakra Petch (nagłówki, liczby, przyciski — wersaliki), Geist (tekst), JetBrains Mono (numery, daty, etykiety danych).
+- Ruch krótki i rzadki: boot ekranu, okresowy glitch tytułów, rysujące się linie trendu, przewijana taśma; całość wyłączana przy reduced-motion.
 
 ## Colors
 
-Chłodna, niemal achromatyczna powłoka z jednym błękitnym akcentem akcji, trzema sygnałami stanu i dwoma zamkniętymi wyspami koloru (płyta powitalna, tafle KPI).
+Prawie czarna powłoka z chłodnym odcieniem, nad nią neony o wysokim nasyceniu; każdy neon ma przypisaną rolę, żaden nie jest dekoracją bez znaczenia.
 
 ### Primary
-- **Chłodny błękit akcji** (`accent`, hover `accent-hover`): przycisk główny, aktywna zakładka, hover linków w listach, obrys fokusu (2px, offset 2px), karetka, zaznaczenie tekstu (35% krycia). Na przycisku zawsze z `accent-foreground` (ciemny tekst, kontrast > 7:1), nigdy z białym.
+- **Kwasowy żółty** (`--accent`): przycisk główny, przycisk szukania, aktywna pozycja nawigacji (blok w sidebarze, „notch” w dolnym pasku mobilnym, podkreślenie aktywnej zakładki), pierścień focusu, podkreślenie aktywnego pola, kolor kursora tekstu i zaznaczenia, hover na numerach zapytań i linkach. Zawsze z czarnym tekstem `--accent-foreground`. Hover: `--accent-hover`.
 
 ### Secondary
-- **Ciepły pomarańcz „na dziś”** (`terracotta` / `terracotta-bg`): termin przypada dziś, miękkie ostrzeżenie. Nazwa historyczna.
-- **Miętowa zieleń sukcesu** (`sage` / `sage-bg`): zrobione, wygrane, potwierdzenia. Nazwa historyczna.
-- **Koralowa czerwień** (`danger` / `danger-bg`): po terminie, przegrane, błędy walidacji. Na przycisku „danger” zawsze z ciemnym `danger-foreground`.
-- **Złoto ostrzeżenia** (`warning-fg` / `warning-bg`): ostrzeżenia nie związane z terminem.
+- **Neonowy cyjan** (`--neon-cyan`, w Tailwind `cyan`): kolor nawigacyjno-informacyjny — hover nawigacji i przycisku drugorzędnego, licznik `[n]` przy tytule ekranu, sufiks `//CRM`, rola użytkownika, grupa „czekamy na klienta”, odczyt „Aktywne”, ton `accent` w Badge (uwaga: ton `accent` w Badge to cyjan, nie żółty).
+- **Neonowa magenta** (`--neon-magenta`, w Tailwind `magenta`): znaki `//` w etykietach sekcji nawigacji, strzałki taśmy, kanał RGB w glitchu, poświata w tle; hover wylogowania.
 
-Tła stanów to ten sam odcień na 12% krycia — chip czyta się kolorem tekstu, nie plamą.
+### Tertiary — stany (nazwy historyczne)
+Nazwy tokenów zostały z poprzednich światów, żeby ekrany przeszły bez przepisywania klas. Nazwa nie opisuje już koloru:
+- **Bursztyn „na dziś”** (`--terracotta`, tło `--terracotta-bg`): termin dziś, grupa „do przypomnienia”, odczyt „Na dziś”. Miękkie ostrzeżenie.
+- **Kwasowa zieleń sukcesu** (`--sage`, tło `--sage-bg`): sukces, „wygrane”, status „Aktywny”.
+- **Neonowa czerwień-magenta alarmu** (`--danger`, tło `--danger-bg`, tekst na pełnym tle `--danger-foreground`): po terminie, błąd, „wymaga działania”, „przegrane”, alarm w pasku statusu.
+- **Żółć ostrzeżenia** (`--warning-fg`, `--warning-bg`): ton `warning` w Badge; zdefiniowany, obecnie nieużywany na ekranach. Jest wizualnie bliski akcji — nie używać do „na dziś”.
 
-`surface-hover` to stan hover przycisku drugorzędnego (o stopień jaśniej niż `surface-raised`).
-
-### Tertiary
-- **Perłowa płyta** (`hero-bg` → `hero-bg-2`, tekst `hero-fg`, drugorzędny `hero-muted`, linie `hero-line`, pole `hero-field`): wyłącznie wewnątrz płyty powitalnej. Ma własne warianty stanów o ciemnym tekście na jasnym tle: `hero-danger` / `hero-danger-bg` (po terminie), `hero-today` / `hero-today-bg` (dziś).
-- **Gradient powitania** (`greet-1` → `greet-2` → `greet-3`, błękit → fiolet → róż): tylko imię w nagłówku powitania; `greet-1` służy też jako pierścień fokusu i karetka w polu szybkiego wyszukiwania na płycie.
-- **Tafle KPI**: głębokie indygo (`kpi-1-*`), królewski błękit (`kpi-2-*`), butelkowa zieleń (`kpi-3-*`), śliwkowa magenta (`kpi-4-*`); gradient 140° `from → to`, jasna linia trendu `kpi-N-line`; zmiana procentowa w `kpi-up` / `kpi-down` (odwracane, gdy wzrost jest zły, np. „Przegrane”).
+### Tafle KPI
+- **Indygo** (`--kpi-1`), **królewski błękit** (`--kpi-2`), **turkusowa zieleń** (`--kpi-3`), **magenta** (`--kpi-4`): odcienie czterech tafli ze zdjęcia referencyjnego użytkownika, z podbitą jasnością i nasyceniem, bez obrotu odcienia. Kolejność tafli: nowe zapytania, oferty wysłane, wygrane, przegrane. `--kpi-1` jest też kolorem domyślnym etapów sprzedaży bez własnej pilności.
+- **Trend** (`--kpi-up`, `--kpi-down`): strzałka zmiany procentowej; dla „Przegrane” logika jest odwrócona (wzrost = źle).
 
 ### Neutral
-- **Tło nocne** (`background`, `sidebar`): powłoka i sidebar — jeden ton, sidebar oddziela się układem, nie kolorem.
-- **Powierzchnia** (`surface`): karty, kontener tabeli, karty listy mobilnej.
-- **Powierzchnia podniesiona** (`surface-raised`): pola formularzy, przycisk drugorzędny, chip neutralny, licznik grupy.
-- **Tekst** (`foreground`) i **tekst drugorzędny** (`foreground-muted`): treść i metadane; nieaktywne pozycje nawigacji „Wkrótce” to `foreground-muted` na 55%.
-- **Linie** (`border`, `border-strong`): podziały wierszy, obrys kart i pól; `border-strong` na hover pól i jako kolor pasków przewijania.
-- Nakładki bieli na ciemnym (`white` 4% hover, 6% aktywna pozycja, 15% obrys aktywnej pigułki) są częścią języka nawigacji i wierszy tabel.
+- **Nocny grunt** (`--background`): tło strony pod poświatami.
+- **Sidebar** (`--sidebar`): pasek boczny i dolna nawigacja mobilna (z przezroczystością 95%).
+- **Powierzchnie** (`--surface` → `--surface-raised` → `--surface-hover`): panele i karty, pola i przycisk drugorzędny, hover przycisku drugorzędnego.
+- **Tekst** (`--foreground`, `--foreground-muted`): treść i tekst pomocniczy, etykiety, nieaktywna nawigacja.
+- **Linie** (`--border`, `--border-strong`): obrys paneli HUD, separatory wierszy; mocniejsza linia dla pól, chipów neutralnych i paska przewijania.
+
+`--neon-acid` i `--neon-violet` są zdefiniowane w `app/globals.css`, ale żaden komponent ich nie używa; zieleń sukcesu idzie przez `--sage`.
 
 ### Named Rules
-**The Dwie Wyspy Rule.** Duże pola koloru istnieją tylko w dwóch miejscach: płyta powitalna i tafle KPI. Reszta interfejsu żyje w tonach powłoki plus `accent` i chipy stanów.
+**The Yellow Action Rule.** Żółty `--accent` oznacza „tu kliknij / tu jesteś / tu piszesz”: akcja główna, aktywna nawigacja, focus. Nigdy nie jest statusem — „na dziś” to bursztyn `--terracotta`, nie żółty. Istniejące nieinteraktywne użycia (imię w powitaniu, blok zegara w pasku statusu, pasy ostrzegawcze, awatar inicjałów) są zamkniętą listą sygnatur pulpitu i powłoki, nie wzorcem do powielania.
 
-**The Własny Zestaw Rule.** Wewnątrz płyty powitalnej używa się wyłącznie tokenów `--hero-*` (i `--greet-*`); tokeny powłoki (`foreground`, `danger`, `terracotta`) są tam nieczytelne. Poza płytą `--hero-*` nie występuje.
+**The Urgency Map Rule.** Kolor grupy jest liczony w jednym miejscu, `lib/ui/urgency.ts` (`groupNeon`): `wymaga_dzialania` i `przegrane` = `--danger`; `do_przypomnienia` = `--terracotta`; `czekamy_na_klienta` = `--neon-cyan`; `wygrane` = `--sage`; każdy inny klucz (pozostałe etapy sprzedaży) = `--kpi-1`. Nagłówki grup, obrys tabeli grupy i chipy grupy biorą kolor z tej funkcji; chip grupy operacyjnej to zawsze `GroupBadge`, nigdy ręcznie złożony `Badge`. Na liście zadań ta sama logika: po terminie = `--danger`, dziś = `--terracotta`, reszta = `--neon-cyan`.
 
-**The Stare Nazwy Rule.** `--terracotta` = na dziś / miękkie ostrzeżenie, `--sage` = sukces. Nie zmieniaj nazw i nie dodawaj synonimów (`--orange`, `--success`); nowe komponenty biorą kolory z `app/globals.css`, nie wprowadzają ad-hoc wartości.
+**The Legacy Name Rule.** `--terracotta` = bursztyn „na dziś”, `--sage` = zieleń sukcesu, `--danger` = alarm/po terminie. Nie zmieniać nazw i nie dodawać równoległych tokenów o „prawdziwych” nazwach; nowe kolory nie wchodzą ad hoc, tylko przez `app/globals.css`.
 
 ## Typography
 
-**Display Font:** Geist (z ui-sans-serif, system-ui, sans-serif)
-**Body Font:** Geist (ta sama rodzina)
+**Display Font:** Chakra Petch 500/600/700 (z repo, SIL OFL; fallback Geist, system-ui)
+**Body Font:** Geist, zmienna grubość 100–900 (z repo przez `next/font/local`, zmienna `--font-geist-sans`)
+**Label/Mono Font:** JetBrains Mono, zmienna grubość 100–800 (z repo, SIL OFL)
 
-**Character:** Jedna rodzina geometryczno-groteskowa w wariancie zmiennej grubości, serwowana z repo (`app/fonts/Geist-Variable.woff2`, SIL OFL). Hierarchię budują rozmiar, grubość i ciasne światło w dużych stopniach; zestawy `ss01`, `cv11` włączone globalnie.
+**Character:** Kanciasta, techniczna Chakra Petch w wersalikach z rozstrzeleniem daje głos HUD-u; neutralny Geist niesie zdania, które trzeba przeczytać; JetBrains Mono z cyframi tabelarycznymi odróżnia dane od prozy.
 
 ### Hierarchy
-- **Display**: powitanie na płycie; na mobile 2.1rem. Jedyny nagłówek o grubości 500 i trackingu −0.03em.
-- **KPI figure**: liczba w tafli KPI (1.875rem na mobile); liczby w płycie powitalnej to ten sam charakter w 1.5rem.
-- **Headline**: tytuł strony (np. „Zapytania (12)”).
-- **Title**: tytuł karty, nazwa marki w sidebarze; nagłówki grup w listach to 14px/600.
-- **Body**: treść list, tabel, pól, przycisków (przyciski 500).
-- **Caption**: chipy, daty w listach, etykiety liczb na płycie, podpisy w taflach (13px dla etykiet pól i nagłówków tafli).
-- **Label**: wersaliki — wyłącznie etykiety sekcji nawigacji (tracking 0.08em) i nagłówki kolumn tabel (tracking 0.06em).
+- **Display** (Chakra Petch 700, 2.6rem → 3.75rem → 4.5rem, interlinia 0.95, wersaliki): wyłącznie powitanie „HEY, {IMIĘ}” na pulpicie; imię w żółtym z rozszczepieniem RGB i migającym kursorem `_`.
+- **Headline** (Chakra Petch 700, 1.5rem → 1.875rem, rozstrzelenie 0.06em, wersaliki): tytuł ekranu przez `PageTitle` — glitch + stały podział kanałów RGB, opcjonalny licznik `[n]` w mono cyjanie. Marka „INNDES” w sidebarze/logowaniu to ten sam głos (rozstrzelenie 0.12–0.14em).
+- **Numeric** (Chakra Petch 700, 2.25rem → 3rem w taflach, 1.875rem → 2.25rem w odczytach, interlinia 1): liczby KPI i odczyty, w kolorze swojego neonu z poświatą tekstu, nabijane od zera.
+- **Title** (Chakra Petch 600–700, 15px, rozstrzelenie 0.06–0.08em, wersaliki): tytuły kart, nagłówki grup na listach, „Dzisiaj” (18px).
+- **Control** (Chakra Petch 600, 13px przyciski i zakładki / 13.5px nawigacja / 10.5px dolny pasek mobilny, rozstrzelenie 0.06–0.08em, wersaliki).
+- **Body** (Geist 400–500, 14px, interlinia ~1.43): opisy, następne kroki, nazwy firm, pola formularzy.
+- **Data** (JetBrains Mono, 13–14px, cyfry tabelaryczne): numery zapytań na pulpicie, daty, podsumowanie pod powitaniem, pole szybkiego szukania, puste stany na pulpicie.
+- **Label** (JetBrains Mono 500, 10.5–11px, rozstrzelenie 0.04–0.12em, wersaliki): etykiety pól, chipy, etykiety tafli i odczytów, pasek statusu, etykiety sekcji nawigacji.
 
 ### Named Rules
-**The Cyfry Tabelaryczne Rule.** Każda liczba, data i licznik używa `tabular-nums` (klasa `.tabular`, tabele domyślnie). Kolumny i tafle nie mogą „drgać”.
-
-**The Jeden Krój Rule.** Geist i nic więcej; wyróżnienie robi grubość i rozmiar, nie drugi krój.
+**The Three Voices Rule.** Chakra Petch mówi (nagłówki, liczby, przyciski, nawigacja — zawsze wersalikami), Geist opowiada (zdania), JetBrains Mono raportuje (numer, data, licznik, etykieta). Akapity nigdy nie idą w Chakra Petch; liczby w tabelach i chipach zawsze z `tabular-nums`.
 
 ## Layout
 
-Powłoka: sidebar 15rem (`w-60`) przyklejony na pełną wysokość od `md` (768px) w górę; poniżej — górny pasek 56px z marką i ikoną profilu oraz dolna, przyklejona nawigacja z pięcioma pozycjami (treść ma 96px dolnego zapasu). Kolumna treści ma maksymalnie 88rem, marginesy 16px (mobile) / 32px (desktop), 24px u góry.
+Powłoka: na `md` (768px) i szerzej sticky sidebar pełnej wysokości o szerokości 15rem; poniżej — górny pasek 56px z marką i ikoną profilu oraz stały dolny pasek pięciu pozycji (Pulpit, Zapytania, Zadania, Firmy, Kontakty) z `safe-area-inset-bottom`, a treść dostaje dolny margines 96px. Kolumna treści ma maks. 88rem, odstęp boczny 16px (mobile) / 32px (desktop), pionowy 24px.
 
-Rytm pionowy pulpitu: 20px między płytą, rzędem KPI i kartami. Płyta powitalna: jedna kolumna na mobile, od `lg` (1024px) dwie kolumny 1.1fr / 1fr z pionową linią `hero-line` i min. wysokością 25rem; padding 20 / 32 / 48px. Tafle KPI: 2 kolumny do `xl` (1280px), potem 4; odstęp 12 / 16px. Karty list: jedna kolumna, od `lg` dwie.
+Pulpit: pasek statusu (zegar, data, przewijana taśma liczników, alarm po terminie) → panel główny `hud-lg` (od `lg` dwie kolumny 1.15fr / 1fr, min. 27rem wysokości, padding 20 / 32 / 48px): po lewej powitanie, podsumowanie, trzy odczyty, szukanie i akcje; po prawej „Dzisiaj” z czterema wierszami oddzielony pionową linią → cztery tafle KPI (2 kolumny, 4 od `xl`, odstęp 12/16px) → dwie karty list (od `lg` obok siebie). Odstęp między sekcjami 20px.
 
-Listy robocze (Zapytania): tabela w zaokrąglonym kontenerze od `md`, poniżej — stos kart (`surface`, 16px, padding 16px). Tabele są `table-fixed` z kilkoma kolumnami i obcinaniem tekstu; kolumn nie dokłada się bez końca — szczegóły idą do karty rekordu. Filtry: pole wyszukiwania + sortowanie w rzędzie, pięć selectów w siatce, na mobile chowane za przyciskiem.
+Listy (zapytania, zadania): tytuł z licznikiem i akcją po prawej, zakładki widoków podkreśleniem, wiersz wyszukiwania i sortowania, filtry chowane na mobile. Wyniki pogrupowane; każda grupa ma neonowy nagłówek i własny panel HUD z tabelą 5 kolumn (desktop, wspólne szerokości kolumn między grupami na liście zapytań) albo stos kart `hud-sm` (mobile). Odstęp między grupami 32px. Rytm odstępów to skala 4px Tailwinda; gęstość wysoka, wiersze tabel 10px w pionie.
 
 ## Elevation & Depth
 
-Głębia jest hybrydowa: przede wszystkim tonalne warstwy (`background` → `surface` → `surface-raised`) i 1px obramowania; cień jest zawsze miękki, rozmyty i ujemnie rozciągnięty, tak że czyta się jako zaciemnienie pod elementem, nie jako krawędź.
+System jest płaski w sensie cieni strukturalnych: głębię budują warstwy tonalne (`--background` → `--surface` → `--surface-raised` → `--surface-hover`), półprzezroczyste panele z lekkim rozmyciem tła, wewnętrzny obrys 1px i światło neonu. Nad wszystkim leży stała warstwa skanlinii (co 3px ciemny pasek 22%) z wolną wiązką skanującą (9s), nie przechwytująca kliknięć.
 
 ### Shadow Vocabulary
-- **Karta** (`box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.03), 0 12px 32px -16px rgb(0 0 0 / 0.6)`): każda karta w powłoce.
-- **Płyta powitalna** (`box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.9), 0 30px 60px -30px rgb(0 0 0 / 0.9)`): jasna górna krawędź i głęboki cień, który odkleja wyspę od czarnego tła.
-- **Tafla KPI** (`box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18), inset 0 0 28px color-mix(in srgb, var(--kpi-N-to) 45%, transparent), 0 18px 40px -20px rgb(0 0 0 / 0.8)`): wewnętrzna poświata w odcieniu tafli.
-- **Pole szybkiego wyszukiwania** (`box-shadow: 0 1px 2px rgb(18 20 26 / 0.06), 0 8px 24px -12px rgb(18 20 26 / 0.25)`): tylko na płycie.
+- **Obrys HUD** (`box-shadow: inset 0 0 0 1px var(--hud-line)`): krawędź paneli; kolor przez `--hud-line` (tafle i tabele grup nadpisują go swoim neonem przy 45–55%).
+- **Obrys kontrolki** (`box-shadow: inset 0 0 0 1px var(--border-strong)`): przycisk drugorzędny, chip neutralny; na hover przycisku cyjan 60%.
+- **Poświata focusu pola** (`box-shadow: inset 0 0 0 1px rgb(245 228 0 / 0.35), 0 6px 20px -12px rgb(245 228 0 / 0.8)`): pole w focusie; szybkie szukanie ma wariant `0 10px 30px -16px`.
+- **Poświata znacznika** (`box-shadow: 0 0 10px <neon>`): romby 8px przy nagłówkach grup, etykietach tafli i na końcu linii trendu.
+- **Wskaźnik aktywnej nawigacji** (`box-shadow: 0 0 12px rgb(245 228 0 / 0.9)`): pionowa belka 3px przy aktywnej pozycji sidebara.
+- **Alarm chipu** (`0 0 12px -4px rgb(255 42 109 / 0.7)` obok obrysu): tylko ton `danger` w Badge.
+- **Poświata dolnego paska mobilnego** (`0 -10px 30px -12px rgb(245 228 0 / 0.35)`).
+- **Lista rozwijana** (`0 16px 40px -12px rgb(0 0 0 / 0.7)`): jedyny cień „podnoszący”, dla podpowiedzi wyboru firmy.
+- **Poświata tekstu** (`text-shadow: 0 0 18px` w 55% koloru bieżącego): liczby KPI, odczyty, nagłówki grup.
+- **Podział RGB** (`text-shadow: -2px 0 rgb(0 225 255 / 0.55), 2px 0 rgb(255 42 109 / 0.55)`): tytuły ekranów i imię w powitaniu.
 
 ### Named Rules
-**The Miękki Cień Rule.** Cienie mają duże rozmycie i ujemny spread; żadnych twardych przesunięć bez rozmycia.
+**The Clipped Glow Rule.** Panele `.hud` i kształty `.notch` są wycinane przez `clip-path`, który obcina każdy zewnętrzny `box-shadow`. Krawędź takiego elementu to zawsze cień wewnętrzny (`inset`), a poświata trafia na osobny, nieprzycięty element: romb, belkę wskaźnika, linię trendu, chip, pole formularza.
 
 ## Shapes
 
-Miękka, spójna geometria w czterech stopniach: pigułka (`full`) dla przycisków, chipów, pola szybkiego wyszukiwania i ikon na mobile; 12px (`xl`) dla pól formularzy, pozycji nawigacji i wierszy listy „Dzisiaj”; 16px (`2xl`) dla kart, tafli KPI, kontenera tabeli i kart listy mobilnej; 1.75rem (`plate`) wyłącznie dla płyty powitalnej. 8px (`lg`) tylko dla małych przycisków-ikon. Obramowania 1px; tafle KPI mają obrys z odcienia tafli (`color-mix(in srgb, var(--kpi-N-to) 65%, white 22%)`), nie neutralną biel. Awatar to koło z inicjałami (`foreground` na `background`).
+Zero zaokrągleń na wszystkich komponentach (`0px`). Forma to cięcie pod kątem 45°:
+- **Panel HUD**: ścięty prawy górny róg z cienką przekątną krawędzi dorysowaną pseudo-elementem; trzy rozmiary cięcia — 8px (karty mobilne, pasek statusu), 14px (domyślny: karty, tabele grup, tafle), 28px (panel główny pulpitu).
+- **Notch**: dwa przeciwległe ścięte rogi 8px (lewy górny i prawy dolny) — przyciski, aktywna pozycja nawigacji, kafel ikony w pasku mobilnym, awatar inicjałów, przycisk szukania.
+- **Romb**: kwadrat 7–8px obrócony o 45° jako znacznik koloru (nagłówki grup, etykiety tafli, koniec linii trendu).
+- **Pasy ostrzegawcze**: ukośne paski żółte 8px / przerwa 8px pod kątem −45° — górna krawędź sidebara i krótki trapez na górnej krawędzi panelu głównego.
+- Linie: obrys 1px, podkreślenie pól 1px (2px w szybkim szukaniu i zakładkach), belka wskaźnika 3px, akcent tafli 2px u góry.
+
+Jedyne okręgi to rozmyte plamy poświaty w tle panelu głównego — nie są czytelne jako kształt.
 
 ## Components
 
 ### Buttons
-Pigułki o zdecydowanym, spokojnym charakterze.
-- **Shape:** pełne zaokrąglenie; wysokości 32 / 40 / 44px (sm / md / lg).
-- **Primary:** `accent` z ciemnym `accent-foreground`, 14px/500, ikona 16px z odstępem 8px.
-- **Secondary:** `surface-raised` z obrysem `border-strong`.
-- **Ghost:** sam tekst `foreground-muted`; hover dostaje `surface-raised` i `foreground`.
-- **Danger:** wypełnienie `danger` z ciemnym tekstem.
-- **Hover / Focus:** zmiana koloru w 150ms ease-out; wciśnięcie skaluje do 0.98; fokus to pierścień 2px `accent` z offsetem 2px w kolorze tła; wyłączony 45% krycia.
-- **Na płycie powitalnej:** przyciski atramentowe (`hero-fg` z białym tekstem, hover `hero-ink-hover`, 36px) i obrysowane (`hero-line`, hover białe tło) — nie używa się tam `accent`.
+Zdecydowane, ścięte bloki z wersalikami; wejście akcji jest krótkim „szarpnięciem” glitcha.
+- **Shape:** notch (cięcie 8px), bez zaokrągleń; wysokości 32 / 40 / 44px (sm / md / lg), padding poziomy 14 / 16 / 24px.
+- **Primary:** żółte tło `--accent`, czarny tekst; hover `--accent-hover`; active przyciemnienie (`brightness 0.9`).
+- **Secondary:** `--surface-raised` z wewnętrznym obrysem `--border-strong`; hover: `--surface-hover`, tekst i obrys cyjan.
+- **Ghost:** tekst `--foreground-muted`, hover tło `--surface-raised` i tekst `--foreground`.
+- **Danger:** pełne `--danger` z ciemnym tekstem; tylko dla akcji nieodwracalnych w karcie zapytania.
+- **Hover / Focus:** jednorazowy jitter 0.28s (2 kroki), przejścia koloru 150ms; focus = pierścień 2px żółty z odsunięciem 2px na kolorze tła; disabled 40% krycia.
 
 ### Chips
-- **Style:** pigułka 12px/500, tabelaryczne cyfry; tło stanu na 12% + tekst stanu (`terracotta`, `sage`, `danger`, `warning`), akcent na 15% dla grupy operacyjnej, neutralny z obrysem `border` na `surface-raised` dla etapu sprzedaży.
-- **Terminy:** po terminie → `danger`, dziś → `terracotta`, przyszły → neutralny, brak → neutralny „Brak terminu”. Na płycie te same znaczenia w `hero-danger*` / `hero-today*`, min. szerokość 4.75rem.
-- Grupa operacyjna i etap sprzedaży to zawsze dwa osobne chipy obok siebie.
+- **Badge** (`components/ui/badge.tsx`): mono 11px wersaliki, padding 2×8px, kwadratowy, półprzezroczyste tło + wewnętrzny obrys w kolorze tonu. Tony: `neutral` (terminy przyszłe, brak terminu, etap sprzedaży), `danger` (po terminie, z poświatą), `terracotta` (dziś), `sage` (sukces), `accent` (cyjan — segment firmy), `warning` (nieużywany).
+- **GroupBadge** (`components/ui/group-badge.tsx`): ta sama forma, kolor z `groupNeon` — tło 12% i obrys 45% neonu grupy. Jedyny dopuszczalny chip grupy operacyjnej.
+- Chip terminu na pulpicie ma min. szerokość 5.5rem i wyśrodkowany tekst, żeby wiersze trzymały linię.
 
 ### Cards / Containers
-- **Corner Style:** 16px.
-- **Background:** `surface` z obrysem `border`.
-- **Shadow Strategy:** „Karta” z Elevation & Depth.
-- **Internal Padding:** nagłówek 20px × 16px z dolną linią `border`, treść 20px × 16px; licznik w nagłówku po prawej, `foreground-muted`.
+- **Corner Style:** panel HUD, cięcie 14px.
+- **Background:** `--surface` 90% z rozmyciem tła 2px i cyjanową poświatą 5% wygasającą w pierwszych 120px.
+- **Shadow Strategy:** obrys wewnętrzny (patrz Elevation & Depth).
+- **Border:** nagłówek karty oddzielony linią `--border`.
+- **Internal Padding:** 16px pionowo / 20px poziomo; tytuł karty w głosie Title, licznik `[n]` mono po prawej.
 
 ### Inputs / Fields
-- **Style:** 40px, zaokrąglenie 12px, `surface-raised`, obrys `border`, placeholder `foreground-muted` 80%; etykieta 13px/500 `foreground-muted` nad polem.
-- **Focus:** obrys `accent` 60% + pierścień 2px `accent` 30%; hover → `border-strong`.
-- **Error / Disabled:** `aria-invalid` → obrys `danger`; wyłączone 50% krycia. Select i textarea dzielą ten sam styl.
+- **Style:** kwadratowe, wysokość 40px, tło `--surface-raised` 80%, wewnętrzny obrys `--border`, dolna linia `--border-strong`; etykieta nad polem mono 11px wersaliki `--foreground-muted`.
+- **Hover:** dolna linia cyjan 50%.
+- **Focus:** dolna linia żółta, pełne tło i żółta poświata pod polem; bez domyślnego outline.
+- **Error / Disabled:** `aria-invalid` zmienia dolną linię na `--danger`; disabled 50% krycia.
+- **Szybkie szukanie (pulpit):** pole 48px w mono, ikona lupy w żółtym, czarne tło 50%, żółty przycisk-notch ze strzałką wewnątrz pola.
 
 ### Navigation
-- **Sidebar:** marka „INNDES” `foreground` + „CRM” `foreground-muted` (15px/600). Sekcje Praca / Baza / Dane / Wkrótce z etykietami w wersalikach (11px, `foreground-muted` 70%). Pozycje 14px/500, ikona liniowa 16px (stroke 1.75), zaokrąglenie 12px. Aktywna: obrysowana pigułka (biały 15% obrys, biały 6% tło, `foreground`) plus znacznik 3×20px przy lewej krawędzi sidebaru. Hover: biały 4%. „Wkrótce”: nieklikalne, 55% krycia, tooltip „Dostępne w kolejnej fazie”. Na dole profil/użytkownicy i stopka z awatarem, rolą i wylogowaniem nad linią `border`.
-- **Mobile:** dolny pasek `sidebar` 95% z rozmyciem tła, pięć pozycji (ikona 18px nad etykietą 11px); aktywna ikona w pigułce 48×28px na białym 8%. Szanuje `safe-area-inset-bottom`.
-- **Zakładki widoków:** tekst 14px/500 nad linią `border`; aktywna w `accent` z podkreśleniem 2px `accent`.
+- **Sidebar:** 15rem, `--sidebar` 95%, u góry pasy ostrzegawcze 4px; marka „INNDES” (glitch) + `//CRM` mono cyjan. Sekcje (Praca, Baza, Dane, Wkrótce) z etykietą mono 10.5px poprzedzoną magentowym `//`. Pozycje w głosie Control z ikoną 16px (stroke 1.75): spoczynek `--foreground-muted`, hover cyjan na tle cyjanu 7% z jitterem, aktywna = żółty blok notch z czarnym tekstem + świecąca belka 3px na krawędzi. Pozycje „Wkrótce” wyszarzone do 40% i nieklikalne. Na dole profil i użytkownicy (Geist 14px), potem awatar inicjałów, imię, rola w cyjanie i wylogowanie (hover magenta).
+- **Mobile:** dolny pasek z żółtą linią 40% i poświatą u góry; aktywna pozycja = żółty kafel notch pod ikoną i żółta etykieta.
+- **Zakładki widoków:** Control 13px, aktywna = żółty tekst z żółtym podkreśleniem 2px, nieaktywna hover cyjan.
 
-### Tabela listy
-Kontener 16px na `surface` z obrysem `border`; nagłówki kolumn 11px w wersalikach (tracking 0.06em, `foreground-muted`); wiersze z podziałem `border`, padding 16px × 10px, hover biały 4%; pierwsza kolumna (numer) `foreground`/500 z hoverem `accent`, pozostałe `foreground-muted` z obcięciem; termin jako chip. Nad tabelą nagłówek grupy 14px/600 z licznikiem w pigułce `surface-raised`.
+### Tytuł ekranu
+`PageTitle`: głos Headline z glitchem i podziałem RGB, licznik `[n]` mono cyjan. Każdy ekran listy zaczyna się od niego, akcja główna stoi po prawej w tym samym wierszu. Bez etykiet nad tytułem.
 
-### Płyta powitalna (signature)
-Jasna wyspa na pulpicie: gradient 160° `hero-bg → hero-bg-2` z białą poświatą radialną w prawej części, zaokrąglenie 1.75rem. Lewa część: powitanie (Display) z imieniem w gradiencie `greet-*`, podtytuł 15px `hero-muted` z datą, trzy liczby (etykieta 12px, wartość 24px/600; po terminie > 0 → `hero-danger`), pole szybkiego wyszukiwania (pigułka `hero-field`, pierścień `hero-line`, fokus `greet-1`, okrągły przycisk 36px w `hero-fg`), przyciski atramentowe. Prawa część: lista „Dzisiaj” (do 4 pozycji) z chipem terminu, numerem, firmą, następnym krokiem i chevronem przesuwanym o 2px na hover; wiersz na hover biały 80%.
+### Tafla KPI
+Panel HUD 14px z obrysem w kolorze tafli (55%), gradientem tafli od prawego górnego rogu (22%) i akcentem 2px u góry; etykieta mono z rombem, liczba w głosie Numeric z poświatą, chip zmiany procentowej (`--kpi-up` / `--kpi-down` na czarnym tle) i „poprz. miesiąc”, na dole linia trendu z 8 tygodni: proste odcinki od zera, poświata `drop-shadow`, romb na końcu, odsłaniana maską od lewej. Tylko prawdziwe dane, bez kwot.
 
-### Tafla KPI (signature)
-Gradient 140° `kpi-N-from → kpi-N-to`, biały tekst, min. wysokość 10–10.5rem, padding 16 / 20px. Nagłówek 13px biały 80% z kropką 6px w `kpi-N-line`; liczba (KPI figure); chip zmiany na czarnym 20% w `kpi-up` / `kpi-down` ze strzałką; „poprz. miesiąc”. Na dole linia trendu z 8 tygodni: proste odcinki 2px w `kpi-N-line` bez wygładzania, skala od zera, kropka końcowa 7px jako osobny element (nie elipsa w rozciągniętym SVG).
+### Pasek statusu
+Panel HUD 8px na czarnym 60%, mono 11px wersaliki: blok zegara na żółtym, data, przewijana taśma liczników (40s, dwie kopie, ukryta przed czytnikami), alarm „po terminie” na `--danger` 15% z mrugającym punktem (`neon-hum`).
+
+### Efekty i ruch
+- **Boot ekranu** (każda nawigacja przez `template.tsx`): 0.45s, `cubic-bezier(0.16, 1, 0.3, 1)`, z rozmycia 4px i przesunięcia 8px; dzieci `.stagger` co 60ms.
+- **Glitch** tytułów i marki: cyjanowa i magentowa kopia tekstu widoczna tylko w kilku klatkach na cykl 3.2s (~6% czasu); poza klatkami pseudo-elementy są ukryte.
+- **Liczby** nabijane w CSS od 0 do wartości w 1.1s; wartość końcowa jest wartością bazową.
+- **Linia trendu** odsłaniana 1.4s; **siatka podłogi** w perspektywie (magenta/cyjan, 56px) przesuwa się co 3.5s; **kursor** `_` miga co 1.1s; **neon-hum** delikatnie przygasa (do 82%) w cyklu 6s.
+
+**The Reduced Motion Rule.** Każda animacja i przejście jest wyłączane globalnie przy `prefers-reduced-motion: reduce`, a każdy efekt jest zbudowany tak, żeby stan spoczynkowy był stanem końcowym: liczby pokazują wynik, linie trendu są narysowane, kopie glitcha są ukryte, a zostaje statyczny podział RGB i statyczne skanlinie. Nowy efekt bez tej gwarancji nie wchodzi. Żadna duża płaszczyzna nie miga częściej niż 3 razy na sekundę.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** brać każdy kolor z tokenów w `app/globals.css`; nowy stan = nowy token tam, nie hex w komponencie.
-- **Do** stawiać na `accent` ciemny tekst `accent-foreground`.
-- **Do** używać `--hero-*` w płycie powitalnej i tylko tam.
-- **Do** zachować kolejność i znaczenie tafli KPI 1–4 (indygo, królewski błękit, butelkowa zieleń, śliwkowa magenta) i odwracać kolor zmiany, gdy wzrost jest zły.
-- **Do** pokazywać grupę operacyjną i etap sprzedaży jako dwa osobne chipy.
-- **Do** dawać tabeli wersję kart poniżej `md` i trzymać tabele wąskie; szczegóły idą do karty rekordu.
-- **Do** używać cyfr tabelarycznych dla każdej liczby i daty.
-- **Do** szanować `prefers-reduced-motion` (globalnie wyłączone animacje i przejścia).
+- **Do** brać kolory wyłącznie z tokenów `app/globals.css` (klasy Tailwind `bg-surface`, `text-cyan`, `text-danger` itd. albo `var(--token)`).
+- **Do** liczyć kolor grupy przez `groupNeon` z `lib/ui/urgency.ts` i renderować chip grupy operacyjnej przez `GroupBadge`.
+- **Do** oznaczać terminy przez Badge: po terminie `danger`, dziś `terracotta`, pozostałe `neutral`.
+- **Do** zaczynać ekrany od `PageTitle` (glitch + RGB + licznik `[n]`).
+- **Do** stawiać obrys paneli HUD jako cień wewnętrzny, a poświatę na osobnym, nieprzyciętym elemencie.
+- **Do** pisać numery, daty i liczniki w JetBrains Mono z cyframi tabelarycznymi, a etykiety UI po polsku z `lib/enums.ts`.
+- **Do** budować każdy nowy efekt tak, by przy reduced-motion zostawał gotowy, statyczny stan końcowy.
 
 ### Don't:
-- **Don't** wprowadzać trzeciej wyspy koloru ani gradientów poza płytą powitalną, imieniem w powitaniu i taflami KPI.
-- **Don't** przemianowywać `--terracotta` / `--sage` ani dodawać ich synonimów.
-- **Don't** stawiać kickerów / eyebrow w wersalikach nad nagłówkami; wersaliki 11px są zarezerwowane dla etykiet sekcji nawigacji i nagłówków kolumn tabel.
-- **Don't** używać twardych cieni bez rozmycia ani białych neutralnych ramek na taflach KPI.
-- **Don't** wygładzać linii trendu ani pokazywać w taflach wartości, których nie ma w danych (np. kwot w zł bez tabeli ofert).
-- **Don't** pokazywać funkcji z przyszłych faz jako działających — pozycje „Wkrótce” zostają wygaszone i nieklikalne.
+- **Don't** używać żółtego `--accent` jako koloru statusu ani do „na dziś” (to `--terracotta`), ani dokładać nowych nieinteraktywnych żółtych bloków.
+- **Don't** składać chipu grupy operacyjnej ręcznie z `Badge` ani nadawać grupom kolorów poza `groupNeon`.
+- **Don't** wprowadzać kolorów ad hoc ani kolorów marki INNDES (granat, kobalt, terakota, szałwia) do tego świata.
+- **Don't** zaokrąglać rogów komponentów; forma to cięcie 45°.
+- **Don't** dawać zewnętrznego `box-shadow` elementom `.hud` ani `.notch` — `clip-path` go obetnie.
+- **Don't** używać logotypów, postaci, nazw, cytatów ani elementów interfejsu z Cyberpunk 2077 / Edgerunners; tylko klimat gatunku.
+- **Don't** stawiać etykiet-„kickerów” nad nagłówkami; prefiks `//` żyje tylko w etykietach sekcji nawigacji i sufiksie marki `//CRM`.
+- **Don't** wracać do jasnej płyty powitalnej ani pasteli poprzedniego świata.
+- **Don't** pokazywać zmyślonych liczb ani kwot w taflach i wykresach.

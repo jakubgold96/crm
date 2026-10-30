@@ -1,447 +1,591 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-30T23:59:00Z",
+  "generatedAt": "2026-10-30T23:10:14+00:00",
   "title": "Design System: INNDES CRM",
   "extensions": {
     "colorMeta": {
       "background": {
         "role": "neutral",
-        "displayName": "Tło nocne",
-        "canonical": "oklch(15.9% 0.011 268)",
+        "displayName": "Nocny grunt",
+        "canonical": "#05060b",
         "tonalRamp": [
-          "#0b0b0c",
-          "#202224",
-          "#3e4044",
-          "#616369",
-          "#83868c",
-          "#a9abb0",
-          "#ccced1",
-          "#edeef0"
+          "#0a0b0e",
+          "#242529",
+          "#404247",
+          "#5f6168",
+          "#80828a",
+          "#a3a5ac",
+          "#c7c9cf",
+          "#edeef3"
+        ]
+      },
+      "sidebar": {
+        "role": "neutral",
+        "displayName": "Sidebar",
+        "canonical": "#07080f",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#24252a",
+          "#404248",
+          "#5f6169",
+          "#80828c",
+          "#a3a4ae",
+          "#c7c9d1",
+          "#edeef5"
         ]
       },
       "surface": {
         "role": "neutral",
         "displayName": "Powierzchnia",
-        "canonical": "oklch(19.6% 0.015 267)",
+        "canonical": "#0b0d16",
         "tonalRamp": [
-          "#0a0b0d",
-          "#202225",
-          "#3d4045",
-          "#60636b",
-          "#82868e",
-          "#a8abb1",
-          "#ccced2",
-          "#edeef1"
+          "#0a0b0f",
+          "#23252b",
+          "#40424a",
+          "#5e616b",
+          "#7f828e",
+          "#a2a4b0",
+          "#c6c9d2",
+          "#eceef6"
         ]
       },
       "surface-raised": {
         "role": "neutral",
         "displayName": "Powierzchnia podniesiona",
-        "canonical": "oklch(23.1% 0.020 268)",
+        "canonical": "#11141f",
         "tonalRamp": [
-          "#0a0b0e",
-          "#202226",
-          "#3c4047",
-          "#5f636e",
-          "#818691",
-          "#a7abb4",
-          "#cbced4",
-          "#edeef2"
+          "#0a0b0f",
+          "#23252c",
+          "#3f424b",
+          "#5d616d",
+          "#7d8290",
+          "#a1a5b2",
+          "#c5c9d4",
+          "#ebeef7"
+        ]
+      },
+      "surface-hover": {
+        "role": "neutral",
+        "displayName": "Powierzchnia hover",
+        "canonical": "#181c2b",
+        "tonalRamp": [
+          "#090b11",
+          "#22252e",
+          "#3e414e",
+          "#5c6170",
+          "#7c8295",
+          "#9fa4b5",
+          "#c4c9d7",
+          "#eaeefa"
         ]
       },
       "foreground": {
         "role": "neutral",
         "displayName": "Tekst",
-        "canonical": "oklch(94.3% 0.009 265)",
+        "canonical": "#e8f0ff",
         "tonalRamp": [
-          "#0b0b0c",
-          "#212224",
-          "#3e4043",
-          "#616368",
-          "#84868b",
-          "#a9abae",
-          "#ccced0",
-          "#eeeef0"
+          "#090b0f",
+          "#22252b",
+          "#3e424b",
+          "#5c616c",
+          "#7c8390",
+          "#9fa5b1",
+          "#c4c9d4",
+          "#eaeff7"
         ]
       },
       "foreground-muted": {
         "role": "neutral",
-        "displayName": "Tekst drugorzędny",
-        "canonical": "oklch(68.8% 0.025 264)",
+        "displayName": "Tekst pomocniczy",
+        "canonical": "#8b94ae",
         "tonalRamp": [
-          "#0a0b0e",
-          "#1f2227",
-          "#3b4049",
-          "#5d6371",
-          "#808694",
-          "#a6abb6",
-          "#caced5",
-          "#eceef3"
+          "#080b13",
+          "#212531",
+          "#3c4152",
+          "#596175",
+          "#79829b",
+          "#9da4bb",
+          "#c2c9dc",
+          "#e8eefe"
         ]
       },
       "border": {
         "role": "neutral",
         "displayName": "Linia",
-        "canonical": "oklch(27.8% 0.025 268)",
+        "canonical": "#1b2034",
         "tonalRamp": [
-          "#0a0b0e",
-          "#1f2227",
-          "#3c4049",
-          "#5e6371",
-          "#808694",
-          "#a6abb6",
-          "#caced5",
-          "#eceef3"
+          "#090b12",
+          "#212430",
+          "#3d4151",
+          "#5a6075",
+          "#7a819a",
+          "#9ea4ba",
+          "#c3c8dc",
+          "#e9eefe"
         ]
       },
       "border-strong": {
         "role": "neutral",
         "displayName": "Linia mocna",
-        "canonical": "oklch(35.3% 0.027 268)",
+        "canonical": "#2c3352",
         "tonalRamp": [
-          "#0a0b0e",
-          "#1f2228",
-          "#3b404a",
-          "#5d6372",
-          "#808695",
-          "#a6abb7",
-          "#caced6",
-          "#eceef4"
+          "#080a15",
+          "#202435",
+          "#3b4158",
+          "#58607d",
+          "#7780a4",
+          "#9ba4c3",
+          "#c0c8e4",
+          "#e7eeff"
         ]
       },
       "accent": {
         "role": "primary",
-        "displayName": "Chłodny błękit akcji",
-        "canonical": "oklch(70.9% 0.151 272)",
+        "displayName": "Kwasowy żółty (akcja)",
+        "canonical": "#f5e400",
         "tonalRamp": [
-          "#06091c",
-          "#171e42",
-          "#2e3a75",
-          "#495ab1",
-          "#6b7fd5",
-          "#95a7ea",
-          "#beccfc",
-          "#e4eeff"
+          "#120a00",
+          "#2f2500",
+          "#504200",
+          "#726200",
+          "#978400",
+          "#b7a900",
+          "#d8cd5c",
+          "#faf39c"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Kwasowy żółty hover",
+        "canonical": "#fff35e",
+        "tonalRamp": [
+          "#110b00",
+          "#2d2600",
+          "#4d4300",
+          "#6f6300",
+          "#938500",
+          "#b3a929",
+          "#d5cd6f",
+          "#f8f3a9"
+        ]
+      },
+      "accent-foreground": {
+        "role": "primary",
+        "displayName": "Czarny na żółtym",
+        "canonical": "#05060b",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#242529",
+          "#404247",
+          "#5f6168",
+          "#80828a",
+          "#a3a5ac",
+          "#c7c9cf",
+          "#edeef3"
+        ]
+      },
+      "neon-cyan": {
+        "role": "secondary",
+        "displayName": "Neonowy cyjan",
+        "canonical": "#00e1ff",
+        "tonalRamp": [
+          "#00101a",
+          "#002e3c",
+          "#004f62",
+          "#00728a",
+          "#0097b4",
+          "#13b9d1",
+          "#70dbf0",
+          "#adfeff"
+        ]
+      },
+      "neon-magenta": {
+        "role": "secondary",
+        "displayName": "Neonowa magenta",
+        "canonical": "#ff2a6d",
+        "tonalRamp": [
+          "#290003",
+          "#550014",
+          "#85002c",
+          "#b90045",
+          "#ed0c60",
+          "#ff6087",
+          "#ff96af",
+          "#ffc7d9"
         ]
       },
       "terracotta": {
-        "role": "secondary",
-        "displayName": "Ciepły pomarańcz „na dziś” (nazwa historyczna)",
-        "canonical": "oklch(82.3% 0.126 62)",
+        "role": "tertiary",
+        "displayName": "Bursztyn „na dziś” (nazwa historyczna)",
+        "canonical": "#ffb547",
         "tonalRamp": [
-          "#150700",
-          "#341a00",
-          "#5e3401",
-          "#905202",
-          "#b57639",
-          "#d1a074",
-          "#eac6a8",
-          "#ffead8"
+          "#1a0500",
+          "#3d1b00",
+          "#633600",
+          "#8c5200",
+          "#b67100",
+          "#d4983f",
+          "#f3bf7a",
+          "#ffe7b0"
+        ]
+      },
+      "terracotta-bg": {
+        "role": "tertiary",
+        "displayName": "Tło bursztynu",
+        "canonical": "rgb(255 181 71 / 0.12)",
+        "tonalRamp": [
+          "#1a0500",
+          "#3d1b00",
+          "#633600",
+          "#8c5200",
+          "#b67100",
+          "#d4983f",
+          "#f3bf7a",
+          "#ffe7b0"
         ]
       },
       "sage": {
-        "role": "secondary",
-        "displayName": "Miętowa zieleń sukcesu (nazwa historyczna)",
-        "canonical": "oklch(81.0% 0.138 155)",
+        "role": "tertiary",
+        "displayName": "Kwasowa zieleń sukcesu (nazwa historyczna)",
+        "canonical": "#39ff9c",
         "tonalRamp": [
-          "#001005",
-          "#002a14",
-          "#004d29",
-          "#007743",
-          "#3e9b66",
-          "#7bbc92",
-          "#aedbbc",
-          "#dcf7e4"
+          "#001400",
+          "#003305",
+          "#005619",
+          "#007c2f",
+          "#00a347",
+          "#18c474",
+          "#72e5a0",
+          "#aeffcd"
+        ]
+      },
+      "sage-bg": {
+        "role": "tertiary",
+        "displayName": "Tło sukcesu",
+        "canonical": "rgb(57 255 156 / 0.1)",
+        "tonalRamp": [
+          "#001400",
+          "#003305",
+          "#005619",
+          "#007c2f",
+          "#00a347",
+          "#18c474",
+          "#72e5a0",
+          "#aeffcd"
         ]
       },
       "danger": {
-        "role": "secondary",
-        "displayName": "Koralowa czerwień",
-        "canonical": "oklch(73.4% 0.163 27)",
+        "role": "tertiary",
+        "displayName": "Neonowy alarm (po terminie, błąd)",
+        "canonical": "#ff4d82",
         "tonalRamp": [
-          "#1a0303",
-          "#3e0f0c",
-          "#6e221d",
-          "#a73730",
-          "#ce5f55",
-          "#e79085",
-          "#fbbcb3",
-          "#ffe4de"
+          "#260005",
+          "#50001a",
+          "#7e0033",
+          "#b0154f",
+          "#e2316c",
+          "#ff6b91",
+          "#ff9db8",
+          "#ffcce0"
+        ]
+      },
+      "danger-bg": {
+        "role": "tertiary",
+        "displayName": "Tło alarmu",
+        "canonical": "rgb(255 42 109 / 0.14)",
+        "tonalRamp": [
+          "#290003",
+          "#550014",
+          "#85002c",
+          "#b90045",
+          "#ed0c60",
+          "#ff6087",
+          "#ff96af",
+          "#ffc7d9"
+        ]
+      },
+      "danger-foreground": {
+        "role": "tertiary",
+        "displayName": "Tekst na alarmie",
+        "canonical": "#05060b",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#242529",
+          "#404247",
+          "#5f6168",
+          "#80828a",
+          "#a3a5ac",
+          "#c7c9cf",
+          "#edeef3"
         ]
       },
       "warning-fg": {
-        "role": "secondary",
-        "displayName": "Złoto ostrzeżenia",
-        "canonical": "oklch(88.5% 0.129 86)",
+        "role": "tertiary",
+        "displayName": "Żółć ostrzeżenia (nieużywana)",
+        "canonical": "#ffd23f",
         "tonalRamp": [
-          "#120a00",
-          "#2e1f00",
-          "#543b00",
-          "#815d00",
-          "#a48126",
-          "#c3a76b",
-          "#dfcca2",
-          "#f9edd4"
+          "#160800",
+          "#362100",
+          "#593d00",
+          "#7f5b00",
+          "#a67c00",
+          "#c5a126",
+          "#e5c66e",
+          "#ffeda8"
         ]
       },
-      "hero-bg": {
+      "warning-bg": {
         "role": "tertiary",
-        "displayName": "Perłowa płyta",
-        "canonical": "oklch(94.8% 0.005 258)",
+        "displayName": "Tło ostrzeżenia",
+        "canonical": "rgb(255 210 63 / 0.12)",
         "tonalRamp": [
-          "#0b0b0c",
-          "#212223",
-          "#3f4041",
-          "#626366",
-          "#858689",
-          "#aaabad",
-          "#cdcecf",
-          "#eeeeef"
+          "#160800",
+          "#362100",
+          "#593d00",
+          "#7f5b00",
+          "#a67c00",
+          "#c5a126",
+          "#e5c66e",
+          "#ffeda8"
         ]
       },
-      "hero-fg": {
+      "kpi-1": {
         "role": "tertiary",
-        "displayName": "Atrament płyty",
-        "canonical": "oklch(19.2% 0.013 271)",
+        "displayName": "Tafla 1 — indygo",
+        "canonical": "#7867ff",
         "tonalRamp": [
-          "#0b0b0d",
-          "#202224",
-          "#3e4044",
-          "#61636a",
-          "#83868d",
-          "#a9abb0",
-          "#ccced2",
-          "#edeef1"
+          "#0b0031",
+          "#22125e",
+          "#3c2c90",
+          "#5848c6",
+          "#7666fc",
+          "#9891ff",
+          "#bcbbff",
+          "#e3e4ff"
         ]
       },
-      "hero-muted": {
+      "kpi-2": {
         "role": "tertiary",
-        "displayName": "Szarość płyty",
-        "canonical": "oklch(49.2% 0.026 266)",
+        "displayName": "Tafla 2 — królewski błękit",
+        "canonical": "#3d7bff",
         "tonalRamp": [
-          "#0a0b0e",
-          "#1f2227",
-          "#3b4049",
-          "#5d6371",
-          "#808694",
-          "#a6abb6",
-          "#caced6",
-          "#eceef3"
+          "#000330",
+          "#021d5e",
+          "#123990",
+          "#2558c5",
+          "#3b78fb",
+          "#68a0ff",
+          "#96c8ff",
+          "#c5efff"
         ]
       },
-      "hero-danger": {
+      "kpi-3": {
         "role": "tertiary",
-        "displayName": "Czerwień płyty (po terminie)",
-        "canonical": "oklch(50.5% 0.172 31)",
+        "displayName": "Tafla 3 — turkusowa zieleń",
+        "canonical": "#2bffa8",
         "tonalRamp": [
-          "#1b0302",
-          "#3f0e07",
-          "#702014",
-          "#aa3424",
-          "#d15d4b",
-          "#e98f7f",
-          "#fdbbaf",
-          "#ffe4dc"
+          "#001400",
+          "#00340d",
+          "#005623",
+          "#007c3a",
+          "#00a354",
+          "#00c37d",
+          "#6ee4a8",
+          "#acffd3"
         ]
       },
-      "hero-today": {
+      "kpi-4": {
         "role": "tertiary",
-        "displayName": "Brąz płyty (dziś)",
-        "canonical": "oklch(47.8% 0.110 57)",
+        "displayName": "Tafla 4 — magenta",
+        "canonical": "#ff3fd2",
         "tonalRamp": [
-          "#140801",
-          "#331b07",
-          "#5d3413",
-          "#8d5322",
-          "#b2774a",
-          "#cea07e",
-          "#e8c6af",
-          "#ffeadc"
+          "#24001a",
+          "#4e003c",
+          "#7b0061",
+          "#ab008a",
+          "#dc08b3",
+          "#fa5fd1",
+          "#ff94f0",
+          "#ffc6ff"
         ]
       },
-      "greet-1": {
+      "kpi-up": {
         "role": "tertiary",
-        "displayName": "Gradient powitania: błękit",
-        "canonical": "oklch(60.7% 0.198 260)",
+        "displayName": "Trend w górę",
+        "canonical": "#39ff9c",
         "tonalRamp": [
-          "#010a21",
-          "#031f4c",
-          "#0b3b84",
-          "#165cc7",
-          "#4183ec",
-          "#79abfc",
-          "#abcfff",
-          "#daf0ff"
+          "#001400",
+          "#003305",
+          "#005619",
+          "#007c2f",
+          "#00a347",
+          "#18c474",
+          "#72e5a0",
+          "#aeffcd"
         ]
       },
-      "greet-2": {
+      "kpi-down": {
         "role": "tertiary",
-        "displayName": "Gradient powitania: fiolet",
-        "canonical": "oklch(60.6% 0.219 293)",
+        "displayName": "Trend w dół",
+        "canonical": "#ff4d82",
         "tonalRamp": [
-          "#0d0421",
-          "#25134c",
-          "#462785",
-          "#6c3fc8",
-          "#8d68ed",
-          "#ae98fd",
-          "#cfc2ff",
-          "#efe8ff"
-        ]
-      },
-      "greet-3": {
-        "role": "tertiary",
-        "displayName": "Gradient powitania: róż",
-        "canonical": "oklch(64.7% 0.197 349)",
-        "tonalRamp": [
-          "#1a020e",
-          "#3e0828",
-          "#6e164a",
-          "#a72672",
-          "#ce5295",
-          "#e788b7",
-          "#fbb6d6",
-          "#ffe1f4"
-        ]
-      },
-      "kpi-1-to": {
-        "role": "tertiary",
-        "displayName": "Tafla 1: głębokie indygo",
-        "canonical": "oklch(42.7% 0.219 269)",
-        "tonalRamp": [
-          "#040724",
-          "#101a50",
-          "#23348c",
-          "#3952d2",
-          "#5979f8",
-          "#87a5ff",
-          "#b3cbff",
-          "#deeeff"
-        ]
-      },
-      "kpi-2-to": {
-        "role": "tertiary",
-        "displayName": "Tafla 2: królewski błękit",
-        "canonical": "oklch(50.3% 0.233 266)",
-        "tonalRamp": [
-          "#020825",
-          "#091a53",
-          "#173491",
-          "#2852d9",
-          "#4a7bff",
-          "#7ca7ff",
-          "#adcdff",
-          "#daefff"
-        ]
-      },
-      "kpi-3-to": {
-        "role": "tertiary",
-        "displayName": "Tafla 3: butelkowa zieleń",
-        "canonical": "oklch(41.6% 0.069 175)",
-        "tonalRamp": [
-          "#040e0b",
-          "#102721",
-          "#22483e",
-          "#386f61",
-          "#5e9284",
-          "#8eb5a9",
-          "#bad5cd",
-          "#e2f3ee"
-        ]
-      },
-      "kpi-4-to": {
-        "role": "tertiary",
-        "displayName": "Tafla 4: śliwkowa magenta",
-        "canonical": "oklch(40.5% 0.150 346)",
-        "tonalRamp": [
-          "#17040f",
-          "#381128",
-          "#64254a",
-          "#983d73",
-          "#bd6396",
-          "#d991b7",
-          "#f0bcd7",
-          "#ffe4f4"
+          "#260005",
+          "#50001a",
+          "#7e0033",
+          "#b0154f",
+          "#e2316c",
+          "#ff6b91",
+          "#ff9db8",
+          "#ffcce0"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Powitanie na płycie pulpitu (2.1rem mobile / 2.85rem)."
-      },
-      "kpi-figure": {
-        "displayName": "KPI figure",
-        "purpose": "Liczba w tafli KPI (1.875rem mobile / 2.25rem)."
+        "purpose": "Wyłącznie powitanie „HEY, {IMIĘ}” na pulpicie; 2.6rem → 3.75rem → 4.5rem, wersaliki, imię żółte z podziałem RGB i kursorem."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Tytuł strony."
+        "purpose": "Tytuł ekranu przez PageTitle (1.5rem → 1.875rem), glitch + podział RGB, licznik [n] w mono cyjanie; także marka INNDES."
+      },
+      "numeric": {
+        "displayName": "Numeric",
+        "purpose": "Liczby KPI i odczyty pulpitu w kolorze neonu, z poświatą tekstu, nabijane od zera."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Tytuł karty, marka w sidebarze."
+        "purpose": "Tytuły kart, nagłówki grup na listach (15px), „Dzisiaj” (18px); wersaliki."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Przyciski i zakładki 13px, nawigacja 13.5px, dolny pasek mobilny 10.5px; wersaliki, rozstrzelenie 0.06–0.08em."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Treść list, tabel, pól i przycisków."
+        "purpose": "Geist 14px: opisy, następne kroki, nazwy firm, pola formularzy."
       },
-      "caption": {
-        "displayName": "Caption",
-        "purpose": "Chipy, daty, etykiety liczb."
+      "data": {
+        "displayName": "Data",
+        "purpose": "JetBrains Mono z cyframi tabelarycznymi: numery zapytań, daty, podsumowania, szybkie szukanie."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Wersaliki: tylko etykiety sekcji nawigacji i nagłówki kolumn tabel."
+        "purpose": "JetBrains Mono 10.5–11px wersaliki: etykiety pól, chipy, etykiety tafli, pasek statusu, sekcje nawigacji."
       }
     },
     "shadows": [
       {
-        "name": "card",
-        "value": "inset 0 1px 0 rgb(255 255 255 / 0.03), 0 12px 32px -16px rgb(0 0 0 / 0.6)",
-        "purpose": "Każda karta w powłoce."
+        "name": "hud-line",
+        "value": "inset 0 0 0 1px var(--hud-line)",
+        "purpose": "Krawędź paneli HUD; kolor przez --hud-line (tafle i tabele grup nadpisują neonem 45–55%). Zawsze inset, bo clip-path obcina cienie zewnętrzne."
       },
       {
-        "name": "hero-plate",
-        "value": "inset 0 1px 0 rgb(255 255 255 / 0.9), 0 30px 60px -30px rgb(0 0 0 / 0.9)",
-        "purpose": "Odklejenie jasnej płyty powitalnej od czarnego tła."
+        "name": "control-line",
+        "value": "inset 0 0 0 1px var(--border-strong)",
+        "purpose": "Przycisk drugorzędny i chip neutralny; hover przycisku: cyjan 60%."
       },
       {
-        "name": "kpi-tile",
-        "value": "inset 0 1px 0 rgb(255 255 255 / 0.18), inset 0 0 28px color-mix(in srgb, var(--kpi-N-to) 45%, transparent), 0 18px 40px -20px rgb(0 0 0 / 0.8)",
-        "purpose": "Wewnętrzna poświata w odcieniu tafli + cień pod taflą."
+        "name": "field-focus",
+        "value": "inset 0 0 0 1px rgb(245 228 0 / 0.35), 0 6px 20px -12px rgb(245 228 0 / 0.8)",
+        "purpose": "Pole formularza w focusie (szybkie szukanie: 0 10px 30px -16px)."
       },
       {
-        "name": "hero-search",
-        "value": "0 1px 2px rgb(18 20 26 / 0.06), 0 8px 24px -12px rgb(18 20 26 / 0.25)",
-        "purpose": "Pole szybkiego wyszukiwania na płycie."
+        "name": "marker-glow",
+        "value": "0 0 10px <neon>",
+        "purpose": "Romby 8px przy nagłówkach grup, etykietach tafli i na końcu linii trendu."
       },
       {
-        "name": "focus-ring",
-        "value": "outline: 2px solid var(--accent); outline-offset: 2px",
-        "purpose": "Globalny :focus-visible."
+        "name": "nav-active-glow",
+        "value": "0 0 12px rgb(245 228 0 / 0.9)",
+        "purpose": "Pionowa belka 3px przy aktywnej pozycji sidebara."
+      },
+      {
+        "name": "danger-chip",
+        "value": "inset 0 0 0 1px rgb(255 42 109 / 0.5), 0 0 12px -4px rgb(255 42 109 / 0.7)",
+        "purpose": "Tylko Badge w tonie danger."
+      },
+      {
+        "name": "mobile-nav-glow",
+        "value": "0 -10px 30px -12px rgb(245 228 0 / 0.35)",
+        "purpose": "Górna krawędź dolnego paska mobilnego."
+      },
+      {
+        "name": "popover",
+        "value": "0 16px 40px -12px rgb(0 0 0 / 0.7)",
+        "purpose": "Jedyny cień podnoszący: lista podpowiedzi wyboru firmy."
+      },
+      {
+        "name": "neon-text",
+        "value": "text-shadow: 0 0 18px color-mix(in srgb, currentColor 55%, transparent)",
+        "purpose": "Liczby KPI, odczyty, nagłówki grup."
+      },
+      {
+        "name": "rgb-split",
+        "value": "text-shadow: -2px 0 rgb(0 225 255 / 0.55), 2px 0 rgb(255 42 109 / 0.55)",
+        "purpose": "Tytuły ekranów i imię w powitaniu; zostaje statycznie przy reduced-motion."
+      },
+      {
+        "name": "scanlines",
+        "value": "repeating-linear-gradient(to bottom, rgb(0 0 0 / 0) 0 2px, rgb(0 0 0 / 0.22) 2px 3px) + wiązka 30vh cyjan 5%",
+        "purpose": "Warstwa body::after nad całym UI (z-index 60, bez przechwytywania kliknięć); wiązka przesuwa się w 9s."
       }
     ],
     "motion": [
       {
-        "name": "state-change",
+        "name": "ease-boot",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Wejście ekranu (.boot-in 0.45s, .stagger 0.5s co 60ms) i nabijanie liczb (.count 1.1s)."
+      },
+      {
+        "name": "ease-draw",
+        "value": "cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "Odsłanianie linii trendu maską od lewej (.draw-line 1.4s, opóźnienie 0.25s)."
+      },
+      {
+        "name": "glitch",
+        "value": "3.2s steps(1, end) infinite",
+        "purpose": "Okresowy glitch tytułów i marki; kopie widoczne tylko w kilku klatkach cyklu."
+      },
+      {
+        "name": "jitter",
+        "value": "0.28s steps(2, end) 1",
+        "purpose": "Jednorazowe szarpnięcie na hover przycisków i nawigacji (.hover-glitch)."
+      },
+      {
+        "name": "control-transition",
         "value": "150ms ease-out",
-        "purpose": "Kolor, obrys, tło przycisków i pozycji nawigacji."
+        "purpose": "Kolor, tło i obrys kontrolek."
       },
       {
-        "name": "press",
-        "value": "transform: scale(0.98)",
-        "purpose": "Wciśnięcie przycisku (0.95 dla okrągłego przycisku wyszukiwania, hover 1.05)."
+        "name": "caret",
+        "value": "1.1s steps(1, end) infinite",
+        "purpose": "Migający kursor _ w powitaniu i na logowaniu."
       },
       {
-        "name": "row-nudge",
-        "value": "translateX(2px) 150ms",
-        "purpose": "Chevron w wierszu listy „Dzisiaj” na hover."
+        "name": "neon-hum",
+        "value": "6s linear infinite",
+        "purpose": "Delikatne przygasanie punktu alarmu (do 82%)."
+      },
+      {
+        "name": "ticker",
+        "value": "40s linear infinite",
+        "purpose": "Przewijana taśma liczników w pasku statusu."
+      },
+      {
+        "name": "grid-run",
+        "value": "3.5s linear infinite",
+        "purpose": "Perspektywiczna siatka podłogi na pulpicie i logowaniu."
+      },
+      {
+        "name": "hud-sweep",
+        "value": "9s linear infinite",
+        "purpose": "Wiązka skanująca nad interfejsem."
       },
       {
         "name": "reduced-motion",
-        "value": "animation/transition-duration: 0.01ms",
-        "purpose": "Globalnie przy prefers-reduced-motion: reduce."
+        "value": "@media (prefers-reduced-motion: reduce) { animation: none !important; transition-duration: 0.01ms !important }",
+        "purpose": "Wyłącza wszystko; każdy efekt ma stan spoczynkowy równy końcowemu."
       }
     ],
     "breakpoints": [
@@ -465,137 +609,139 @@
   },
   "components": [
     {
-      "name": "Primary Button",
+      "name": "Przycisk główny",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Główna akcja w powłoce (np. „Nowe zapytanie” nad listą).",
-      "html": "<button class=\"ds-btn ds-btn-primary\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"M12 5v14\"/></svg>Nowe zapytanie</button>",
-      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:9999px;font-family:var(--font-geist-sans),Geist,ui-sans-serif,system-ui,sans-serif;font-size:14px;font-weight:500;border:1px solid transparent;cursor:pointer;transition:background-color .15s ease-out,color .15s ease-out,border-color .15s ease-out,transform .15s ease-out;} .ds-btn:active{transform:scale(.98);} .ds-btn:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background),0 0 0 4px var(--accent);} .ds-btn-primary{background:var(--accent);color:var(--accent-foreground);} .ds-btn-primary:hover{background:var(--accent-hover);}"
+      "description": "Akcja główna: żółty blok notch z czarnymi wersalikami Chakra Petch.",
+      "html": "<button class=\"ds-btn ds-btn-primary\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M5 12h14M12 5v14\"/></svg>Nowe zapytanie</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border: 0; border-radius: 0; font-family: 'Chakra Petch', var(--font-geist-sans), sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px); transition: background-color 150ms ease-out, color 150ms ease-out, box-shadow 150ms ease-out, filter 150ms ease-out; } .ds-btn-primary { background: var(--accent); color: var(--accent-foreground); } .ds-btn-primary:hover { background: var(--accent-hover); animation: ds-jitter 0.28s steps(2, end) 1; } .ds-btn-primary:active { filter: brightness(0.9); } .ds-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; } @keyframes ds-jitter { 25% { transform: translate(-2px, 1px); } 50% { transform: translate(2px, -1px); } 75% { transform: translate(-1px, 0); } } @media (prefers-reduced-motion: reduce) { .ds-btn:hover { animation: none; } }"
     },
     {
-      "name": "Secondary Button",
+      "name": "Przycisk drugorzędny",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Akcja drugorzędna w powłoce.",
-      "html": "<button class=\"ds-btn ds-btn-secondary\">Wszystkie zapytania</button>",
-      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:9999px;font-family:var(--font-geist-sans),Geist,ui-sans-serif,system-ui,sans-serif;font-size:14px;font-weight:500;border:1px solid transparent;cursor:pointer;transition:background-color .15s ease-out,color .15s ease-out,border-color .15s ease-out,transform .15s ease-out;} .ds-btn:active{transform:scale(.98);} .ds-btn:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background),0 0 0 4px var(--accent);} .ds-btn-secondary{background:var(--surface-raised);color:var(--foreground);border-color:var(--border-strong);} .ds-btn-secondary:hover{border-color:rgb(147 155 171 / .6);}"
+      "description": "Akcja poboczna: ciemny notch z wewnętrznym obrysem, na hover cyjan.",
+      "html": "<button class=\"ds-btn2\">Firma</button>",
+      "css": ".ds-btn2 { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border: 0; border-radius: 0; background: var(--surface-raised); color: var(--foreground); box-shadow: inset 0 0 0 1px var(--border-strong); font-family: 'Chakra Petch', var(--font-geist-sans), sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px); transition: background-color 150ms ease-out, color 150ms ease-out, box-shadow 150ms ease-out; } .ds-btn2:hover { background: var(--surface-hover); color: var(--neon-cyan); box-shadow: inset 0 0 0 1px rgb(0 225 255 / 0.6); } .ds-btn2:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }"
     },
     {
-      "name": "Ghost Button",
-      "kind": "button",
-      "refersTo": "button-ghost",
-      "description": "Akcja cicha, np. w paskach narzędzi.",
-      "html": "<button class=\"ds-btn ds-btn-ghost\">Anuluj</button>",
-      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:9999px;font-family:var(--font-geist-sans),Geist,ui-sans-serif,system-ui,sans-serif;font-size:14px;font-weight:500;border:1px solid transparent;cursor:pointer;transition:background-color .15s ease-out,color .15s ease-out,border-color .15s ease-out,transform .15s ease-out;} .ds-btn:active{transform:scale(.98);} .ds-btn:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background),0 0 0 4px var(--accent);} .ds-btn-ghost{background:transparent;color:var(--foreground-muted);} .ds-btn-ghost:hover{background:var(--surface-raised);color:var(--foreground);}"
-    },
-    {
-      "name": "Input",
+      "name": "Pole tekstowe",
       "kind": "input",
       "refersTo": "input",
-      "description": "Pole formularza i wyszukiwania w listach.",
-      "html": "<label class=\"ds-label\" for=\"ds-q\">Szukaj</label><input id=\"ds-q\" class=\"ds-input\" placeholder=\"Szukaj zapytań…\">",
-      "css": ".ds-label{display:block;margin-bottom:6px;font-size:13px;font-weight:500;color:var(--foreground-muted);font-family:var(--font-geist-sans),Geist,sans-serif;} .ds-input{height:40px;width:100%;border-radius:12px;border:1px solid var(--border);background:var(--surface-raised);padding:0 14px;font-size:14px;color:var(--foreground);font-family:var(--font-geist-sans),Geist,sans-serif;transition:border-color .15s,box-shadow .15s;} .ds-input::placeholder{color:rgb(147 155 171 / .8);} .ds-input:hover{border-color:var(--border-strong);} .ds-input:focus{outline:none;border-color:rgb(129 153 255 / .6);box-shadow:0 0 0 2px rgb(129 153 255 / .3);} .ds-input[aria-invalid=true]{border-color:var(--danger);}"
+      "description": "Kwadratowe pole z dolną linią; focus = żółta linia i poświata pod polem.",
+      "html": "<label class=\"ds-label\">Firma<input class=\"ds-input\" placeholder=\"Szukaj zapytań…\"></label>",
+      "css": ".ds-label { display: block; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--foreground-muted); } .ds-input { display: block; margin-top: 6px; width: 100%; height: 40px; padding: 0 14px; border: 0; border-bottom: 1px solid var(--border-strong); border-radius: 0; background: color-mix(in srgb, var(--surface-raised) 80%, transparent); box-shadow: inset 0 0 0 1px var(--border); color: var(--foreground); font-family: var(--font-geist-sans), sans-serif; font-size: 14px; text-transform: none; letter-spacing: 0; transition: border-color 150ms, box-shadow 150ms, background-color 150ms; } .ds-input::placeholder { color: color-mix(in srgb, var(--foreground-muted) 80%, transparent); } .ds-input:hover { border-bottom-color: rgb(0 225 255 / 0.5); } .ds-input:focus { outline: none; border-bottom-color: var(--accent); background: var(--surface-raised); box-shadow: inset 0 0 0 1px rgb(245 228 0 / 0.35), 0 6px 20px -12px rgb(245 228 0 / 0.8); } .ds-input[aria-invalid=true] { border-bottom-color: var(--danger); }"
     },
     {
-      "name": "Status Chips",
+      "name": "Chip terminu",
       "kind": "chip",
-      "refersTo": "badge-neutral",
-      "description": "Chipy grupy, etapu i terminu: akcent 15%, neutralny z obrysem, stany na 12%.",
-      "html": "<div class=\"ds-chips\"><span class=\"ds-chip ds-chip-accent\">Wymaga działania</span><span class=\"ds-chip ds-chip-neutral\">Oferta wysłana</span><span class=\"ds-chip ds-chip-danger\">Po terminie: 24.10.2026</span><span class=\"ds-chip ds-chip-today\">Dziś</span><span class=\"ds-chip ds-chip-sage\">Wygrane</span></div>",
-      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:6px;} .ds-chip{display:inline-flex;align-items:center;white-space:nowrap;border-radius:9999px;padding:2px 10px;font-size:12px;font-weight:500;font-variant-numeric:tabular-nums;font-family:var(--font-geist-sans),Geist,sans-serif;} .ds-chip-accent{background:rgb(129 153 255 / .15);color:var(--accent);} .ds-chip-neutral{background:var(--surface-raised);color:var(--foreground-muted);border:1px solid var(--border);} .ds-chip-danger{background:var(--danger-bg);color:var(--danger);} .ds-chip-today{background:var(--terracotta-bg);color:var(--terracotta);} .ds-chip-sage{background:var(--sage-bg);color:var(--sage);}"
+      "refersTo": "badge-danger",
+      "description": "Badge: mono wersaliki; danger = po terminie (z poświatą), terracotta = dziś, neutral = reszta.",
+      "html": "<span class=\"ds-badge ds-badge-danger\">24.10.2026</span> <span class=\"ds-badge ds-badge-today\">dziś</span> <span class=\"ds-badge ds-badge-neutral\">bez terminu</span>",
+      "css": ".ds-badge { display: inline-flex; align-items: center; padding: 2px 8px; white-space: nowrap; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; } .ds-badge-danger { background: var(--danger-bg); color: var(--danger); box-shadow: inset 0 0 0 1px rgb(255 42 109 / 0.5), 0 0 12px -4px rgb(255 42 109 / 0.7); } .ds-badge-today { background: var(--terracotta-bg); color: var(--terracotta); box-shadow: inset 0 0 0 1px rgb(255 181 71 / 0.4); } .ds-badge-neutral { background: var(--surface-raised); color: var(--foreground-muted); box-shadow: inset 0 0 0 1px var(--border-strong); }"
     },
     {
-      "name": "Card",
+      "name": "Chip grupy operacyjnej (GroupBadge)",
+      "kind": "chip",
+      "refersTo": "badge-accent",
+      "description": "Jedyny chip grupy operacyjnej; kolor z groupNeon (lib/ui/urgency.ts): tło 12%, obrys 45%.",
+      "html": "<span class=\"ds-group\" style=\"--g: var(--danger)\">Wymaga działania</span> <span class=\"ds-group\" style=\"--g: var(--terracotta)\">Do przypomnienia</span> <span class=\"ds-group\" style=\"--g: var(--neon-cyan)\">Czekamy na klienta</span>",
+      "css": ".ds-group { display: inline-flex; align-items: center; padding: 2px 8px; white-space: nowrap; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--g); background: color-mix(in srgb, var(--g) 12%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--g) 45%, transparent); }"
+    },
+    {
+      "name": "Karta HUD",
       "kind": "card",
       "refersTo": "card",
-      "description": "Karta listy w powłoce z nagłówkiem i licznikiem.",
-      "html": "<section class=\"ds-card\"><header class=\"ds-card-h\"><h2>Moje zapytania</h2><span>6</span></header><div class=\"ds-card-b\"><a class=\"ds-row\" href=\"#\"><b>ZAP-2026-048</b> · Meble do nowej linii hoteli</a><a class=\"ds-row\" href=\"#\"><b>ZAP-2026-046</b> · Dokumentacja techniczna</a></div></section>",
-      "css": ".ds-card{border-radius:16px;border:1px solid var(--border);background:var(--surface);box-shadow:inset 0 1px 0 rgb(255 255 255 / .03),0 12px 32px -16px rgb(0 0 0 / .6);font-family:var(--font-geist-sans),Geist,sans-serif;color:var(--foreground);max-width:420px;} .ds-card-h{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--border);} .ds-card-h h2{margin:0;font-size:15px;font-weight:600;letter-spacing:-.025em;} .ds-card-h span{font-size:14px;color:var(--foreground-muted);font-variant-numeric:tabular-nums;} .ds-card-b{padding:8px 20px;} .ds-row{display:block;padding:12px 0;font-size:14px;color:var(--foreground-muted);text-decoration:none;border-top:1px solid var(--border);} .ds-row:first-child{border-top:0;} .ds-row b{color:var(--foreground);font-weight:500;} .ds-row:hover b{color:var(--accent);}"
+      "description": "Panel ze ściętym prawym górnym rogiem (14px), obrys inset i przekątna krawędzi.",
+      "html": "<div class=\"ds-hud\"><div class=\"ds-hud-head\"><h2>Moje zapytania</h2><span>[6]</span></div><div class=\"ds-hud-body\"><b>ZAP-2026-048</b> · Meble do nowej linii hoteli</div></div>",
+      "css": ".ds-hud { --cut: 14px; position: relative; background: color-mix(in srgb, var(--surface) 90%, transparent); background-image: linear-gradient(180deg, rgb(0 225 255 / 0.05), transparent 120px); clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%); box-shadow: inset 0 0 0 1px var(--border); color: var(--foreground); } .ds-hud::before { content: ''; position: absolute; top: 0; left: calc(100% - var(--cut)); width: calc(var(--cut) * 1.4143); height: 1px; background: var(--border); transform-origin: 0 0; transform: rotate(45deg); } .ds-hud-head { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--border); } .ds-hud-head h2 { margin: 0; font-family: 'Chakra Petch', var(--font-geist-sans), sans-serif; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; } .ds-hud-head span { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--foreground-muted); } .ds-hud-body { padding: 16px 20px; font-family: var(--font-geist-sans), sans-serif; font-size: 14px; color: var(--foreground-muted); } .ds-hud-body b { font-family: 'JetBrains Mono', monospace; color: var(--foreground); }"
     },
     {
-      "name": "Sidebar Navigation",
+      "name": "Nawigacja boczna",
       "kind": "nav",
       "refersTo": "nav-item-active",
-      "description": "Sidebar w sekcjach; aktywna pozycja jako obrysowana pigułka ze znacznikiem przy krawędzi.",
-      "html": "<nav class=\"ds-nav\"><p class=\"ds-nav-sec\">Praca</p><a class=\"ds-nav-i\" href=\"#\">Pulpit</a><a class=\"ds-nav-i is-active\" aria-current=\"page\" href=\"#\">Zapytania</a><a class=\"ds-nav-i\" href=\"#\">Zadania</a><p class=\"ds-nav-sec\">Wkrótce</p><span class=\"ds-nav-i is-off\">Leady</span></nav>",
-      "css": ".ds-nav{width:240px;background:var(--sidebar);padding:8px 12px;font-family:var(--font-geist-sans),Geist,sans-serif;} .ds-nav-sec{margin:16px 0 6px;padding:0 12px;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:rgb(147 155 171 / .7);} .ds-nav-i{position:relative;display:flex;align-items:center;gap:12px;margin:2px 0;padding:8px 12px;border-radius:12px;border:1px solid transparent;font-size:14px;font-weight:500;color:var(--foreground-muted);text-decoration:none;transition:background-color .15s,color .15s;} .ds-nav-i:hover{background:rgb(255 255 255 / .04);color:var(--foreground);} .ds-nav-i.is-active{border-color:rgb(255 255 255 / .15);background:rgb(255 255 255 / .06);color:var(--foreground);} .ds-nav-i.is-active::before{content:'';position:absolute;left:-13px;top:50%;width:3px;height:20px;transform:translateY(-50%);border-radius:0 9999px 9999px 0;background:var(--foreground);} .ds-nav-i.is-off{color:rgb(147 155 171 / .55);font-weight:400;} .ds-nav-i.is-off:hover{background:none;color:rgb(147 155 171 / .55);}"
+      "description": "Sekcje z magentowym //, pozycje w wersalikach; aktywna = żółty notch + świecąca belka 3px.",
+      "html": "<nav class=\"ds-nav\"><p class=\"ds-nav-sec\"><i>//</i> Praca</p><a class=\"ds-nav-item is-active\" href=\"#\"><span class=\"ds-nav-bar\"></span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"9\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"5\"/><rect x=\"14\" y=\"12\" width=\"7\" height=\"9\"/><rect x=\"3\" y=\"16\" width=\"7\" height=\"5\"/></svg>Pulpit</a><a class=\"ds-nav-item\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\"><path d=\"M22 12h-6l-2 3h-4l-2-3H2\"/><path d=\"M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z\"/></svg>Zapytania</a></nav>",
+      "css": ".ds-nav { width: 15rem; padding: 8px 12px; background: var(--sidebar); } .ds-nav-sec { margin: 0 0 6px; padding: 0 12px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: color-mix(in srgb, var(--foreground-muted) 70%, transparent); } .ds-nav-sec i { font-style: normal; color: var(--neon-magenta); } .ds-nav-item { position: relative; display: flex; align-items: center; gap: 12px; padding: 8px 12px; font-family: 'Chakra Petch', var(--font-geist-sans), sans-serif; font-size: 13.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--foreground-muted); text-decoration: none; transition: background-color 150ms, color 150ms; } .ds-nav-item:hover { background: rgb(0 225 255 / 0.07); color: var(--neon-cyan); } .ds-nav-item.is-active { background: var(--accent); color: var(--accent-foreground); clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px); } .ds-nav-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; } .ds-nav-bar { display: none; }"
     },
     {
-      "name": "Hero Plate",
-      "kind": "custom",
-      "refersTo": "hero-plate",
-      "description": "Jasna płyta powitalna pulpitu: powitanie z imieniem w gradiencie, liczby dnia, szybkie wyszukiwanie, przyciski atramentowe.",
-      "html": "<section class=\"ds-hero\"><h1>Dzień dobry, <span class=\"ds-greet\">Jakub</span></h1><p class=\"ds-hero-sub\">Piątek, 30 października · 4 zadania czekają dziś.</p><dl class=\"ds-hero-stats\"><div><dt>Po terminie</dt><dd class=\"ds-hot\">2</dd></div><div><dt>Na dziś</dt><dd>2</dd></div><div><dt>Aktywne zapytania</dt><dd>12</dd></div></dl><form class=\"ds-qs\" onsubmit=\"return false\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input placeholder=\"Szukaj: numer, firma, kontakt, kraj…\" aria-label=\"Szukaj zapytania\"><button aria-label=\"Szukaj\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button></form><div class=\"ds-hero-actions\"><a class=\"ds-ink\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"M12 5v14\"/></svg>Nowe zapytanie</a><a class=\"ds-ink-o\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"M12 5v14\"/></svg>Firma</a></div></section>",
-      "css": ".ds-hero{border-radius:1.75rem;padding:48px;color:var(--hero-fg);font-family:var(--font-geist-sans),Geist,sans-serif;background:radial-gradient(90% 120% at 88% 30%,rgb(255 255 255 / .95) 0%,rgb(255 255 255 / 0) 55%),linear-gradient(160deg,var(--hero-bg) 0%,var(--hero-bg-2) 100%);box-shadow:inset 0 1px 0 rgb(255 255 255 / .9),0 30px 60px -30px rgb(0 0 0 / .9);} .ds-hero h1{margin:0;font-size:2.85rem;font-weight:500;line-height:1.25;letter-spacing:-.03em;} .ds-greet{background-image:linear-gradient(90deg,var(--greet-1),var(--greet-2) 55%,var(--greet-3));-webkit-background-clip:text;background-clip:text;color:transparent;} .ds-hero-sub{margin:8px 0 0;font-size:15px;color:var(--hero-muted);} .ds-hero-stats{display:flex;gap:40px;margin:28px 0 0;} .ds-hero-stats dt{font-size:12px;font-weight:500;color:var(--hero-muted);} .ds-hero-stats dd{margin:2px 0 0;font-size:1.5rem;font-weight:600;letter-spacing:-.025em;font-variant-numeric:tabular-nums;} .ds-hot{color:var(--hero-danger);} .ds-qs{display:flex;align-items:center;gap:8px;max-width:28rem;margin-top:32px;padding:6px 6px 6px 16px;border-radius:9999px;background:var(--hero-field);color:var(--hero-muted);box-shadow:0 0 0 1px var(--hero-line),0 1px 2px rgb(18 20 26 / .06),0 8px 24px -12px rgb(18 20 26 / .25);} .ds-qs:focus-within{box-shadow:0 0 0 2px var(--greet-1),0 8px 24px -12px rgb(18 20 26 / .25);} .ds-qs input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:14px;color:var(--hero-fg);caret-color:var(--greet-1);} .ds-qs input:focus{outline:none;} .ds-qs button{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:0;border-radius:9999px;background:var(--hero-fg);color:#fff;cursor:pointer;transition:transform .15s ease-out;} .ds-qs button:hover{transform:scale(1.05);} .ds-hero-actions{display:flex;gap:8px;margin-top:16px;} .ds-ink,.ds-ink-o{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 16px;border-radius:9999px;font-size:14px;font-weight:500;text-decoration:none;transition:background-color .15s;} .ds-ink{background:var(--hero-fg);color:#fff;} .ds-ink:hover{background:var(--hero-ink-hover);} .ds-ink-o{color:var(--hero-fg);box-shadow:0 0 0 1px var(--hero-line);} .ds-ink-o:hover{background:#fff;} .ds-ink:focus-visible,.ds-ink-o:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}"
-    },
-    {
-      "name": "KPI Tile",
+      "name": "Tafla KPI",
       "kind": "custom",
       "refersTo": "kpi-tile",
-      "description": "Nasycona tafla sprzedaży (tu N=1, indygo) z liczbą miesiąca, zmianą i linią 8 tygodni.",
-      "html": "<article class=\"ds-kpi\"><h3><i></i>Nowe zapytania</h3><p class=\"ds-kpi-n\">7</p><p class=\"ds-kpi-d\"><span class=\"ds-kpi-chg\">↗ +40%</span>poprz. miesiąc: 5</p><svg class=\"ds-kpi-sp\" viewBox=\"0 0 100 40\" preserveAspectRatio=\"none\" role=\"img\" aria-label=\"Nowe zapytania: ostatnie 8 tygodni\"><polyline points=\"0,20 14.3,36 28.6,36 42.9,36 57.1,36 71.4,20 85.7,20 100,20\" fill=\"none\" stroke=\"var(--kpi-1-line)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" vector-effect=\"non-scaling-stroke\"/></svg></article>",
-      "css": ".ds-kpi{display:flex;flex-direction:column;width:260px;min-height:10.5rem;padding:20px;border-radius:16px;color:#fff;font-family:var(--font-geist-sans),Geist,sans-serif;background:linear-gradient(140deg,var(--kpi-1-from) 0%,var(--kpi-1-to) 100%);border:1px solid color-mix(in srgb,var(--kpi-1-to) 65%,white 22%);box-shadow:inset 0 1px 0 rgb(255 255 255 / .18),inset 0 0 28px color-mix(in srgb,var(--kpi-1-to) 45%,transparent),0 18px 40px -20px rgb(0 0 0 / .8);} .ds-kpi h3{display:flex;align-items:center;gap:8px;margin:0;font-size:13px;font-weight:500;color:rgb(255 255 255 / .8);} .ds-kpi h3 i{width:6px;height:6px;border-radius:9999px;background:var(--kpi-1-line);} .ds-kpi-n{margin:8px 0 0;font-size:2.25rem;font-weight:600;letter-spacing:-.025em;font-variant-numeric:tabular-nums;line-height:1.1;} .ds-kpi-d{display:flex;align-items:center;gap:8px;margin:8px 0 0;font-size:12px;color:rgb(255 255 255 / .75);font-variant-numeric:tabular-nums;} .ds-kpi-chg{border-radius:9999px;background:rgb(0 0 0 / .2);padding:2px 8px;font-weight:600;color:var(--kpi-up);} .ds-kpi-sp{margin-top:auto;padding-top:12px;width:100%;height:48px;overflow:visible;}"
+      "description": "Panel HUD w kolorze tafli (--kpi-1..4): obrys, gradient, liczba z poświatą, zmiana % i linia trendu.",
+      "html": "<article class=\"ds-kpi\" style=\"--k: var(--kpi-1)\"><h3><span class=\"ds-dia\"></span>Nowe zapytania</h3><p class=\"ds-kpi-n\">7</p><p class=\"ds-kpi-ch\"><span>+40%</span> poprz. miesiąc: 5</p><svg viewBox=\"0 0 100 40\" preserveAspectRatio=\"none\"><polyline points=\"0,30 14,30 28,30 42,30 57,30 71,22 85,22 100,22\" fill=\"none\" stroke=\"var(--k)\" stroke-width=\"2\" vector-effect=\"non-scaling-stroke\"/></svg></article>",
+      "css": ".ds-kpi { --cut: 14px; position: relative; display: flex; flex-direction: column; width: 260px; min-height: 11.5rem; padding: 20px; clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--k) 55%, transparent); background: radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--k) 22%, transparent) 0%, transparent 60%), linear-gradient(180deg, color-mix(in srgb, var(--k) 7%, var(--surface)) 0%, var(--surface) 100%); } .ds-kpi h3 { display: flex; align-items: center; gap: 8px; margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--foreground-muted); } .ds-dia { width: 8px; height: 8px; transform: rotate(45deg); background: var(--k); box-shadow: 0 0 10px var(--k); } .ds-kpi-n { margin: 8px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 3rem; font-weight: 700; line-height: 1; color: var(--k); text-shadow: 0 0 18px color-mix(in srgb, var(--k) 55%, transparent); font-variant-numeric: tabular-nums; } .ds-kpi-ch { margin: 12px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--foreground-muted); } .ds-kpi-ch span { padding: 2px 6px; background: rgb(0 0 0 / 0.4); color: var(--kpi-up); font-weight: 600; } .ds-kpi svg { margin-top: auto; width: 100%; height: 48px; padding-top: 12px; overflow: visible; filter: drop-shadow(0 0 4px var(--k)); }"
+    },
+    {
+      "name": "Tytuł ekranu (PageTitle)",
+      "kind": "custom",
+      "refersTo": "page-title",
+      "description": "Chakra Petch wersalikami ze stałym podziałem RGB, okresowym glitchem i licznikiem [n] w mono cyjanie.",
+      "html": "<h1 class=\"ds-title\"><span class=\"ds-glitch\" data-text=\"Zapytania\">Zapytania</span><small>[12]</small></h1>",
+      "css": ".ds-title { display: flex; align-items: baseline; gap: 12px; margin: 0; font-family: 'Chakra Petch', var(--font-geist-sans), sans-serif; font-size: 1.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--foreground); } .ds-title small { font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 400; color: var(--neon-cyan); } .ds-glitch { position: relative; display: inline-block; text-shadow: -2px 0 rgb(0 225 255 / 0.55), 2px 0 rgb(255 42 109 / 0.55); } .ds-glitch::before, .ds-glitch::after { content: attr(data-text); position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; clip-path: inset(0 0 100% 0); } .ds-glitch::before { color: var(--neon-cyan); animation: ds-ga 3.2s steps(1, end) infinite; } .ds-glitch::after { color: var(--neon-magenta); animation: ds-gb 3.2s steps(1, end) infinite; } @keyframes ds-ga { 0%, 86%, 100% { clip-path: inset(0 0 100% 0); transform: translate(-2px, 0); } 87% { clip-path: inset(10% 0 62% 0); transform: translate(-6px, -1px); } 89% { clip-path: inset(58% 0 12% 0); transform: translate(5px, 1px); } 91% { clip-path: inset(30% 0 40% 0); transform: translate(-3px, 0); } } @keyframes ds-gb { 0%, 86%, 100% { clip-path: inset(0 0 100% 0); transform: translate(2px, 0); } 88% { clip-path: inset(70% 0 4% 0); transform: translate(6px, 1px); } 90% { clip-path: inset(18% 0 55% 0); transform: translate(-5px, -1px); } 92% { clip-path: inset(44% 0 30% 0); transform: translate(3px, 0); } } @media (prefers-reduced-motion: reduce) { .ds-glitch::before, .ds-glitch::after { animation: none; } }"
     }
   ],
   "narrative": {
-    "northStar": "Ciemna konsola dnia",
-    "overview": "INNDES CRM to prawie czarna, chłodna powłoka (`background`), w której praca toczy się na spokojnych, ciemnych kartach i listach, a dwa miejsca dostają światło i kolor: jasna, perłowa płyta powitalna na pulpicie (dzień już rozpisany) i rząd czterech nasyconych tafli sprzedaży z ośmiotygodniową linią trendu. Kierunek przypiął właściciel produktu ze zrzutu referencyjnego (2026-10-30); zastępuje wcześniejszą jasną paletę granat/kobalt/terakota/szałwia.\n\nGęstość jest robocza, nie wystawowa: tekst 14px, wiersze tabeli ~42px, Geist jako jedyny krój z cyframi tabelarycznymi wszędzie, gdzie stoją liczby i daty. Kształty są miękkie i powtarzalne — pigułki dla akcji i statusów, zaokrąglenia 12–16px dla pól i kart. Głębia to głównie tonalne warstwy (background → surface → surface-raised) i cienkie obramowania; cień jest miękki i nisko pod kartą, nigdy twardy.\n\nKonwencja nazw: tokeny zachowały nazwy z jasnej wersji, żeby każdy ekran przeszedł na nowy świat bez przepisywania klas. `--terracotta` znaczy dziś „na dziś / miękkie ostrzeżenie” (ciepły pomarańcz, nie terakota), `--sage` znaczy „sukces / zrobione / wygrane” (miętowa zieleń). Płyta powitalna ma własny jasny zestaw `--hero-*`, tafle KPI — `--kpi-N-from` / `--kpi-N-to` / `--kpi-N-line` (N = 1–4), gradient imienia — `--greet-1..3`.",
+    "northStar": "Nocny HUD",
+    "overview": "INNDES CRM to ciemna, gęsta konsola, do której zespół „loguje się” rano jak do systemu: prawie czarny grunt z zimnym błękitem, skanlinie nad całym interfejsem, panele ze ściętymi rogami obrysowane cienką linią, neon w kolorze pilności i jeden kwasowy żółty jako kolor akcji. Kierunek przypiął właściciel produktu: cyberpunk w klimacie gatunku, „abstract hardcore”, kolory zrzutu referencyjnego podbite do neonu, efekty (glitch, skanlinie, neon) na wszystkich ekranach — także na liście zapytań, zadaniach i logowaniu, nie tylko na pulpicie.\n\nHałas wizualny jest podporządkowany pracy. Neon niesie znaczenie (po terminie, na dziś, czekamy na klienta, wygrane), dane siedzą w czcionce monospace z cyframi tabelarycznymi, a każdy efekt ruchu znika przy `prefers-reduced-motion`, zostawiając statyczny, w pełni czytelny ekran. Świat jest gatunkowy, nie licencjonowany: żadnych logotypów, postaci, nazw ani elementów interfejsu z gry/anime Cyberpunk 2077 / Edgerunners. Kolory marki INNDES (granat, kobalt, terakota, szałwia) nie wchodzą do tego świata.\n\nTo jest pełna wymiana poprzedniego świata (ciemna powłoka z jasną perłową płytą powitalną, sam Geist). Jasna płyta i pastelowe akcenty są anty-wzorcem.",
     "keyCharacteristics": [
-      "Prawie czarna, chłodna powłoka; sidebar w tym samym tonie co tło, bez ramki.",
-      "Jedna jasna wyspa (płyta powitalna) i cztery nasycone tafle KPI — jedyne duże pola koloru.",
-      "Chłodny błękit `accent` z ciemnym tekstem jako jedyny kolor akcji w powłoce.",
-      "Geist, jedna rodzina, cyfry tabelaryczne.",
-      "Pigułki dla przycisków, statusów i aktywnej nawigacji."
+      "Grunt `#05060b` z dwiema rozmytymi poświatami (magenta z prawej u góry, cyjan z lewej u dołu) i skanliniami nad wszystkim.",
+      "Zero zaokrągleń; dwie sylwetki: panel HUD (jeden ścięty róg) i „notch” (dwa przeciwległe ścięte rogi).",
+      "Kolor = pilność. Żółty = akcja. Te dwa systemy się nie mieszają.",
+      "Trzy głosy pisma: Chakra Petch (nagłówki, liczby, przyciski — wersaliki), Geist (tekst), JetBrains Mono (numery, daty, etykiety danych).",
+      "Ruch krótki i rzadki: boot ekranu, okresowy glitch tytułów, rysujące się linie trendu, przewijana taśma; całość wyłączana przy reduced-motion."
     ],
     "rules": [
       {
-        "name": "The Dwie Wyspy Rule",
-        "body": "Duże pola koloru istnieją tylko w dwóch miejscach: płyta powitalna i tafle KPI. Reszta interfejsu żyje w tonach powłoki plus `accent` i chipy stanów.",
+        "name": "The Yellow Action Rule",
+        "body": "Żółty `--accent` oznacza „tu kliknij / tu jesteś / tu piszesz”: akcja główna, aktywna nawigacja, focus. Nigdy nie jest statusem — „na dziś” to bursztyn `--terracotta`, nie żółty. Istniejące nieinteraktywne użycia (imię w powitaniu, blok zegara w pasku statusu, pasy ostrzegawcze, awatar inicjałów) są zamkniętą listą sygnatur pulpitu i powłoki, nie wzorcem do powielania.",
         "section": "colors"
       },
       {
-        "name": "The Własny Zestaw Rule",
-        "body": "Wewnątrz płyty powitalnej używa się wyłącznie tokenów `--hero-*` (i `--greet-*`); tokeny powłoki (`foreground`, `danger`, `terracotta`) są tam nieczytelne. Poza płytą `--hero-*` nie występuje.",
+        "name": "The Urgency Map Rule",
+        "body": "Kolor grupy jest liczony w jednym miejscu, `lib/ui/urgency.ts` (`groupNeon`): `wymaga_dzialania` i `przegrane` = `--danger`; `do_przypomnienia` = `--terracotta`; `czekamy_na_klienta` = `--neon-cyan`; `wygrane` = `--sage`; każdy inny klucz (pozostałe etapy sprzedaży) = `--kpi-1`. Nagłówki grup, obrys tabeli grupy i chipy grupy biorą kolor z tej funkcji; chip grupy operacyjnej to zawsze `GroupBadge`, nigdy ręcznie złożony `Badge`. Na liście zadań ta sama logika: po terminie = `--danger`, dziś = `--terracotta`, reszta = `--neon-cyan`.",
         "section": "colors"
       },
       {
-        "name": "The Stare Nazwy Rule",
-        "body": "`--terracotta` = na dziś / miękkie ostrzeżenie, `--sage` = sukces. Nie zmieniaj nazw i nie dodawaj synonimów (`--orange`, `--success`); nowe komponenty biorą kolory z `app/globals.css`, nie wprowadzają ad-hoc wartości.",
+        "name": "The Legacy Name Rule",
+        "body": "`--terracotta` = bursztyn „na dziś”, `--sage` = zieleń sukcesu, `--danger` = alarm/po terminie. Nie zmieniać nazw i nie dodawać równoległych tokenów o „prawdziwych” nazwach; nowe kolory nie wchodzą ad hoc, tylko przez `app/globals.css`.",
         "section": "colors"
       },
       {
-        "name": "The Cyfry Tabelaryczne Rule",
-        "body": "Każda liczba, data i licznik używa `tabular-nums` (klasa `.tabular`, tabele domyślnie). Kolumny i tafle nie mogą „drgać”.",
+        "name": "The Three Voices Rule",
+        "body": "Chakra Petch mówi (nagłówki, liczby, przyciski, nawigacja — zawsze wersalikami), Geist opowiada (zdania), JetBrains Mono raportuje (numer, data, licznik, etykieta). Akapity nigdy nie idą w Chakra Petch; liczby w tabelach i chipach zawsze z `tabular-nums`.",
         "section": "typography"
       },
       {
-        "name": "The Jeden Krój Rule",
-        "body": "Geist i nic więcej; wyróżnienie robi grubość i rozmiar, nie drugi krój.",
-        "section": "typography"
-      },
-      {
-        "name": "The Miękki Cień Rule",
-        "body": "Cienie mają duże rozmycie i ujemny spread; żadnych twardych przesunięć bez rozmycia.",
+        "name": "The Clipped Glow Rule",
+        "body": "Panele `.hud` i kształty `.notch` są wycinane przez `clip-path`, który obcina każdy zewnętrzny `box-shadow`. Krawędź takiego elementu to zawsze cień wewnętrzny (`inset`), a poświata trafia na osobny, nieprzycięty element: romb, belkę wskaźnika, linię trendu, chip, pole formularza.",
         "section": "elevation"
+      },
+      {
+        "name": "The Reduced Motion Rule",
+        "body": "Każda animacja i przejście jest wyłączane globalnie przy `prefers-reduced-motion: reduce`, a każdy efekt jest zbudowany tak, żeby stan spoczynkowy był stanem końcowym: liczby pokazują wynik, linie trendu są narysowane, kopie glitcha są ukryte, a zostaje statyczny podział RGB i statyczne skanlinie. Nowy efekt bez tej gwarancji nie wchodzi. Żadna duża płaszczyzna nie miga częściej niż 3 razy na sekundę.",
+        "section": "components"
       }
     ],
     "dos": [
-      "**Do** brać każdy kolor z tokenów w `app/globals.css`; nowy stan = nowy token tam, nie hex w komponencie.",
-      "**Do** stawiać na `accent` ciemny tekst `accent-foreground`.",
-      "**Do** używać `--hero-*` w płycie powitalnej i tylko tam.",
-      "**Do** zachować kolejność i znaczenie tafli KPI 1–4 (indygo, królewski błękit, butelkowa zieleń, śliwkowa magenta) i odwracać kolor zmiany, gdy wzrost jest zły.",
-      "**Do** pokazywać grupę operacyjną i etap sprzedaży jako dwa osobne chipy.",
-      "**Do** dawać tabeli wersję kart poniżej `md` i trzymać tabele wąskie; szczegóły idą do karty rekordu.",
-      "**Do** używać cyfr tabelarycznych dla każdej liczby i daty.",
-      "**Do** szanować `prefers-reduced-motion` (globalnie wyłączone animacje i przejścia)."
+      "**Do** brać kolory wyłącznie z tokenów `app/globals.css` (klasy Tailwind `bg-surface`, `text-cyan`, `text-danger` itd. albo `var(--token)`).",
+      "**Do** liczyć kolor grupy przez `groupNeon` z `lib/ui/urgency.ts` i renderować chip grupy operacyjnej przez `GroupBadge`.",
+      "**Do** oznaczać terminy przez Badge: po terminie `danger`, dziś `terracotta`, pozostałe `neutral`.",
+      "**Do** zaczynać ekrany od `PageTitle` (glitch + RGB + licznik `[n]`).",
+      "**Do** stawiać obrys paneli HUD jako cień wewnętrzny, a poświatę na osobnym, nieprzyciętym elemencie.",
+      "**Do** pisać numery, daty i liczniki w JetBrains Mono z cyframi tabelarycznymi, a etykiety UI po polsku z `lib/enums.ts`.",
+      "**Do** budować każdy nowy efekt tak, by przy reduced-motion zostawał gotowy, statyczny stan końcowy."
     ],
     "donts": [
-      "**Don't** wprowadzać trzeciej wyspy koloru ani gradientów poza płytą powitalną, imieniem w powitaniu i taflami KPI.",
-      "**Don't** przemianowywać `--terracotta` / `--sage` ani dodawać ich synonimów.",
-      "**Don't** stawiać kickerów / eyebrow w wersalikach nad nagłówkami; wersaliki 11px są zarezerwowane dla etykiet sekcji nawigacji i nagłówków kolumn tabel.",
-      "**Don't** używać twardych cieni bez rozmycia ani białych neutralnych ramek na taflach KPI.",
-      "**Don't** wygładzać linii trendu ani pokazywać w taflach wartości, których nie ma w danych (np. kwot w zł bez tabeli ofert).",
-      "**Don't** pokazywać funkcji z przyszłych faz jako działających — pozycje „Wkrótce” zostają wygaszone i nieklikalne."
+      "**Don't** używać żółtego `--accent` jako koloru statusu ani do „na dziś” (to `--terracotta`), ani dokładać nowych nieinteraktywnych żółtych bloków.",
+      "**Don't** składać chipu grupy operacyjnej ręcznie z `Badge` ani nadawać grupom kolorów poza `groupNeon`.",
+      "**Don't** wprowadzać kolorów ad hoc ani kolorów marki INNDES (granat, kobalt, terakota, szałwia) do tego świata.",
+      "**Don't** zaokrąglać rogów komponentów; forma to cięcie 45°.",
+      "**Don't** dawać zewnętrznego `box-shadow` elementom `.hud` ani `.notch` — `clip-path` go obetnie.",
+      "**Don't** używać logotypów, postaci, nazw, cytatów ani elementów interfejsu z Cyberpunk 2077 / Edgerunners; tylko klimat gatunku.",
+      "**Don't** stawiać etykiet-„kickerów” nad nagłówkami; prefiks `//` żyje tylko w etykietach sekcji nawigacji i sufiksie marki `//CRM`.",
+      "**Don't** wracać do jasnej płyty powitalnej ani pasteli poprzedniego świata.",
+      "**Don't** pokazywać zmyślonych liczb ani kwot w taflach i wykresach."
     ]
   }
 }

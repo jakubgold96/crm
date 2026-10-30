@@ -1,5 +1,6 @@
 'use client';
 
+import { PageTitle } from '@/components/ui/page-title';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -173,7 +174,7 @@ export function InquiryDetailClient({
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="rgb-split font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">{inquiry.number}</h1>
+            <PageTitle className="font-data tracking-[0.02em]">{inquiry.number}</PageTitle>
             {inquiry.is_archived && <Badge tone="neutral">Zarchiwizowane</Badge>}
           </div>
           <p className="mt-1 text-sm text-foreground-muted">

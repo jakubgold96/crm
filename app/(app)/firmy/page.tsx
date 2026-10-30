@@ -1,3 +1,4 @@
+import { PageTitle } from '@/components/ui/page-title';
 import { Plus } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -19,7 +20,7 @@ export default async function CompaniesPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="rgb-split font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Firmy ({companies.length})</h1>
+        <PageTitle count={companies.length}>Firmy</PageTitle>
         <Link href="/firmy/nowa">
           <Button size="sm">
             <Plus className="size-4" aria-hidden />

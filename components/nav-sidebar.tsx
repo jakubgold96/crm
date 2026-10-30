@@ -149,7 +149,7 @@ export function NavSidebar({ profile }: { profile: Profile }) {
         <Link
           href="/ustawienia/profil"
           className={cn(
-            'flex items-center gap-3 px-3 py-2 text-sm transition-colors',
+            'flex items-center gap-3 px-3 py-2 font-display text-[13px] font-semibold uppercase tracking-[0.06em] transition-colors',
             pathname.startsWith('/ustawienia/profil')
               ? 'bg-cyan/[0.08] text-cyan'
               : 'text-foreground-muted hover:bg-cyan/[0.06] hover:text-cyan'
@@ -162,7 +162,7 @@ export function NavSidebar({ profile }: { profile: Profile }) {
           <Link
             href="/ustawienia/uzytkownicy"
             className={cn(
-              'flex items-center gap-3 px-3 py-2 text-sm transition-colors',
+              'flex items-center gap-3 px-3 py-2 font-display text-[13px] font-semibold uppercase tracking-[0.06em] transition-colors',
               pathname.startsWith('/ustawienia/uzytkownicy')
                 ? 'bg-white/[0.06] text-foreground'
                 : 'text-foreground-muted hover:bg-white/[0.04] hover:text-foreground'

@@ -1,3 +1,4 @@
+import { PageTitle } from '@/components/ui/page-title';
 import { GroupBadge } from '@/components/ui/group-badge';
 import { Badge } from '@/components/ui/badge';
 import { companySegmentLabels, salesStageLabels } from '@/lib/enums';
@@ -31,7 +32,7 @@ export default async function ArchivePage() {
   return (
     <div className="space-y-10">
       <div>
-        <h1 className="rgb-split font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Archiwum</h1>
+        <PageTitle>Archiwum</PageTitle>
         <p className="mt-1 text-sm text-foreground-muted">
           Zarchiwizowane zapytania i firmy — nic nie jest tu usuwane, tylko ukryte z głównych list.
         </p>
@@ -59,7 +60,7 @@ export default async function ArchivePage() {
                   {inquiries.map((inq) => (
                     <tr key={inq.id} className="transition-colors hover:bg-white/[0.04]">
                       <td className="px-4 py-2.5">
-                        <Link href={`/zapytania/${inq.id}`} className="font-medium text-foreground hover:text-accent">
+                        <Link href={`/zapytania/${inq.id}`} className="font-data font-semibold text-foreground hover:text-accent">
                           {inq.number}
                         </Link>
                       </td>
@@ -120,7 +121,7 @@ export default async function ArchivePage() {
                   {companies.map((c) => (
                     <tr key={c.id} className="transition-colors hover:bg-white/[0.04]">
                       <td className="px-4 py-2.5">
-                        <Link href={`/firmy/${c.id}`} className="font-medium text-foreground hover:text-accent">
+                        <Link href={`/firmy/${c.id}`} className="font-data font-semibold text-foreground hover:text-accent">
                           {c.name}
                         </Link>
                       </td>

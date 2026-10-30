@@ -1,3 +1,4 @@
+import { PageTitle } from '@/components/ui/page-title';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { userRoleLabels } from '@/lib/enums';
 import { requireUser } from '@/lib/auth';
@@ -9,7 +10,7 @@ export default async function ProfilePage() {
 
   return (
     <div className="max-w-xl space-y-6">
-      <h1 className="rgb-split font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Twój profil</h1>
+      <PageTitle>Twój profil</PageTitle>
       <Card>
         <CardHeader>
           <CardTitle>Dane konta</CardTitle>

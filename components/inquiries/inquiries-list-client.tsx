@@ -223,7 +223,7 @@ export function InquiriesListClient({
                   {items.map((inq) => (
                     <tr key={inq.id} className="transition-colors hover:bg-white/[0.04]">
                       <td className="px-4 py-2.5">
-                        <Link href={`/zapytania/${inq.id}`} className="font-medium text-foreground hover:text-accent">
+                        <Link href={`/zapytania/${inq.id}`} className="font-data font-semibold text-foreground hover:text-accent">
                           {inq.number}
                         </Link>
                       </td>

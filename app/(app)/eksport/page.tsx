@@ -1,3 +1,4 @@
+import { PageTitle } from '@/components/ui/page-title';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { requireUser } from '@/lib/auth';
@@ -21,7 +22,7 @@ export default async function ExportPage() {
   return (
     <div className="max-w-2xl space-y-6">
       <div>
-        <h1 className="rgb-split font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Eksport danych</h1>
+        <PageTitle>Eksport danych</PageTitle>
         <p className="mt-1 text-sm text-foreground-muted">
           Pobierz dane biznesowe w formacie CSV (do Excela/Arkuszy) lub JSON. Eksport zawiera tylko
           rekordy, do których masz dostęp w aplikacji.

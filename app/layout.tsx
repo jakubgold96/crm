@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 
-// Geist (SIL OFL 1.1, app/fonts/Geist-LICENSE.txt) — serwowany z repo, nie z
-// zewnętrznego CDN; jedna rodzina na cały interfejs, wariant zmiennej grubości.
+// Geist (SIL OFL 1.1, app/fonts/Geist-LICENSE.txt) — krój tekstu, serwowany z repo.
+// Chakra Petch (nagłówki/liczby) i JetBrains Mono (dane) są w app/globals.css.
 const geistSans = localFont({
   src: './fonts/Geist-Variable.woff2',
   variable: '--font-geist-sans',
