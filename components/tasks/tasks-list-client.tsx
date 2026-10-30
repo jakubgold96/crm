@@ -122,9 +122,9 @@ function TaskGroup({
       </h2>
 
       {/* Desktop table */}
-      <div className="hidden overflow-hidden rounded-lg border border-border md:block">
+      <div className="hidden overflow-hidden rounded-2xl border border-border bg-surface md:block">
         <table className="w-full text-sm">
-          <thead className="bg-background text-left text-xs uppercase tracking-wide text-foreground-muted">
+          <thead className="border-b border-border text-left text-[11px] font-medium uppercase tracking-[0.06em] text-foreground-muted">
             <tr>
               <th className="px-4 py-2">Numer</th>
               <th className="px-4 py-2">Firma</th>
@@ -135,7 +135,7 @@ function TaskGroup({
           </thead>
           <tbody className="divide-y divide-border">
             {items.map((inq) => (
-              <tr key={inq.id} className="hover:bg-background">
+              <tr key={inq.id} className="transition-colors hover:bg-white/[0.04]">
                 <td className="px-4 py-2.5">
                   <Link href={`/zapytania/${inq.id}`} className="font-medium text-foreground hover:text-accent">
                     {inq.number}
@@ -169,7 +169,7 @@ function TaskGroup({
       {/* Mobile cards */}
       <div className="space-y-2 md:hidden">
         {items.map((inq) => (
-          <div key={inq.id} className="rounded-lg border border-border bg-surface p-4">
+          <div key={inq.id} className="rounded-2xl border border-border bg-surface p-4">
             <Link href={`/zapytania/${inq.id}`} className="block">
               <div className="flex items-center justify-between">
                 <span className="font-medium text-foreground">{inq.number}</span>

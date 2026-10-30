@@ -343,7 +343,7 @@ export function InquiryDetailClient({
                   </p>
                   <ul className="space-y-2">
                     {notes.map((n) => (
-                      <li key={n.id} className="rounded-md border border-border p-3 text-sm">
+                      <li key={n.id} className="rounded-xl border border-border bg-surface-raised p-3 text-sm">
                         {n.is_hidden ? (
                           <p className="italic text-foreground-muted">
                             Notatka ukryta ({n.hidden_reason || 'brak powodu'})

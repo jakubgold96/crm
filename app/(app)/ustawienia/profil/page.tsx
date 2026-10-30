@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { userRoleLabels } from '@/lib/enums';
 import { requireUser } from '@/lib/auth';
 import { ProfileForm } from './profile-form';
+import { LogoutButton } from '@/components/logout-button';
 
 export default async function ProfilePage() {
   const { profile, email } = await requireUser();
@@ -30,6 +31,7 @@ export default async function ProfilePage() {
           <ProfileForm fullName={profile.full_name} />
         </CardContent>
       </Card>
+      <LogoutButton className="w-full md:hidden" />
     </div>
   );
 }

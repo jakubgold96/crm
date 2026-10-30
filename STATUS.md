@@ -115,8 +115,18 @@ Luki względem PRD (wyszukiwanie: numer/firma/kontakt/kraj/opis/następny krok; 
 - Testy: `tests/unit/inquiry-list-filters.test.ts` — 11 nowych, całość Vitest 45/45; `tsc`, `lint`, `build` czyste.
 - Niezrobione: manualny przegląd na viewporcie mobilnym (kryterium #7 tego wymaga) — do zrobienia przez właściciela produktu w przeglądarce.
 
+#### Nowy wygląd całej aplikacji + pulpit (na żądanie właściciela, 2026-10-30)
+
+Kierunek przypięty zrzutem referencyjnym („1:1”): prawie czarna powłoka, sidebar w sekcjach (Praca / Baza / Dane / Wkrótce) z ikonami lucide, jasna płyta powitalna na pulpicie i 4 nasycone tafle KPI. Zapis decyzji: `PRODUCT.md`, `.impeccable/surfaces/app-app-page-tsx.md`.
+- Tokeny w `app/globals.css` (nazwy bez zmian, więc wszystkie ekrany przeszły na nowy świat); font Geist serwowany z repo (`app/fonts/`, licencja OFL obok).
+- Pulpit (`components/dashboard/`): „Dzień dobry/Dobry wieczór, {imię}”, po terminie / na dziś / aktywne, wyszukiwarka → `/zapytania?q=`, lista „Dzisiaj” (4 najpilniejsze kroki), tafle **Nowe zapytania / Oferty wysłane / Wygrane / Przegrane** — bieżący miesiąc vs te same dni poprzedniego + 8 tygodni historii. Liczone z prawdziwych danych: wejścia w etap z `audit_log` (etap początkowy z `old_value` pierwszej zmiany). Żadnych kwot w zł (brak ofert w systemie).
+- Logika KPI: `lib/dashboard/sales-kpis.ts`, testy `tests/unit/sales-kpis.test.ts` (8, w tym strefa czasowa Warszawy i przełom miesięcy).
+- Pozostałe ekrany: tabele/karty/formularze w nowej palecie, kolumny tabel zapytań wyrównane między grupami, mobilny pasek z ikonami (+ Zadania), na telefonie wylogowanie na stronie „Mój profil”.
+- Weryfikacja: zrzuty 1440/1280/390 z tymczasowej trasy podglądu na danych syntetycznych (usunięta przed commitem; prawdziwe trasy wymagają logowania), detektor impeccable bez uwag, niezależny przegląd (fix → poprawki → ocena).
+- Otwarte: rzut oka na żywe dane po zalogowaniu (zwłaszcza aktywna pozycja w sidebarze i tafle KPI przy małej liczbie danych).
+
 ### Następny krok (Faza 2)
 
-Wszystkie punkty Fazy 2 z `CLAUDE.md` mają implementację. Do zamknięcia fazy:
+Wszystkie punkty Fazy 2 z `CLAUDE.md` mają implementację. Potem: Faza 3a (leady, ICP, fakty ze źródłami — bez AI), następnie 3b (research agenta). Do zamknięcia Fazy 2:
 1. Manualny przegląd `/zapytania` na telefonie (filtry, karty) — akceptacja właściciela.
 2. Realna weryfikacja `/api/backup/snapshot` przez żywe konto administratora (sprawdzona tylko logika kodu + skrypt weryfikujący na syntetycznych danych).

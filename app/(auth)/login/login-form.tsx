@@ -56,7 +56,7 @@ export function LoginForm({
 
   if (magicLinkSent) {
     return (
-      <div className="rounded-lg border border-border bg-surface p-5 text-center text-sm text-foreground">
+      <div className="rounded-2xl border border-border bg-surface p-5 text-center text-sm text-foreground">
         Wysłaliśmy link logowania na adres <strong>{email}</strong>. Sprawdź skrzynkę i kliknij
         link, aby się zalogować.
       </div>
@@ -64,7 +64,7 @@ export function LoginForm({
   }
 
   return (
-    <div className="rounded-lg border border-border bg-surface p-6 shadow-sm">
+    <div className="rounded-2xl border border-border bg-surface p-6 shadow-[0_24px_60px_-24px_rgb(0_0_0/0.8)]">
       {deactivated && (
         <div className="mb-4 rounded-md bg-danger-bg px-3 py-2 text-sm text-danger">
           Twoje konto zostało dezaktywowane. Skontaktuj się z administratorem.

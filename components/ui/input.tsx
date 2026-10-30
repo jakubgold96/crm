@@ -6,7 +6,7 @@ export const Input = forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTML
     <input
       ref={ref}
       className={cn(
-        'h-10 w-full rounded-md border border-border bg-surface px-3 text-sm text-foreground placeholder:text-foreground-muted focus:outline-none focus:ring-2 focus:ring-accent disabled:opacity-50',
+        'h-10 w-full rounded-xl border border-border bg-surface-raised px-3.5 text-sm text-foreground placeholder:text-foreground-muted/80 transition-colors hover:border-border-strong focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/30 disabled:opacity-50 aria-[invalid=true]:border-danger',
         className
       )}
       {...props}
@@ -20,7 +20,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, React.TextareaHTMLAttrib
     <textarea
       ref={ref}
       className={cn(
-        'w-full rounded-md border border-border bg-surface px-3 py-2 text-sm text-foreground placeholder:text-foreground-muted focus:outline-none focus:ring-2 focus:ring-accent disabled:opacity-50',
+        'w-full rounded-xl border border-border bg-surface-raised px-3.5 py-2.5 text-sm text-foreground placeholder:text-foreground-muted/80 transition-colors hover:border-border-strong focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/30 disabled:opacity-50',
         className
       )}
       {...props}
@@ -30,7 +30,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, React.TextareaHTMLAttrib
 Textarea.displayName = 'Textarea';
 
 export const Label = ({ className, ...props }: React.LabelHTMLAttributes<HTMLLabelElement>) => (
-  <label className={cn('mb-1 block text-sm font-medium text-foreground', className)} {...props} />
+  <label className={cn('mb-1.5 block text-[13px] font-medium text-foreground-muted', className)} {...props} />
 );
 
 export const Select = forwardRef<HTMLSelectElement, React.SelectHTMLAttributes<HTMLSelectElement>>(
@@ -38,7 +38,7 @@ export const Select = forwardRef<HTMLSelectElement, React.SelectHTMLAttributes<H
     <select
       ref={ref}
       className={cn(
-        'h-10 w-full rounded-md border border-border bg-surface px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent disabled:opacity-50',
+        'h-10 w-full rounded-xl border border-border bg-surface-raised px-3.5 text-sm text-foreground transition-colors hover:border-border-strong focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/30 disabled:opacity-50',
         className
       )}
       {...props}

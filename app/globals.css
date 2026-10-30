@@ -1,41 +1,87 @@
 @import "tailwindcss";
 
 /*
- * Paleta INNDES CRM — zgodnie z briefem: jasne tło, granatowa typografia,
- * kobaltowy kolor akcji, subtelny terakotowy i szałwiowy akcent. Profesjonalne
- * narzędzie B2B dla architektury/produkcji mebli, nie generyczny "AI dashboard".
+ * Paleta INNDES CRM — kierunek przypięty przez właściciela produktu
+ * (2026-10-30, zrzut referencyjny): prawie czarna, chłodna powłoka, jasna
+ * perłowa płyta powitalna na pulpicie i nasycone tafle KPI. Zastępuje
+ * wcześniejszą jasną paletę granat/kobalt/terakota/szałwia.
+ *
+ * Nazwy tokenów zostały te same co w jasnej wersji (--surface, --accent,
+ * --terracotta = "na dziś / miękkie ostrzeżenie", --sage = "sukces"),
+ * żeby każdy ekran przeszedł na nowy świat bez przepisywania klas.
  */
 :root {
-  --background: #f7f7f5; /* ciepła jasna szarość, nie czysta biel — spokojniejsza */
-  --surface: #ffffff;
-  --foreground: #1b2a41; /* granat tekstu */
-  --foreground-muted: #4a5a72;
+  color-scheme: dark;
 
-  --border: #e2e4e0;
+  /* Powłoka */
+  --background: #0b0d12;
+  --sidebar: #0b0d12;
+  --surface: #12151c;
+  --surface-raised: #191d27;
+  --foreground: #e9ecf2;
+  --foreground-muted: #939bab;
+  --border: #232835;
+  --border-strong: #353b4a;
 
-  --accent: #2f5fa8; /* kobalt — akcje, linki, primary buttons */
-  --accent-hover: #244a85;
-  --accent-foreground: #ffffff;
+  /* Akcja: chłodny błękit z ciemnym tekstem (kontrast > 7:1) */
+  --accent: #8199ff;
+  --accent-hover: #9bafff;
+  --accent-foreground: #0b0d12;
 
-  --terracotta: #c06a4b; /* subtelny akcent: ostrzeżenia miękkie, oznaczenia "po terminie" */
-  --terracotta-bg: #fbeee8;
+  /* Stany */
+  --terracotta: #ffb26b; /* na dziś, miękkie ostrzeżenie */
+  --terracotta-bg: rgb(255 178 107 / 0.12);
+  --sage: #6edb9a; /* sukces, zrobione, wygrane */
+  --sage-bg: rgb(110 219 154 / 0.12);
+  --danger: #ff7b6e; /* po terminie, przegrane, błędy */
+  --danger-bg: rgb(255 123 110 / 0.12);
+  --warning-bg: rgb(255 210 110 / 0.12);
+  --warning-fg: #ffd36e;
 
-  --sage: #7d9a7f; /* subtelny akcent: sukces, "zrobione", pozytywne statusy */
-  --sage-bg: #edf3ec;
+  /* Płyta powitalna pulpitu (jasna wyspa w ciemnej powłoce) */
+  --hero-bg: #eceef1;
+  --hero-bg-2: #f8f9fa;
+  --hero-fg: #12141a;
+  --hero-muted: #5a6170;
+  --hero-line: #d9dce2;
+  --hero-field: #ffffff;
+  --hero-ink-hover: #262a33;
+  --hero-danger: #b22d1b;
+  --hero-danger-bg: #fde4df;
+  --hero-today: #8a4a0c;
+  --hero-today-bg: #ffecd6;
 
-  --danger: #b3432f;
-  --danger-bg: #fbe9e6;
+  /* Gradient imienia w powitaniu */
+  --greet-1: #2f7cf6;
+  --greet-2: #8b5cf6;
+  --greet-3: #e04fa0;
 
-  --warning-bg: #fdf3e3;
-  --warning-fg: #8a5a12;
+  /* Tafle KPI: tło (from → to), linia trendu */
+  --kpi-1-from: #11155a;
+  --kpi-1-to: #2733c4;
+  --kpi-1-line: #8ff09c;
+  --kpi-2-from: #0c1f8f;
+  --kpi-2-to: #234ee6;
+  --kpi-2-line: #ffffff;
+  --kpi-3-from: #0a2722;
+  --kpi-3-to: #16584a;
+  --kpi-3-line: #e3fff3;
+  --kpi-4-from: #34092c;
+  --kpi-4-to: #7d1759;
+  --kpi-4-line: #c8f25c;
+  --kpi-up: #8ff09c;
+  --kpi-down: #ffb3b3;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-sidebar: var(--sidebar);
   --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
   --color-foreground: var(--foreground);
   --color-foreground-muted: var(--foreground-muted);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-accent-foreground: var(--accent-foreground);
@@ -47,12 +93,62 @@
   --color-danger-bg: var(--danger-bg);
   --color-warning-bg: var(--warning-bg);
   --color-warning-fg: var(--warning-fg);
+  --color-hero-bg: var(--hero-bg);
+  --color-hero-fg: var(--hero-fg);
+  --color-hero-muted: var(--hero-muted);
+  --color-hero-line: var(--hero-line);
+  --color-hero-field: var(--hero-field);
+  --color-hero-ink-hover: var(--hero-ink-hover);
+  --color-hero-danger: var(--hero-danger);
+  --color-hero-danger-bg: var(--hero-danger-bg);
+  --color-hero-today: var(--hero-today);
+  --color-hero-today-bg: var(--hero-today-bg);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  background: var(--background);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  caret-color: var(--accent);
+}
+
+::selection {
+  background: rgb(129 153 255 / 0.35);
+  color: #ffffff;
+}
+
+/* Cyfry w danych zawsze tabelaryczne — kolumny liczb się nie "trzęsą". */
+.tabular,
+table {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Paski przewijania w kolorach powłoki. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -6,7 +6,8 @@ import type { Profile } from '@/lib/types/database';
 
 type InquiryWithCompany = InquiryListItem;
 
-export default async function InquiriesPage() {
+export default async function InquiriesPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
+  const { q } = await searchParams;
   const { profile } = await requireUser();
   const supabase = await createClient();
 
@@ -23,6 +24,7 @@ export default async function InquiriesPage() {
       inquiries={(inquiries ?? []) as unknown as InquiryWithCompany[]}
       profiles={(profiles ?? []) as Profile[]}
       currentUserId={profile.id}
+      initialSearch={q ?? ''}
     />
   );
 }

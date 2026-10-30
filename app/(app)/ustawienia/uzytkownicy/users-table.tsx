@@ -28,9 +28,9 @@ export function UsersTable({ profiles, currentUserId }: { profiles: Profile[]; c
   return (
     <div>
       {error && <p className="mb-3 text-sm text-danger">{error}</p>}
-      <div className="overflow-hidden rounded-lg border border-border">
+      <div className="overflow-hidden rounded-2xl border border-border bg-surface">
         <table className="w-full text-sm">
-          <thead className="bg-background text-left text-xs uppercase tracking-wide text-foreground-muted">
+          <thead className="border-b border-border text-left text-[11px] font-medium uppercase tracking-[0.06em] text-foreground-muted">
             <tr>
               <th className="px-4 py-2.5">Użytkownik</th>
               <th className="px-4 py-2.5">Rola</th>
@@ -40,7 +40,7 @@ export function UsersTable({ profiles, currentUserId }: { profiles: Profile[]; c
           </thead>
           <tbody className="divide-y divide-border">
             {rows.map((p) => (
-              <tr key={p.id} className="hover:bg-background">
+              <tr key={p.id} className="transition-colors hover:bg-white/[0.04]">
                 <td className="px-4 py-2.5">
                   <span className="font-medium text-foreground">{p.full_name}</span>
                   {p.id === currentUserId && <span className="ml-1 text-xs text-foreground-muted">(Ty)</span>}

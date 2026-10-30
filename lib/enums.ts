@@ -143,3 +143,11 @@ export const inquirySortLabels = {
   numer: 'Sortuj: numer',
   firma: 'Sortuj: firma A–Z',
 } as const;
+
+// Tafle KPI sprzedaży na pulpicie — logika w lib/dashboard/sales-kpis.ts.
+export const salesKpiLabels = {
+  nowe: 'Nowe zapytania',
+  oferta_wyslana: 'Oferty wysłane',
+  wygrane: 'Wygrane',
+  przegrane: 'Przegrane',
+} as const;

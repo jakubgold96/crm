@@ -44,9 +44,9 @@ export default async function ArchivePage() {
         ) : (
           <>
             {/* Desktop: tabela */}
-            <div className="hidden overflow-hidden rounded-lg border border-border md:block">
+            <div className="hidden overflow-hidden rounded-2xl border border-border bg-surface md:block">
               <table className="w-full text-sm">
-                <thead className="bg-background text-left text-xs uppercase tracking-wide text-foreground-muted">
+                <thead className="border-b border-border text-left text-[11px] font-medium uppercase tracking-[0.06em] text-foreground-muted">
                   <tr>
                     <th className="px-4 py-2.5">Numer</th>
                     <th className="px-4 py-2.5">Firma</th>
@@ -56,7 +56,7 @@ export default async function ArchivePage() {
                 </thead>
                 <tbody className="divide-y divide-border">
                   {inquiries.map((inq) => (
-                    <tr key={inq.id} className="hover:bg-background">
+                    <tr key={inq.id} className="transition-colors hover:bg-white/[0.04]">
                       <td className="px-4 py-2.5">
                         <Link href={`/zapytania/${inq.id}`} className="font-medium text-foreground hover:text-accent">
                           {inq.number}
@@ -77,7 +77,7 @@ export default async function ArchivePage() {
                 <Link
                   key={inq.id}
                   href={`/zapytania/${inq.id}`}
-                  className="block rounded-lg border border-border bg-surface p-4"
+                  className="block rounded-2xl border border-border bg-surface p-4 transition-colors active:bg-surface-raised"
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-medium text-foreground">{inq.number}</span>
@@ -106,9 +106,9 @@ export default async function ArchivePage() {
         ) : (
           <>
             {/* Desktop: tabela */}
-            <div className="hidden overflow-hidden rounded-lg border border-border md:block">
+            <div className="hidden overflow-hidden rounded-2xl border border-border bg-surface md:block">
               <table className="w-full text-sm">
-                <thead className="bg-background text-left text-xs uppercase tracking-wide text-foreground-muted">
+                <thead className="border-b border-border text-left text-[11px] font-medium uppercase tracking-[0.06em] text-foreground-muted">
                   <tr>
                     <th className="px-4 py-2.5">Nazwa</th>
                     <th className="px-4 py-2.5">Segment</th>
@@ -117,7 +117,7 @@ export default async function ArchivePage() {
                 </thead>
                 <tbody className="divide-y divide-border">
                   {companies.map((c) => (
-                    <tr key={c.id} className="hover:bg-background">
+                    <tr key={c.id} className="transition-colors hover:bg-white/[0.04]">
                       <td className="px-4 py-2.5">
                         <Link href={`/firmy/${c.id}`} className="font-medium text-foreground hover:text-accent">
                           {c.name}
@@ -139,7 +139,7 @@ export default async function ArchivePage() {
                 <Link
                   key={c.id}
                   href={`/firmy/${c.id}`}
-                  className="block rounded-lg border border-border bg-surface p-4"
+                  className="block rounded-2xl border border-border bg-surface p-4 transition-colors active:bg-surface-raised"
                 >
                   <p className="font-medium text-foreground">{c.name}</p>
                   <p className="mt-0.5 text-sm text-foreground-muted">

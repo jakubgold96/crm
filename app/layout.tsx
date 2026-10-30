@@ -1,5 +1,15 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import './globals.css';
+
+// Geist (SIL OFL 1.1, app/fonts/Geist-LICENSE.txt) — serwowany z repo, nie z
+// zewnętrznego CDN; jedna rodzina na cały interfejs, wariant zmiennej grubości.
+const geistSans = localFont({
+  src: './fonts/Geist-Variable.woff2',
+  variable: '--font-geist-sans',
+  weight: '100 900',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'INNDES CRM',
@@ -8,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pl" className="h-full antialiased">
+    <html lang="pl" className={`${geistSans.variable} h-full antialiased`}>
       <body className="min-h-full">{children}</body>
     </html>
   );

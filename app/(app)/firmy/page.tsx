@@ -1,3 +1,4 @@
+import { Plus } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { companySegmentLabels, relationshipStatusLabels } from '@/lib/enums';
@@ -20,7 +21,10 @@ export default async function CompaniesPage() {
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-semibold text-foreground">Firmy ({companies.length})</h1>
         <Link href="/firmy/nowa">
-          <Button size="sm">+ Dodaj firmę</Button>
+          <Button size="sm">
+            <Plus className="size-4" aria-hidden />
+            Dodaj firmę
+          </Button>
         </Link>
       </div>
 
@@ -29,9 +33,9 @@ export default async function CompaniesPage() {
       ) : (
         <>
           {/* Desktop: tabela */}
-          <div className="hidden overflow-hidden rounded-lg border border-border md:block">
+          <div className="hidden overflow-hidden rounded-2xl border border-border bg-surface md:block">
             <table className="w-full text-sm">
-              <thead className="bg-background text-left text-xs uppercase tracking-wide text-foreground-muted">
+              <thead className="border-b border-border text-left text-[11px] font-medium uppercase tracking-[0.06em] text-foreground-muted">
                 <tr>
                   <th className="px-4 py-2.5">Nazwa</th>
                   <th className="px-4 py-2.5">Segment</th>
@@ -41,7 +45,7 @@ export default async function CompaniesPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 {companies.map((c) => (
-                  <tr key={c.id} className="hover:bg-background">
+                  <tr key={c.id} className="transition-colors hover:bg-white/[0.04]">
                     <td className="px-4 py-2.5">
                       <Link href={`/firmy/${c.id}`} className="font-medium text-foreground hover:text-accent">
                         {c.name}
@@ -66,7 +70,7 @@ export default async function CompaniesPage() {
               <Link
                 key={c.id}
                 href={`/firmy/${c.id}`}
-                className="block rounded-lg border border-border bg-surface p-4"
+                className="block rounded-2xl border border-border bg-surface p-4 transition-colors active:bg-surface-raised"
               >
                 <p className="font-medium text-foreground">{c.name}</p>
                 <p className="mt-0.5 text-sm text-foreground-muted">

@@ -1,5 +1,6 @@
 'use client';
 
+import { Plus } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input, Select } from '@/components/ui/input';
@@ -32,13 +33,15 @@ export function InquiriesListClient({
   inquiries,
   profiles,
   currentUserId,
+  initialSearch = '',
 }: {
   inquiries: InquiryWithCompany[];
   profiles: Profile[];
   currentUserId: string;
+  initialSearch?: string;
 }) {
   const [view, setView] = useState<View>('operacyjne');
-  const [filters, setFilters] = useState<InquiryListFilters>(emptyFilters);
+  const [filters, setFilters] = useState<InquiryListFilters>({ ...emptyFilters, search: initialSearch });
   const [sortKey, setSortKey] = useState<SortKey>('termin');
   const [showFilters, setShowFilters] = useState(false);
 
@@ -68,7 +71,10 @@ export function InquiriesListClient({
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-xl font-semibold text-foreground">Zapytania ({filtered.length})</h1>
         <Link href="/zapytania/nowe">
-          <Button size="sm">+ Nowe zapytanie</Button>
+          <Button size="sm">
+            <Plus className="size-4" aria-hidden />
+            Nowe zapytanie
+          </Button>
         </Link>
       </div>
 
@@ -91,7 +97,8 @@ export function InquiriesListClient({
         <div className="flex flex-col gap-3 sm:flex-row">
           <Input
             className="sm:flex-1"
-            placeholder="Szukaj: numer, firma, kontakt, kraj, opis, następny krok…"
+            placeholder="Szukaj zapytań…"
+            title="Szuka w: numer, firma, kontakt, kraj, opis, następny krok"
             value={filters.search}
             onChange={(e) => setFilter('search', e.target.value)}
           />
@@ -174,15 +181,23 @@ export function InquiriesListClient({
           <div key={key}>
             <h2 className="mb-2 flex items-center gap-2 text-sm font-semibold text-foreground">
               {label}
-              <span className="rounded-full bg-background px-2 py-0.5 text-xs text-foreground-muted">
+              <span className="rounded-full bg-surface-raised px-2 py-0.5 text-xs text-foreground-muted tabular">
                 {items.length}
               </span>
             </h2>
 
             {/* Desktop table */}
-            <div className="hidden overflow-hidden rounded-lg border border-border md:block">
-              <table className="w-full text-sm">
-                <thead className="bg-background text-left text-xs uppercase tracking-wide text-foreground-muted">
+            <div className="hidden overflow-hidden rounded-2xl border border-border bg-surface md:block">
+              <table className="w-full table-fixed text-sm">
+                {/* Wspólne szerokości kolumn — kolumny trzymają linię między grupami. */}
+                <colgroup>
+                  <col className="w-[9.5rem]" />
+                  <col className="w-[17%]" />
+                  <col />
+                  <col className="w-[24%]" />
+                  <col className="w-[11.5rem]" />
+                </colgroup>
+                <thead className="border-b border-border text-left text-[11px] font-medium uppercase tracking-[0.06em] text-foreground-muted">
                   <tr>
                     <th className="px-4 py-2">Numer</th>
                     <th className="px-4 py-2">Firma</th>
@@ -193,17 +208,17 @@ export function InquiriesListClient({
                 </thead>
                 <tbody className="divide-y divide-border">
                   {items.map((inq) => (
-                    <tr key={inq.id} className="hover:bg-background">
+                    <tr key={inq.id} className="transition-colors hover:bg-white/[0.04]">
                       <td className="px-4 py-2.5">
                         <Link href={`/zapytania/${inq.id}`} className="font-medium text-foreground hover:text-accent">
                           {inq.number}
                         </Link>
                       </td>
-                      <td className="px-4 py-2.5 text-foreground-muted">{inq.companies?.name ?? '—'}</td>
-                      <td className="max-w-xs truncate px-4 py-2.5 text-foreground-muted">
+                      <td className="truncate px-4 py-2.5 text-foreground-muted">{inq.companies?.name ?? '—'}</td>
+                      <td className="truncate px-4 py-2.5 text-foreground-muted">
                         {inq.short_description || '—'}
                       </td>
-                      <td className="px-4 py-2.5 text-foreground-muted">{inq.next_step || '—'}</td>
+                      <td className="truncate px-4 py-2.5 text-foreground-muted">{inq.next_step || '—'}</td>
                       <td className="px-4 py-2.5">
                         <DueBadge due={inq.next_step_due} />
                       </td>
@@ -219,7 +234,7 @@ export function InquiriesListClient({
                 <Link
                   key={inq.id}
                   href={`/zapytania/${inq.id}`}
-                  className="block rounded-lg border border-border bg-surface p-4"
+                  className="block rounded-2xl border border-border bg-surface p-4 transition-colors active:bg-surface-raised"
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-medium text-foreground">{inq.number}</span>
