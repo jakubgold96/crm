@@ -33,10 +33,11 @@ export function Sparkline({
           preserveAspectRatio="none"
           role="img"
           aria-label={label}
-          className="absolute inset-0 h-full w-full overflow-visible"
+          className="draw-line absolute inset-0 h-full w-full overflow-visible"
         >
           <polyline
             points={points.map(([x, y]) => `${x},${y}`).join(' ')}
+            style={{ filter: `drop-shadow(0 0 4px ${color})` }}
             fill="none"
             stroke={color}
             strokeWidth={2}
@@ -47,8 +48,13 @@ export function Sparkline({
         </svg>
         <span
           aria-hidden
-          className="absolute size-[7px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-          style={{ left: `${(last[0] / width) * 100}%`, top: `${(last[1] / height) * 100}%`, background: color }}
+          className="absolute size-[7px] -translate-x-1/2 -translate-y-1/2 rotate-45"
+          style={{
+            left: `${(last[0] / width) * 100}%`,
+            top: `${(last[1] / height) * 100}%`,
+            background: color,
+            boxShadow: `0 0 10px ${color}`,
+          }}
         />
       </div>
     </div>

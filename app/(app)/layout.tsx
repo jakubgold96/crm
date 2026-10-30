@@ -8,19 +8,22 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   const { profile } = await requireUser();
 
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="relative z-[1] flex min-h-screen">
       <div className="hidden md:block">
         <NavSidebar profile={profile} />
       </div>
       <main className="min-w-0 flex-1 pb-24 md:pb-0">
-        <header className="flex h-14 items-center justify-between px-4 md:hidden">
-          <Link href="/" className="text-[15px] font-semibold tracking-tight text-foreground">
-            INNDES <span className="text-foreground-muted">CRM</span>
+        <header className="flex h-14 items-center justify-between border-b border-border px-4 md:hidden">
+          <Link href="/" className="flex items-baseline gap-1.5" aria-label="INNDES CRM — pulpit">
+            <span data-text="INNDES" className="glitch font-display text-base font-bold uppercase tracking-[0.12em] text-foreground">
+              INNDES
+            </span>
+            <span className="font-data text-[11px] text-cyan">{'//CRM'}</span>
           </Link>
           <Link
             href="/ustawienia/profil"
             aria-label="Mój profil"
-            className="rounded-full p-2 text-foreground-muted hover:bg-white/[0.06] hover:text-foreground"
+            className="p-2 text-foreground-muted hover:text-cyan"
           >
             <UserRound className="size-5" strokeWidth={1.75} aria-hidden />
           </Link>

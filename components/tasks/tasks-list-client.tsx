@@ -67,7 +67,7 @@ export function TasksListClient({
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-xl font-semibold text-foreground">Zadania ({filtered.length})</h1>
+        <h1 className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Zadania ({filtered.length})</h1>
       </div>
 
       <div className="flex gap-1 border-b border-border">
@@ -76,8 +76,10 @@ export function TasksListClient({
             key={s}
             onClick={() => setScope(s)}
             className={cn(
-              'px-4 py-2 text-sm font-medium',
-              scope === s ? 'border-b-2 border-accent text-accent' : 'text-foreground-muted hover:text-foreground'
+              'px-4 py-2 font-display text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors',
+              scope === s
+                ? 'border-b-2 border-accent text-accent'
+                : 'border-b-2 border-transparent text-foreground-muted hover:text-cyan'
             )}
           >
             {s === 'moje' ? 'Moje' : 'Wszystkie'}
@@ -116,13 +118,13 @@ function TaskGroup({
 
   return (
     <div>
-      <h2 className="mb-2 flex items-center gap-2 text-sm font-semibold text-foreground">
+      <h2 className="mb-2 flex items-center gap-2 font-display text-[15px] font-bold uppercase tracking-[0.08em] text-foreground">
         {title}
         <Badge tone={tone}>{items.length}</Badge>
       </h2>
 
       {/* Desktop table */}
-      <div className="hidden overflow-hidden rounded-2xl border border-border bg-surface md:block">
+      <div className="hud hidden overflow-hidden bg-surface/90 md:block">
         <table className="w-full text-sm">
           <thead className="border-b border-border text-left text-[11px] font-medium uppercase tracking-[0.06em] text-foreground-muted">
             <tr>
@@ -169,7 +171,7 @@ function TaskGroup({
       {/* Mobile cards */}
       <div className="space-y-2 md:hidden">
         {items.map((inq) => (
-          <div key={inq.id} className="rounded-2xl border border-border bg-surface p-4">
+          <div key={inq.id} className="hud hud-sm bg-surface/90 p-4">
             <Link href={`/zapytania/${inq.id}`} className="block">
               <div className="flex items-center justify-between">
                 <span className="font-medium text-foreground">{inq.number}</span>

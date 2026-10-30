@@ -133,7 +133,7 @@ export function CompanyForm({ initialData }: { initialData?: Company }) {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {duplicates.length > 0 && (
-        <div className="rounded-md border border-terracotta/40 bg-terracotta-bg p-3 text-sm text-terracotta">
+        <div className="border border-terracotta/40 bg-terracotta-bg p-3 text-sm text-terracotta">
           <p className="font-medium">Możliwy duplikat — sprawdź przed zapisem:</p>
           <ul className="mt-1 list-inside list-disc">
             {duplicates.map((m) => (

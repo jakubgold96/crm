@@ -6,7 +6,9 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Count } from '@/components/dashboard/count';
 import { KpiTile } from '@/components/dashboard/kpi-tile';
+import { LiveClock } from '@/components/dashboard/live-clock';
 import { QuickSearch } from '@/components/dashboard/quick-search';
 import { operationalGroupLabels, salesKpiLabels, salesStageLabels } from '@/lib/enums';
 import { computeSalesKpis, toLocalDate, type StageChange } from '@/lib/dashboard/sales-kpis';
@@ -18,6 +20,8 @@ import Link from 'next/link';
 const TZ = 'Europe/Warsaw';
 
 export type DashboardInquiry = Inquiry & { companies: { name: string } | null };
+
+const pctFormat = new Intl.NumberFormat('pl-PL', { maximumFractionDigits: 0, signDisplay: 'exceptZero' });
 
 export function DashboardView({
   profile,
@@ -31,12 +35,17 @@ export function DashboardView({
   now: Date;
 }) {
   const today = toLocalDate(now.toISOString(), TZ);
-  const hour = Number(new Intl.DateTimeFormat('pl-PL', { timeZone: TZ, hour: 'numeric', hourCycle: 'h23' }).format(now));
   const dateLabel = new Intl.DateTimeFormat('pl-PL', {
     timeZone: TZ,
     weekday: 'long',
     day: 'numeric',
     month: 'long',
+  }).format(now);
+  const clock = new Intl.DateTimeFormat('pl-PL', {
+    timeZone: TZ,
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
   }).format(now);
 
   const active = all.filter((i) => !i.is_archived);
@@ -61,95 +70,144 @@ export function DashboardView({
   const needsAttention = active.filter((i) => i.operational_group === 'wymaga_dzialania' && !shownToday.has(i.id));
 
   const kpis = computeSalesKpis(all, stageChanges, today, TZ);
-  const firstName = profile.full_name.split(' ')[0];
-  const greeting = hour < 18 ? 'Dzień dobry' : 'Dobry wieczór';
+  // Imię z profilu (pierwsze słowo pola imię i nazwisko) — decyzja właściciela produktu.
+  const firstName = (profile.full_name.split(' ')[0] || 'operatorze').toUpperCase();
+  const waiting = overdue.length + dueToday.length;
+  const summary = waiting === 0 ? 'nic nie czeka na dziś' : `${waiting} ${pluralZadanie(waiting)} dziś`;
 
-  const summary =
-    overdue.length + dueToday.length === 0
-      ? 'Nic nie czeka na dziś.'
-      : `${overdue.length + dueToday.length} ${pluralZadanie(overdue.length + dueToday.length)} dziś.`;
+  const tickerItems = [
+    `PO TERMINIE: ${overdue.length}`,
+    `NA DZIŚ: ${dueToday.length}`,
+    `AKTYWNE ZAPYTANIA: ${active.length}`,
+    ...kpis.map(
+      (k) =>
+        `${salesKpiLabels[k.key].toUpperCase()} (MIESIĄC): ${k.current}${
+          k.changePct === null ? '' : ` [${pctFormat.format(k.changePct)}%]`
+        }`
+    ),
+  ];
 
   return (
     <div className="space-y-5">
-      <section
-        aria-labelledby="greeting"
-        className="relative overflow-hidden rounded-[1.75rem] text-hero-fg shadow-[0_1px_0_rgb(255_255_255/0.9)_inset,0_30px_60px_-30px_rgb(0_0_0/0.9)]"
-        style={{
-          background:
-            'radial-gradient(90% 120% at 88% 30%, rgb(255 255 255 / 0.95) 0%, rgb(255 255 255 / 0) 55%), linear-gradient(160deg, var(--hero-bg) 0%, var(--hero-bg-2) 100%)',
-        }}
-      >
-        <div className="grid grid-cols-1 gap-8 p-5 sm:p-8 lg:min-h-[25rem] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-10 lg:p-12">
-          <div className="flex min-w-0 flex-col justify-center">
-            <h1 id="greeting" className="text-[2.1rem] font-medium leading-tight tracking-[-0.03em] sm:text-[2.85rem]">
-              {greeting},{' '}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{ backgroundImage: 'linear-gradient(90deg, var(--greet-1), var(--greet-2) 55%, var(--greet-3))' }}
-              >
+      {/* Pasek statusu: stałe odczyty + przewijana taśma z bieżącymi liczbami */}
+      <div className="hud hud-sm flex items-stretch overflow-hidden bg-black/60 font-data text-[11px] uppercase tracking-[0.08em]">
+        <div className="flex shrink-0 items-center gap-2 bg-accent px-3 font-semibold text-accent-foreground">
+          <span aria-hidden className="size-1.5 bg-accent-foreground" />
+          <LiveClock initial={clock} />
+        </div>
+        <div className="hidden shrink-0 items-center border-r border-border px-3 text-foreground-muted sm:flex">
+          {dateLabel}
+        </div>
+        <div className="relative min-w-0 flex-1 overflow-hidden py-2" aria-hidden>
+          <div className="ticker gap-10 whitespace-nowrap text-foreground-muted">
+            {[0, 1].map((copy) => (
+              <div key={copy} className="flex gap-10 pr-10">
+                {tickerItems.map((t) => (
+                  <span key={t}>
+                    <span className="text-magenta">▸</span> {t}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+        {overdue.length > 0 && (
+          <Link
+            href="/zadania"
+            className="flex shrink-0 items-center gap-2 bg-danger/15 px-3 font-semibold text-danger hover:bg-danger/25"
+          >
+            <span aria-hidden className="neon-hum size-1.5 bg-danger" />
+            Alarm: {overdue.length} po terminie
+          </Link>
+        )}
+      </div>
+
+      {/* Panel główny */}
+      <section aria-labelledby="greeting" className="hud hud-lg overflow-hidden bg-surface/80">
+        <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="grid-floor opacity-60" />
+          <div className="absolute -right-20 -top-24 size-[28rem] rounded-full bg-magenta/20 blur-3xl" />
+          <div className="absolute -bottom-32 left-1/4 size-[22rem] rounded-full bg-cyan/10 blur-3xl" />
+          <div className="hazard absolute right-10 top-0 h-2 w-40 opacity-70 [clip-path:polygon(0_0,100%_0,calc(100%-8px)_100%,8px_100%)]" />
+        </div>
+
+        <div className="relative grid grid-cols-1 gap-8 p-5 sm:p-8 lg:min-h-[27rem] lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-10 lg:p-12">
+          <div className="stagger flex min-w-0 flex-col justify-center">
+            <h1
+              id="greeting"
+              className="font-display text-[2.6rem] font-bold uppercase leading-[0.95] tracking-[0.01em] text-foreground sm:text-6xl xl:text-7xl"
+            >
+              Hey,{' '}
+              <span data-text={firstName} className="glitch rgb-split text-accent">
                 {firstName}
               </span>
+              <span aria-hidden className="caret" />
             </h1>
-            <p className="mt-2 text-[15px] text-hero-muted">
-              {dateLabel.charAt(0).toUpperCase() + dateLabel.slice(1)} · {summary}
+            <p className="mt-4 font-data text-[13px] text-foreground-muted">
+              <span className="text-cyan">&gt;</span> {dateLabel} · {summary}
             </p>
 
-            <dl className="mt-6 flex flex-wrap gap-x-8 gap-y-4 sm:mt-7 sm:gap-x-10">
-              <HeroStat label="Po terminie" value={overdue.length} tone={overdue.length > 0 ? 'danger' : undefined} />
-              <HeroStat label="Na dziś" value={dueToday.length} />
-              <HeroStat label="Aktywne zapytania" value={active.length} />
+            <dl className="mt-7 grid max-w-md grid-cols-3 gap-px bg-border">
+              <Readout label="Po terminie" value={overdue.length} color={overdue.length > 0 ? 'var(--danger)' : undefined} />
+              <Readout label="Na dziś" value={dueToday.length} color={dueToday.length > 0 ? 'var(--terracotta)' : undefined} />
+              <Readout label="Aktywne" value={active.length} color="var(--neon-cyan)" />
             </dl>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-7">
               <QuickSearch />
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
-              <Link
-                href="/zapytania/nowe"
-                className="inline-flex h-9 items-center gap-1.5 rounded-full bg-hero-fg px-4 text-sm font-medium text-white transition-colors hover:bg-hero-ink-hover"
-              >
-                <Plus className="size-4" aria-hidden /> Nowe zapytanie
+              <Link href="/zapytania/nowe">
+                <Button>
+                  <Plus className="size-4" aria-hidden /> Nowe zapytanie
+                </Button>
               </Link>
-              <Link
-                href="/firmy/nowa"
-                className="inline-flex h-9 items-center gap-1.5 rounded-full px-4 text-sm font-medium text-hero-fg ring-1 ring-hero-line transition-colors hover:bg-white"
-              >
-                <Plus className="size-4" aria-hidden /> Firma
+              <Link href="/firmy/nowa">
+                <Button variant="secondary">
+                  <Plus className="size-4" aria-hidden /> Firma
+                </Button>
               </Link>
             </div>
           </div>
 
-          <div className="flex min-w-0 flex-col border-t border-hero-line pt-6 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+          <div className="flex min-w-0 flex-col border-t border-border pt-6 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
             <div className="flex items-baseline justify-between">
-              <h2 className="text-base font-semibold tracking-tight">Dzisiaj</h2>
-              <Link href="/zadania" className="text-sm font-medium text-hero-muted hover:text-hero-fg">
-                Wszystkie zadania
+              <h2 className="font-display text-lg font-bold uppercase tracking-[0.08em] text-foreground">
+                Dzisiaj <span className="font-data text-xs font-normal text-foreground-muted">[{todayList.length}]</span>
+              </h2>
+              <Link
+                href="/zadania"
+                className="font-data text-[11px] uppercase tracking-[0.08em] text-cyan hover:text-accent"
+              >
+                Wszystkie zadania →
               </Link>
             </div>
             {todayList.length === 0 ? (
-              <p className="mt-6 text-sm text-hero-muted">
+              <p className="mt-6 font-data text-sm text-foreground-muted">
                 Żadne zapytanie nie ma otwartego następnego kroku. Dodaj krok z terminem na karcie zapytania, a pojawi
                 się tutaj.
               </p>
             ) : (
-              <ul className="mt-3 divide-y divide-hero-line">
+              <ul className="stagger mt-3 divide-y divide-border">
                 {todayList.map((inq) => (
                   <li key={inq.id}>
                     <Link
                       href={`/zapytania/${inq.id}`}
-                      className="group -mx-3 flex items-center gap-3 rounded-xl px-3 py-3 transition-colors hover:bg-white/80"
+                      className="group -mx-3 flex items-center gap-3 px-3 py-3 transition-colors hover:bg-cyan/[0.06]"
                     >
-                      <DueChip due={due(inq)} today={today} className="hidden sm:block" />
+                      <DueChip due={due(inq)} today={today} className="hidden sm:inline-flex" />
                       <div className="min-w-0 flex-1">
                         <DueChip due={due(inq)} today={today} className="mb-1.5 sm:hidden" />
-                        <p className="truncate text-sm font-medium">
-                          {inq.number}
-                          <span className="font-normal text-hero-muted"> · {inq.companies?.name ?? 'bez firmy'}</span>
+                        <p className="truncate text-sm">
+                          <span className="font-data font-semibold text-foreground group-hover:text-accent">
+                            {inq.number}
+                          </span>
+                          <span className="text-foreground-muted"> · {inq.companies?.name ?? 'bez firmy'}</span>
                         </p>
-                        <p className="line-clamp-2 text-sm text-hero-muted sm:truncate">{inq.next_step}</p>
+                        <p className="line-clamp-2 text-sm text-foreground/85 sm:truncate">{inq.next_step}</p>
                       </div>
                       <ChevronRight
-                        className="size-4 shrink-0 text-hero-muted transition-transform duration-150 group-hover:translate-x-0.5"
+                        className="size-4 shrink-0 text-foreground-muted transition-[transform,color] duration-150 group-hover:translate-x-0.5 group-hover:text-accent"
                         aria-hidden
                       />
                     </Link>
@@ -161,7 +219,7 @@ export function DashboardView({
         </div>
       </section>
 
-      <section aria-label="Sprzedaż w tym miesiącu" className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
+      <section aria-label="Sprzedaż w tym miesiącu" className="stagger grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
         {kpis.map((kpi, i) => (
           <KpiTile
             key={kpi.key}
@@ -177,7 +235,7 @@ export function DashboardView({
         <Card>
           <CardHeader className="flex items-center justify-between">
             <CardTitle>Moje zapytania</CardTitle>
-            <span className="text-sm text-foreground-muted tabular">{myInquiries.length}</span>
+            <span className="font-data text-sm text-foreground-muted tabular">[{myInquiries.length}]</span>
           </CardHeader>
           <CardContent className="py-2">
             <InquiryMiniList inquiries={myInquiries.slice(0, 6)} empty="Nie masz przypisanych aktywnych zapytań." />
@@ -187,7 +245,7 @@ export function DashboardView({
         <Card>
           <CardHeader className="flex items-center justify-between">
             <CardTitle>Wymaga działania</CardTitle>
-            <span className="text-sm text-foreground-muted tabular">{needsAttention.length}</span>
+            <span className="font-data text-sm text-foreground-muted tabular">[{needsAttention.length}]</span>
           </CardHeader>
           <CardContent className="py-2">
             <InquiryMiniList
@@ -218,23 +276,44 @@ function pluralZadanie(n: number) {
   return last >= 2 && last <= 4 && (lastTwo < 12 || lastTwo > 14) ? 'zadania czekają' : 'zadań czeka';
 }
 
-function HeroStat({ label, value, tone }: { label: string; value: number; tone?: 'danger' }) {
+function Readout({ label, value, color }: { label: string; value: number; color?: string }) {
   return (
-    <div>
-      <dt className="text-xs font-medium text-hero-muted">{label}</dt>
-      <dd className={`mt-0.5 text-2xl font-semibold tracking-tight tabular ${tone === 'danger' ? 'text-hero-danger' : ''}`}>
-        {value}
+    <div className="bg-black/70 px-3 py-3 sm:px-4">
+      <dt className="font-data text-[10.5px] uppercase tracking-[0.1em] text-foreground-muted">{label}</dt>
+      <dd
+        className="neon-text mt-1 font-display text-3xl font-bold leading-none sm:text-4xl"
+        style={{ color: color ?? 'var(--foreground)' }}
+      >
+        <Count value={value} />
       </dd>
     </div>
   );
 }
 
 function DueChip({ due, today, className = '' }: { due: string | null; today: string; className?: string }) {
-  const base = `w-fit min-w-[4.75rem] shrink-0 rounded-full px-2 py-1 text-center text-xs font-medium tabular ${className}`;
-  if (!due) return <span className={`${base} bg-black/5 text-hero-muted`}>bez terminu</span>;
-  if (due < today) return <span className={`${base} bg-hero-danger-bg text-hero-danger`}>{formatDate(due)}</span>;
-  if (due === today) return <span className={`${base} bg-hero-today-bg text-hero-today`}>dziś</span>;
-  return <span className={`${base} bg-black/5 text-hero-fg`}>{formatDate(due)}</span>;
+  if (!due)
+    return (
+      <Badge tone="neutral" className={`min-w-[5.5rem] justify-center ${className}`}>
+        bez terminu
+      </Badge>
+    );
+  if (due < today)
+    return (
+      <Badge tone="danger" className={`min-w-[5.5rem] justify-center ${className}`}>
+        {formatDate(due)}
+      </Badge>
+    );
+  if (due === today)
+    return (
+      <Badge tone="terracotta" className={`min-w-[5.5rem] justify-center ${className}`}>
+        dziś
+      </Badge>
+    );
+  return (
+    <Badge tone="neutral" className={`min-w-[5.5rem] justify-center ${className}`}>
+      {formatDate(due)}
+    </Badge>
+  );
 }
 
 function InquiryMiniList({
@@ -247,7 +326,7 @@ function InquiryMiniList({
   showGroup?: boolean;
 }) {
   if (inquiries.length === 0) {
-    return <p className="py-3 text-sm text-foreground-muted">{empty}</p>;
+    return <p className="py-3 font-data text-sm text-foreground-muted">{empty}</p>;
   }
   return (
     <ul className="divide-y divide-border">
@@ -255,11 +334,13 @@ function InquiryMiniList({
         <li key={inq.id}>
           <Link href={`/zapytania/${inq.id}`} className="group block py-3">
             <div className="flex items-center justify-between gap-3">
-              <span className="truncate text-sm font-medium text-foreground group-hover:text-accent">
-                {inq.number}
-                <span className="font-normal text-foreground-muted"> · {inq.short_description || 'bez opisu'}</span>
+              <span className="truncate text-sm">
+                <span className="font-data font-semibold text-foreground group-hover:text-accent">{inq.number}</span>
+                <span className="text-foreground-muted"> · {inq.short_description || 'bez opisu'}</span>
               </span>
-              <span className="shrink-0 text-xs text-foreground-muted tabular">{formatDate(inq.next_step_due)}</span>
+              <span className="shrink-0 font-data text-xs text-foreground-muted tabular">
+                {formatDate(inq.next_step_due)}
+              </span>
             </div>
             <div className="mt-1.5 flex flex-wrap gap-1.5">
               {showGroup && <Badge tone="accent">{operationalGroupLabels[inq.operational_group]}</Badge>}

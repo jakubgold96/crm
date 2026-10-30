@@ -1,3 +1,4 @@
+import { Count } from '@/components/dashboard/count';
 import { Sparkline } from '@/components/dashboard/sparkline';
 import type { KpiResult } from '@/lib/dashboard/sales-kpis';
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
@@ -5,10 +6,9 @@ import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
 const pctFormat = new Intl.NumberFormat('pl-PL', { maximumFractionDigits: 1, signDisplay: 'exceptZero' });
 
 /**
- * Tafla KPI: nasycony gradient (tokeny --kpi-N-*), liczba z bieżącego
- * miesiąca, zmiana vs ten sam okres poprzedniego miesiąca, 8 tygodni historii.
- * `goodWhenUp=false` dla "Przegrane" — wzrost jest wtedy zły, więc kolor chipa
- * się odwraca.
+ * Tafla KPI w świecie HUD: ciemny panel ze ściętym rogiem, neon w kolorze
+ * tafli (--kpi-N): krawędź, poświata, liczba i rysująca się linia trendu.
+ * `goodWhenUp=false` dla "Przegrane" — wzrost jest wtedy zły.
  */
 export function KpiTile({
   index,
@@ -21,6 +21,7 @@ export function KpiTile({
   kpi: KpiResult;
   goodWhenUp?: boolean;
 }) {
+  const color = `var(--kpi-${index})`;
   const up = (kpi.changePct ?? 0) > 0;
   const down = (kpi.changePct ?? 0) < 0;
   const good = (up && goodWhenUp) || (down && !goodWhenUp);
@@ -29,30 +30,31 @@ export function KpiTile({
 
   return (
     <article
-      className="relative flex min-h-[10rem] min-w-0 flex-col overflow-hidden rounded-2xl border p-4 text-white sm:min-h-[10.5rem] sm:p-5"
+      className="hud group flex min-h-[10.5rem] min-w-0 flex-col overflow-hidden p-4 sm:min-h-[11.5rem] sm:p-5"
       style={{
-        background: `linear-gradient(140deg, var(--kpi-${index}-from) 0%, var(--kpi-${index}-to) 100%)`,
-        // Obrzeże w odcieniu tafli + wewnętrzna poświata od góry, zamiast neutralnej białej ramki.
-        borderColor: `color-mix(in srgb, var(--kpi-${index}-to) 65%, white 22%)`,
-        boxShadow: `inset 0 1px 0 rgb(255 255 255 / 0.18), inset 0 0 28px color-mix(in srgb, var(--kpi-${index}-to) 45%, transparent), 0 18px 40px -20px rgb(0 0 0 / 0.8)`,
+        ['--hud-line' as string]: `color-mix(in srgb, ${color} 55%, transparent)`,
+        background: `radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, ${color} 22%, transparent) 0%, transparent 60%), linear-gradient(180deg, color-mix(in srgb, ${color} 7%, var(--surface)) 0%, var(--surface) 100%)`,
       }}
     >
-      <h3 className="flex items-center gap-2 text-[13px] font-medium text-white/80">
-        <span aria-hidden className="size-1.5 rounded-full" style={{ background: `var(--kpi-${index}-line)` }} />
+      <span aria-hidden className="absolute inset-x-0 top-0 h-[2px]" style={{ background: `linear-gradient(90deg, ${color}, transparent 80%)` }} />
+      <h3 className="flex items-center gap-2 font-data text-[11px] font-medium uppercase tracking-[0.1em] text-foreground-muted">
+        <span aria-hidden className="size-2 rotate-45" style={{ background: color, boxShadow: `0 0 10px ${color}` }} />
         {label}
       </h3>
 
-      <p className="mt-2 text-3xl font-semibold sm:text-4xl tracking-tight tabular">{kpi.current}</p>
+      <p className="neon-text mt-2 font-display text-4xl font-bold leading-none sm:text-5xl" style={{ color }}>
+        <Count value={kpi.current} />
+      </p>
 
-      <p className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-white/75">
+      <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 font-data text-[11px] text-foreground-muted">
         {kpi.changePct === null ? (
-          <span className="rounded-full bg-white/12 px-2 py-0.5 font-medium text-white/90">
+          <span className="bg-white/[0.06] px-1.5 py-0.5 uppercase text-foreground/80">
             {kpi.current > 0 ? 'nowe' : 'bez zmian'}
           </span>
         ) : (
           <span
-            className="inline-flex items-center gap-0.5 rounded-full bg-black/20 px-2 py-0.5 font-semibold tabular"
-            style={{ color: good ? 'var(--kpi-up)' : bad ? 'var(--kpi-down)' : 'rgb(255 255 255 / 0.9)' }}
+            className="inline-flex items-center gap-0.5 bg-black/40 px-1.5 py-0.5 font-semibold tabular"
+            style={{ color: good ? 'var(--kpi-up)' : bad ? 'var(--kpi-down)' : 'var(--foreground)' }}
           >
             {up && <ArrowUpRight className="size-3.5" aria-hidden />}
             {down && <ArrowDownRight className="size-3.5" aria-hidden />}
@@ -66,7 +68,7 @@ export function KpiTile({
 
       <Sparkline
         values={kpi.weekly}
-        color={`var(--kpi-${index}-line)`}
+        color={color}
         label={`${label}: ostatnie 8 tygodni, łącznie ${weeklyTotal}`}
         className="mt-auto h-12 w-full pt-3"
       />

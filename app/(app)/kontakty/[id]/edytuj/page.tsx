@@ -17,7 +17,7 @@ export default async function EditContactPage({ params }: { params: Promise<{ id
 
   return (
     <div className="max-w-2xl">
-      <h1 className="mb-6 text-xl font-semibold text-foreground">Edytuj kontakt</h1>
+      <h1 className="mb-6 font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Edytuj kontakt</h1>
       <ContactForm initialData={typed} defaultCompanyName={typed.companies?.name} />
     </div>
   );

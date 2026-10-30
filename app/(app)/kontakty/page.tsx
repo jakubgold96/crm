@@ -20,7 +20,7 @@ export default async function ContactsPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-xl font-semibold text-foreground">Kontakty ({contacts.length})</h1>
+        <h1 className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Kontakty ({contacts.length})</h1>
         <Link href="/kontakty/nowy">
           <Button size="sm">
             <Plus className="size-4" aria-hidden />
@@ -33,7 +33,7 @@ export default async function ContactsPage() {
         <p className="text-sm text-foreground-muted">Brak kontaktów.</p>
       ) : (
         <>
-          <div className="hidden overflow-hidden rounded-2xl border border-border bg-surface md:block">
+          <div className="hud hidden overflow-hidden bg-surface/90 md:block">
             <table className="w-full text-sm">
               <thead className="border-b border-border text-left text-[11px] font-medium uppercase tracking-[0.06em] text-foreground-muted">
                 <tr>
@@ -71,7 +71,7 @@ export default async function ContactsPage() {
               <Link
                 key={c.id}
                 href={`/kontakty/${c.id}`}
-                className="block rounded-2xl border border-border bg-surface p-4 transition-colors active:bg-surface-raised"
+                className="hud hud-sm block bg-surface/90 p-4 transition-colors hover:bg-cyan/[0.05] active:bg-surface-raised"
               >
                 <p className="font-medium text-foreground">
                   {[c.first_name, c.last_name].filter(Boolean).join(' ') || '(bez nazwiska)'}

@@ -39,7 +39,7 @@ export default async function CompanyDetailPage({ params }: { params: Promise<{ 
     <div className="space-y-6">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h1 className="text-xl font-semibold text-foreground">{typedCompany.name}</h1>
+          <h1 className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">{typedCompany.name}</h1>
           <div className="mt-1 flex flex-wrap gap-1.5">
             {typedCompany.segment && <Badge tone="accent">{companySegmentLabels[typedCompany.segment]}</Badge>}
             <Badge tone="neutral">{relationshipStatusLabels[typedCompany.relationship_status]}</Badge>

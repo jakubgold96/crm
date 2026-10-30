@@ -69,7 +69,7 @@ export function InquiriesListClient({
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-xl font-semibold text-foreground">Zapytania ({filtered.length})</h1>
+        <h1 className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Zapytania ({filtered.length})</h1>
         <Link href="/zapytania/nowe">
           <Button size="sm">
             <Plus className="size-4" aria-hidden />
@@ -84,8 +84,10 @@ export function InquiriesListClient({
             key={v}
             onClick={() => setView(v)}
             className={cn(
-              'px-4 py-2 text-sm font-medium',
-              view === v ? 'border-b-2 border-accent text-accent' : 'text-foreground-muted hover:text-foreground'
+              'px-4 py-2 font-display text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors',
+              view === v
+                ? 'border-b-2 border-accent text-accent'
+                : 'border-b-2 border-transparent text-foreground-muted hover:text-cyan'
             )}
           >
             {v === 'operacyjne' ? 'Operacyjne' : v === 'sprzedaz' ? 'Sprzedaż' : 'Moje'}
@@ -179,15 +181,13 @@ export function InquiriesListClient({
       <div className="space-y-8">
         {groups.map(([key, label, items]) => (
           <div key={key}>
-            <h2 className="mb-2 flex items-center gap-2 text-sm font-semibold text-foreground">
+            <h2 className="mb-2 flex items-center gap-2 font-display text-[15px] font-bold uppercase tracking-[0.08em] text-foreground">
               {label}
-              <span className="rounded-full bg-surface-raised px-2 py-0.5 text-xs text-foreground-muted tabular">
-                {items.length}
-              </span>
+              <span className="font-data text-xs font-normal text-foreground-muted tabular">[{items.length}]</span>
             </h2>
 
             {/* Desktop table */}
-            <div className="hidden overflow-hidden rounded-2xl border border-border bg-surface md:block">
+            <div className="hud hidden overflow-hidden bg-surface/90 md:block">
               <table className="w-full table-fixed text-sm">
                 {/* Wspólne szerokości kolumn — kolumny trzymają linię między grupami. */}
                 <colgroup>
@@ -195,7 +195,7 @@ export function InquiriesListClient({
                   <col className="w-[17%]" />
                   <col />
                   <col className="w-[24%]" />
-                  <col className="w-[11.5rem]" />
+                  <col className="w-[14.5rem]" />
                 </colgroup>
                 <thead className="border-b border-border text-left text-[11px] font-medium uppercase tracking-[0.06em] text-foreground-muted">
                   <tr>
@@ -234,7 +234,7 @@ export function InquiriesListClient({
                 <Link
                   key={inq.id}
                   href={`/zapytania/${inq.id}`}
-                  className="block rounded-2xl border border-border bg-surface p-4 transition-colors active:bg-surface-raised"
+                  className="hud hud-sm block bg-surface/90 p-4 transition-colors hover:bg-cyan/[0.05] active:bg-surface-raised"
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-medium text-foreground">{inq.number}</span>

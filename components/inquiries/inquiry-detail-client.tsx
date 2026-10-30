@@ -173,7 +173,7 @@ export function InquiryDetailClient({
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="text-xl font-semibold text-foreground">{inquiry.number}</h1>
+            <h1 className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">{inquiry.number}</h1>
             {inquiry.is_archived && <Badge tone="neutral">Zarchiwizowane</Badge>}
           </div>
           <p className="mt-1 text-sm text-foreground-muted">
@@ -343,7 +343,7 @@ export function InquiryDetailClient({
                   </p>
                   <ul className="space-y-2">
                     {notes.map((n) => (
-                      <li key={n.id} className="rounded-xl border border-border bg-surface-raised p-3 text-sm">
+                      <li key={n.id} className="hud hud-sm bg-surface-raised p-3 text-sm">
                         {n.is_hidden ? (
                           <p className="italic text-foreground-muted">
                             Notatka ukryta ({n.hidden_reason || 'brak powodu'})

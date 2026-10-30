@@ -3,15 +3,16 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { forwardRef } from 'react';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 rounded-full text-sm font-medium transition-[background-color,color,border-color,transform] duration-150 ease-out active:scale-[0.98] disabled:pointer-events-none disabled:opacity-45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+  'notch hover-glitch inline-flex items-center justify-center gap-2 font-display text-[13px] font-semibold uppercase tracking-[0.08em] transition-[background-color,color,box-shadow,filter] duration-150 ease-out active:brightness-90 disabled:pointer-events-none disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background',
   {
     variants: {
       variant: {
-        primary: 'bg-accent text-accent-foreground hover:bg-accent-hover',
+        primary:
+          'bg-accent text-accent-foreground hover:bg-accent-hover',
         secondary:
-          'border border-border-strong bg-surface-raised text-foreground hover:border-foreground-muted/60 hover:bg-surface-hover',
+          'bg-surface-raised text-foreground shadow-[inset_0_0_0_1px_var(--border-strong)] hover:bg-surface-hover hover:text-cyan hover:shadow-[inset_0_0_0_1px_rgb(0_225_255/0.6)]',
         ghost: 'text-foreground-muted hover:bg-surface-raised hover:text-foreground',
-        danger: 'bg-danger text-danger-foreground hover:brightness-110',
+        danger: 'bg-danger text-danger-foreground',
       },
       size: {
         sm: 'h-8 px-3.5',

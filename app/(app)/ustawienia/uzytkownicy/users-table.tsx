@@ -28,7 +28,7 @@ export function UsersTable({ profiles, currentUserId }: { profiles: Profile[]; c
   return (
     <div>
       {error && <p className="mb-3 text-sm text-danger">{error}</p>}
-      <div className="overflow-hidden rounded-2xl border border-border bg-surface">
+      <div className="hud overflow-hidden bg-surface/90">
         <table className="w-full text-sm">
           <thead className="border-b border-border text-left text-[11px] font-medium uppercase tracking-[0.06em] text-foreground-muted">
             <tr>

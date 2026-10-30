@@ -61,7 +61,7 @@ export function CompanyPicker({
         placeholder="Szukaj firmy po nazwie…"
       />
       {open && results.length > 0 && (
-        <ul className="absolute z-10 mt-1 w-full rounded-xl border border-border-strong bg-surface-raised py-1 shadow-[0_16px_40px_-12px_rgb(0_0_0/0.7)]">
+        <ul className="absolute z-10 mt-1 w-full border border-border-strong bg-surface-raised py-1 shadow-[0_16px_40px_-12px_rgb(0_0_0/0.7)]">
           {results.map((c) => (
             <li key={c.id}>
               <button

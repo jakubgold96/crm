@@ -11,7 +11,7 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
 
   return (
     <div className="max-w-2xl">
-      <h1 className="mb-6 text-xl font-semibold text-foreground">Edytuj firmę</h1>
+      <h1 className="mb-6 font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Edytuj firmę</h1>
       <CompanyForm initialData={company as Company} />
     </div>
   );

@@ -1,10 +1,11 @@
 import { cn } from '@/lib/utils';
 
+/** Panel HUD: ścięty prawy górny róg, cienka krawędź, lekka poświata cyjanu od góry. */
 export function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className={cn(
-        'rounded-2xl border border-border bg-surface shadow-[0_1px_0_rgb(255_255_255/0.03)_inset,0_12px_32px_-16px_rgb(0_0_0/0.6)]',
+        'hud bg-surface/90 backdrop-blur-[2px] [background-image:linear-gradient(180deg,rgb(0_225_255/0.05),transparent_120px)]',
         className
       )}
       {...props}
@@ -17,7 +18,12 @@ export function CardHeader({ className, ...props }: React.HTMLAttributes<HTMLDiv
 }
 
 export function CardTitle({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
-  return <h2 className={cn('text-[15px] font-semibold tracking-tight text-foreground', className)} {...props} />;
+  return (
+    <h2
+      className={cn('font-display text-[15px] font-semibold uppercase tracking-[0.06em] text-foreground', className)}
+      {...props}
+    />
+  );
 }
 
 export function CardContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
