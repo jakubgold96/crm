@@ -7,7 +7,9 @@ export async function login(page: Page) {
   await page.goto('/login');
   await page.getByLabel('E-mail').fill(EMAIL);
   await page.getByLabel('Hasło').fill(PASSWORD);
-  await page.getByRole('button', { name: 'Zaloguj się' }).click();
+  // exact: true — strona ma drugi przycisk "Zaloguj się linkiem e-mail
+  // (bez hasła)", który bez exact też dopasowuje się do nazwy "Zaloguj się".
+  await page.getByRole('button', { name: 'Zaloguj się', exact: true }).click();
   await page.waitForURL('/');
 }
 

@@ -13,7 +13,8 @@ test.describe('Logowanie i ochrona tras', () => {
     await page.goto('/login');
     await page.getByLabel('E-mail').fill(EMAIL);
     await page.getByLabel('Hasło').fill(PASSWORD);
-    await page.getByRole('button', { name: 'Zaloguj się' }).click();
+    // exact: true — odróżnia submit od przycisku "Zaloguj się linkiem e-mail (bez hasła)".
+    await page.getByRole('button', { name: 'Zaloguj się', exact: true }).click();
 
     await expect(page).toHaveURL('/');
     await expect(page.getByRole('heading', { name: 'Pulpit' })).toBeVisible();
@@ -23,7 +24,7 @@ test.describe('Logowanie i ochrona tras', () => {
     await page.goto('/login');
     await page.getByLabel('E-mail').fill(EMAIL);
     await page.getByLabel('Hasło').fill('zdecydowanie-zle-haslo');
-    await page.getByRole('button', { name: 'Zaloguj się' }).click();
+    await page.getByRole('button', { name: 'Zaloguj się', exact: true }).click();
 
     await expect(page.getByText('Nieprawidłowy e-mail lub hasło.')).toBeVisible();
     await expect(page).toHaveURL(/\/login/);
@@ -33,7 +34,7 @@ test.describe('Logowanie i ochrona tras', () => {
     await page.goto('/login');
     await page.getByLabel('E-mail').fill(EMAIL);
     await page.getByLabel('Hasło').fill(PASSWORD);
-    await page.getByRole('button', { name: 'Zaloguj się' }).click();
+    await page.getByRole('button', { name: 'Zaloguj się', exact: true }).click();
     await expect(page).toHaveURL('/');
 
     await page.getByRole('button', { name: 'Wyloguj się' }).click();
