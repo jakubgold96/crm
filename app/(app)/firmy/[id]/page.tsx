@@ -46,11 +46,18 @@ export default async function CompanyDetailPage({ params }: { params: Promise<{ 
             {typedCompany.country && <Badge tone="neutral">{typedCompany.country}</Badge>}
           </div>
         </div>
-        <Link href={`/firmy/${id}/edytuj`}>
-          <Button size="sm" variant="secondary">
-            Edytuj
-          </Button>
-        </Link>
+        <div className="flex gap-2">
+          <a href={`/api/export/company/${id}`} download>
+            <Button size="sm" variant="secondary">
+              Eksportuj dane (RODO)
+            </Button>
+          </a>
+          <Link href={`/firmy/${id}/edytuj`}>
+            <Button size="sm" variant="secondary">
+              Edytuj
+            </Button>
+          </Link>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">

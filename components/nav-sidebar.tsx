@@ -14,6 +14,7 @@ const NAV_ITEMS: { href: string; label: string; disabled?: boolean }[] = [
   { href: '/firmy', label: 'Firmy' },
   { href: '/kontakty', label: 'Kontakty' },
   { href: '/archiwum', label: 'Archiwum' },
+  { href: '/eksport', label: 'Eksport' },
   { href: '/leady', label: 'Leady', disabled: true },
   { href: '/agent', label: 'Agent INNDES', disabled: true },
   { href: '/raporty', label: 'Raporty', disabled: true },
