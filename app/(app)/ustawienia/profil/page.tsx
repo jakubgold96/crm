@@ -9,7 +9,7 @@ export default async function ProfilePage() {
 
   return (
     <div className="max-w-xl space-y-6">
-      <h1 className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Twój profil</h1>
+      <h1 className="rgb-split font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Twój profil</h1>
       <Card>
         <CardHeader>
           <CardTitle>Dane konta</CardTitle>

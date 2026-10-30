@@ -109,10 +109,12 @@
   --warning-fg: #ffd23f;
 
   /* Tafle KPI: kolor neonu tafli */
-  --kpi-1: #9d5cff;
-  --kpi-2: #00e1ff;
-  --kpi-3: #39ff9c;
-  --kpi-4: #ff2a6d;
+  /* Odcienie tafli ze zdjęcia referencyjnego (indygo, królewski błękit,
+     zieleń, magenta) — podbita jasność i nasycenie, bez obrotu odcienia. */
+  --kpi-1: #7867ff;
+  --kpi-2: #3d7bff;
+  --kpi-3: #2bffa8;
+  --kpi-4: #ff3fd2;
   --kpi-up: #39ff9c;
   --kpi-down: #ff4d82;
 
@@ -253,6 +255,9 @@ a {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  /* Domyślnie niewidoczne — pojawiają się tylko w klatkach animacji,
+     więc przy reduced-motion zostaje sam statyczny .rgb-split. */
+  clip-path: inset(0 0 100% 0);
 }
 .glitch::before {
   color: var(--neon-cyan);
@@ -361,15 +366,15 @@ a {
 /* Perspektywiczna siatka "podłogi" na pulpicie */
 .grid-floor {
   position: absolute;
-  inset: auto -20% -10% -20%;
-  height: 70%;
+  inset: auto -20% -12% -20%;
+  height: 85%;
   background-image:
-    linear-gradient(rgb(255 42 109 / 0.35) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(0 225 255 / 0.28) 1px, transparent 1px);
+    linear-gradient(rgb(255 63 210 / 0.55) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(0 225 255 / 0.45) 1px, transparent 1px);
   background-size: 56px 56px;
   transform: perspective(420px) rotateX(62deg);
   transform-origin: 50% 100%;
-  mask-image: linear-gradient(to top, black 10%, transparent 85%);
+  mask-image: linear-gradient(to top, black 25%, transparent 95%);
   animation: grid-run 3.5s linear infinite;
   pointer-events: none;
 }

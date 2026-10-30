@@ -14,7 +14,7 @@ import { operationalGroupLabels, salesKpiLabels, salesStageLabels } from '@/lib/
 import { computeSalesKpis, toLocalDate, type StageChange } from '@/lib/dashboard/sales-kpis';
 import { formatDate } from '@/lib/utils';
 import type { Inquiry, Profile } from '@/lib/types/database';
-import { ChevronRight, Plus } from 'lucide-react';
+import { ArrowRight, ChevronRight, Plus } from 'lucide-react';
 import Link from 'next/link';
 
 const TZ = 'Europe/Warsaw';
@@ -90,21 +90,22 @@ export function DashboardView({
   return (
     <div className="space-y-5">
       {/* Pasek statusu: stałe odczyty + przewijana taśma z bieżącymi liczbami */}
-      <div className="hud hud-sm flex items-stretch overflow-hidden bg-black/60 font-data text-[11px] uppercase tracking-[0.08em]">
-        <div className="flex shrink-0 items-center gap-2 bg-accent px-3 font-semibold text-accent-foreground">
+      <div className="hud hud-sm flex flex-wrap items-stretch overflow-hidden bg-black/60 font-data text-[11px] uppercase tracking-[0.08em] sm:flex-nowrap">
+        <div className="flex shrink-0 items-center gap-2 bg-accent px-3 py-2 font-semibold text-accent-foreground sm:py-0">
           <span aria-hidden className="size-1.5 bg-accent-foreground" />
           <LiveClock initial={clock} />
         </div>
         <div className="hidden shrink-0 items-center border-r border-border px-3 text-foreground-muted sm:flex">
           {dateLabel}
         </div>
-        <div className="relative min-w-0 flex-1 overflow-hidden py-2" aria-hidden>
+        <div className="relative order-last w-full min-w-0 overflow-hidden border-t border-border py-2 sm:order-none sm:w-auto sm:flex-1 sm:border-t-0" aria-hidden>
           <div className="ticker gap-10 whitespace-nowrap text-foreground-muted">
             {[0, 1].map((copy) => (
               <div key={copy} className="flex gap-10 pr-10">
                 {tickerItems.map((t) => (
-                  <span key={t}>
-                    <span className="text-magenta">▸</span> {t}
+                  <span key={t} className="inline-flex items-center gap-1">
+                    <ChevronRight className="size-3 text-magenta" strokeWidth={2.5} aria-hidden />
+                    {t}
                   </span>
                 ))}
               </div>
@@ -114,7 +115,7 @@ export function DashboardView({
         {overdue.length > 0 && (
           <Link
             href="/zadania"
-            className="flex shrink-0 items-center gap-2 bg-danger/15 px-3 font-semibold text-danger hover:bg-danger/25"
+            className="ml-auto flex shrink-0 items-center gap-2 bg-danger/15 px-3 py-2 font-semibold text-danger hover:bg-danger/25 sm:ml-0 sm:py-0"
           >
             <span aria-hidden className="neon-hum size-1.5 bg-danger" />
             Alarm: {overdue.length} po terminie
@@ -125,7 +126,7 @@ export function DashboardView({
       {/* Panel główny */}
       <section aria-labelledby="greeting" className="hud hud-lg overflow-hidden bg-surface/80">
         <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="grid-floor opacity-60" />
+          <div className="grid-floor" />
           <div className="absolute -right-20 -top-24 size-[28rem] rounded-full bg-magenta/20 blur-3xl" />
           <div className="absolute -bottom-32 left-1/4 size-[22rem] rounded-full bg-cyan/10 blur-3xl" />
           <div className="hazard absolute right-10 top-0 h-2 w-40 opacity-70 [clip-path:polygon(0_0,100%_0,calc(100%-8px)_100%,8px_100%)]" />
@@ -179,7 +180,7 @@ export function DashboardView({
                 href="/zadania"
                 className="font-data text-[11px] uppercase tracking-[0.08em] text-cyan hover:text-accent"
               >
-                Wszystkie zadania →
+                Wszystkie zadania <ArrowRight className="ml-1 inline size-3" strokeWidth={2.25} aria-hidden />
               </Link>
             </div>
             {todayList.length === 0 ? (

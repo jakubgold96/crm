@@ -30,7 +30,7 @@ export default async function ArchivePage() {
   return (
     <div className="space-y-10">
       <div>
-        <h1 className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Archiwum</h1>
+        <h1 className="rgb-split font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Archiwum</h1>
         <p className="mt-1 text-sm text-foreground-muted">
           Zarchiwizowane zapytania i firmy — nic nie jest tu usuwane, tylko ukryte z głównych list.
         </p>

@@ -20,7 +20,7 @@ export default async function ContactsPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Kontakty ({contacts.length})</h1>
+        <h1 className="rgb-split font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Kontakty ({contacts.length})</h1>
         <Link href="/kontakty/nowy">
           <Button size="sm">
             <Plus className="size-4" aria-hidden />

@@ -34,7 +34,7 @@ export default async function ContactDetailPage({ params }: { params: Promise<{ 
     <div className="space-y-6">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h1 className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">
+          <h1 className="rgb-split font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">
             {[typedContact.first_name, typedContact.last_name].filter(Boolean).join(' ') || '(bez nazwiska)'}
           </h1>
           <p className="mt-1 text-sm text-foreground-muted">

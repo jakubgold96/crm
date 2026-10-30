@@ -173,7 +173,7 @@ export function InquiryDetailClient({
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">{inquiry.number}</h1>
+            <h1 className="rgb-split font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">{inquiry.number}</h1>
             {inquiry.is_archived && <Badge tone="neutral">Zarchiwizowane</Badge>}
           </div>
           <p className="mt-1 text-sm text-foreground-muted">

@@ -1,5 +1,10 @@
 'use client';
 
+import { PageTitle } from '@/components/ui/page-title';
+
+/** Neon grupy zadań wg pilności: po terminie = czerwień, dziś = bursztyn, reszta = cyjan. */
+const TONE_NEON = { danger: 'var(--danger)', terracotta: 'var(--terracotta)', neutral: 'var(--neon-cyan)' } as const;
+
 import { Badge } from '@/components/ui/badge';
 import { Select } from '@/components/ui/input';
 import { createClient } from '@/lib/supabase/client';
@@ -67,7 +72,7 @@ export function TasksListClient({
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Zadania ({filtered.length})</h1>
+        <PageTitle count={filtered.length}>Zadania</PageTitle>
       </div>
 
       <div className="flex gap-1 border-b border-border">
@@ -118,13 +123,20 @@ function TaskGroup({
 
   return (
     <div>
-      <h2 className="mb-2 flex items-center gap-2 font-display text-[15px] font-bold uppercase tracking-[0.08em] text-foreground">
+      <h2
+        className="neon-text mb-2 flex items-center gap-2 font-display text-[15px] font-bold uppercase tracking-[0.08em]"
+        style={{ color: TONE_NEON[tone] }}
+      >
+        <span aria-hidden className="size-2 rotate-45" style={{ background: TONE_NEON[tone], boxShadow: `0 0 10px ${TONE_NEON[tone]}` }} />
         {title}
-        <Badge tone={tone}>{items.length}</Badge>
+        <span className="font-data text-xs font-normal text-foreground-muted tabular">[{items.length}]</span>
       </h2>
 
       {/* Desktop table */}
-      <div className="hud hidden overflow-hidden bg-surface/90 md:block">
+      <div
+        className="hud hidden overflow-hidden bg-surface/90 md:block"
+        style={{ ['--hud-line' as string]: `color-mix(in srgb, ${TONE_NEON[tone]} 45%, transparent)` }}
+      >
         <table className="w-full text-sm">
           <thead className="border-b border-border text-left text-[11px] font-medium uppercase tracking-[0.06em] text-foreground-muted">
             <tr>

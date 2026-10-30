@@ -111,7 +111,6 @@ export function NavSidebar({ profile }: { profile: Profile }) {
                       >
                         <Icon className="size-4" strokeWidth={1.75} aria-hidden />
                         {item.label}
-                        <span className="ml-auto font-data text-[9.5px] uppercase tracking-[0.1em]">soon</span>
                       </span>
                     </li>
                   );

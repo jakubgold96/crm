@@ -1,6 +1,8 @@
 'use client';
 
 import { Plus } from 'lucide-react';
+import { PageTitle } from '@/components/ui/page-title';
+import { groupNeon } from '@/lib/ui/urgency';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input, Select } from '@/components/ui/input';
@@ -69,7 +71,7 @@ export function InquiriesListClient({
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-foreground">Zapytania ({filtered.length})</h1>
+        <PageTitle count={filtered.length}>Zapytania</PageTitle>
         <Link href="/zapytania/nowe">
           <Button size="sm">
             <Plus className="size-4" aria-hidden />
@@ -181,13 +183,24 @@ export function InquiriesListClient({
       <div className="space-y-8">
         {groups.map(([key, label, items]) => (
           <div key={key}>
-            <h2 className="mb-2 flex items-center gap-2 font-display text-[15px] font-bold uppercase tracking-[0.08em] text-foreground">
+            <h2
+              className="neon-text mb-2 flex items-center gap-2 font-display text-[15px] font-bold uppercase tracking-[0.08em]"
+              style={{ color: groupNeon(key) }}
+            >
+              <span
+                aria-hidden
+                className="size-2 rotate-45"
+                style={{ background: groupNeon(key), boxShadow: `0 0 10px ${groupNeon(key)}` }}
+              />
               {label}
               <span className="font-data text-xs font-normal text-foreground-muted tabular">[{items.length}]</span>
             </h2>
 
             {/* Desktop table */}
-            <div className="hud hidden overflow-hidden bg-surface/90 md:block">
+            <div
+              className="hud hidden overflow-hidden bg-surface/90 md:block"
+              style={{ ['--hud-line' as string]: `color-mix(in srgb, ${groupNeon(key)} 45%, transparent)` }}
+            >
               <table className="w-full table-fixed text-sm">
                 {/* Wspólne szerokości kolumn — kolumny trzymają linię między grupami. */}
                 <colgroup>
