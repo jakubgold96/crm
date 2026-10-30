@@ -9,6 +9,13 @@ const nextConfig: NextConfig = {
    * profilu tej aplikacji — wyłączone świadomie, nie przez przeoczenie.
    */
   cacheComponents: false,
+  /*
+   * Tylko `npm run dev`: pozwala otworzyć serwer deweloperski z telefonu
+   * w tej samej sieci Wi-Fi (http://192.168.x.x:3000 albo http://nazwa-maca.local:3000)
+   * — bez tego Next blokuje skrypty dev i strona na telefonie się nie ładuje.
+   * Nie wpływa na build produkcyjny. `*` = dokładnie jeden segment adresu.
+   */
+  allowedDevOrigins: ['192.168.*.*', '10.*.*.*', '172.*.*.*', '*.local'],
   turbopack: {
     rules: {
       "*.css": {
