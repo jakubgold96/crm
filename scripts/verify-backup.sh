@@ -61,7 +61,12 @@ echo "$PROFILE_IDS_JSON" | psql -d "$DB_NAME" -v ON_ERROR_STOP=1 -q -c "
 # service_scope_options → inquiries → (inquiry_services, inquiry_files,
 # inquiry_notes, activity_log, audit_log). Ta sama lista jak BACKUP_TABLES
 # w app/api/backup/snapshot/route.ts.
-TABLES=(profiles companies contacts service_scope_options inquiries inquiry_services inquiry_files inquiry_notes activity_log audit_log)
+TABLES=(profiles companies contacts service_scope_options icp_profiles inquiries leads lead_facts inquiry_services inquiry_files inquiry_notes activity_log audit_log)
+
+# Migracja 9 zakłada 4 startowe profile ICP z losowymi id — backup ma
+# własne (te same lub zmienione przez użytkownika) wiersze, więc startowe
+# czyścimy, żeby liczba wierszy po restore była porównywalna 1:1.
+psql -d "$DB_NAME" -v ON_ERROR_STOP=1 -q -c "delete from public.icp_profiles;" >/dev/null
 
 for table in "${TABLES[@]}"; do
   ROWS_JSON=$(node -e "
@@ -78,7 +83,13 @@ for table in "${TABLES[@]}"; do
   else
     CONFLICT_CLAUSE="on conflict do nothing"
   fi
+  # Restore = wierne odtworzenie wierszy, nie tworzenie nowych: triggery
+  # biznesowe (np. nadawanie numeru INQ-, audit) muszą milczeć, inaczej
+  # odrzucą gotowy numer zapytania z backupu. session_replication_role =
+  # replica wyłącza triggery na czas tej jednej sesji (wymaga roli
+  # superużytkownika — lokalna baza testowa, nie produkcja).
   echo "$ROWS_JSON" | psql -d "$DB_NAME" -v ON_ERROR_STOP=1 -q -c "
+    set session_replication_role = replica;
     insert into public.$table
     select * from jsonb_populate_recordset(null::public.$table, \$\$$(cat)\$\$::jsonb)
     $CONFLICT_CLAUSE;
