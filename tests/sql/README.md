@@ -15,6 +15,7 @@ psql "$DB_URL" -v ON_ERROR_STOP=1 -f tests/sql/financial_permission.sql
 psql "$DB_URL" -v ON_ERROR_STOP=1 -f tests/sql/archive_not_delete.sql
 psql "$DB_URL" -v ON_ERROR_STOP=1 -f tests/sql/concurrent_edit.sql
 psql "$DB_URL" -v ON_ERROR_STOP=1 -f tests/sql/leads_icp.sql
+psql "$DB_URL" -v ON_ERROR_STOP=1 -f tests/sql/hardening.sql
 tests/sql/concurrency/run.sh <nazwa_bazy_z_DB_URL>
 ```
 
@@ -35,6 +36,7 @@ psql -d inndes_test -v ON_ERROR_STOP=1 -f tests/sql/financial_permission.sql
 psql -d inndes_test -v ON_ERROR_STOP=1 -f tests/sql/archive_not_delete.sql
 psql -d inndes_test -v ON_ERROR_STOP=1 -f tests/sql/concurrent_edit.sql
 psql -d inndes_test -v ON_ERROR_STOP=1 -f tests/sql/leads_icp.sql
+psql -d inndes_test -v ON_ERROR_STOP=1 -f tests/sql/hardening.sql
 tests/sql/concurrency/run.sh inndes_test
 ```
 

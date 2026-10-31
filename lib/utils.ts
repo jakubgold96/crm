@@ -58,3 +58,11 @@ export function greetingName(fullName: string | null | undefined): string {
   const base = raw.includes('@') ? raw.split('@')[0] : raw;
   return base.split(/[\s._-]+/).filter(Boolean)[0] ?? '';
 }
+
+/** Polska odmiana po liczebniku: plural(1,'lead','leady','leadów') -> "1 lead", 3 -> "3 leady", 5 -> "5 leadów". */
+export function plural(n: number, one: string, few: string, many: string): string {
+  const last = n % 10;
+  const lastTwo = n % 100;
+  const word = n === 1 ? one : last >= 2 && last <= 4 && (lastTwo < 12 || lastTwo > 14) ? few : many;
+  return `${n} ${word}`;
+}

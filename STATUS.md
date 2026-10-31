@@ -84,6 +84,19 @@ Poza zakresem Fazy 1 (zaplanowane na Fazy 3–5 zgodnie z briefem): #8–#17, #1
 
 Nie zaimplementowano: leadów, poczty, agenta — zgodnie z poleceniem, czekają na Fazy 3–5 i wyraźną akceptację właściciela produktu dla fundamentu.
 
+## Faza 3a — leady i profile ICP (bez AI): ZBUDOWANA
+
+- **Baza (migracja 9):** `icp_profiles`, `leads`, `lead_facts` z RLS, bez DELETE, historia zmian leada w `audit_log`. Reguły w samej bazie: lead z samej domeny (#8), fakt bez źródła = „brak potwierdzenia” (#9), wynik zawsze z uzasadnieniem (#10). Fakty niezmienne — tylko ukrywanie z powodem. RPC `convert_lead_to_inquiry` (ręcznie, atomowo: firma + zapytanie ze źródłem „Lead” i następnym krokiem).
+- **UI:** `/leady` (wyszukiwanie + filtry status/ICP/właściciel), `/leady/nowy` (sama domena wystarcza; normalizacja domeny, ostrzeżenie o duplikacie), `/leady/[id]` (status, scoring z uzasadnieniem, fakty ze źródłami, konwersja z potwierdzeniem, dane, archiwizacja z powodem, historia z autorami), `/icp` + edycja profili. Nawigacja: sekcja „Pozyskanie”.
+- **Profile ICP:** 4 z PRD (studio architektoniczne, hotel/restauracja, marka meblowa, GW) — tylko nazwa i segment; reszta była w briefie, którego nie ma w repo, więc lista pokazuje „do uzupełnienia n/6” zamiast zmyślonych kryteriów.
+- **Bezpieczeństwo (wykryte przy wdrażaniu na „CRM Test”):** Supabase domyślnie nadaje `anon`/`authenticated` DELETE i TRUNCATE na nowych tabelach — „druga warstwa” zakazu usuwania (migracja 7) działała lokalnie, ale nie na hostingu. Migracja 11 odbiera je (też dla przyszłych tabel), migracja 10 ustala `search_path` i zamyka wywoływanie funkcji triggerów przez REST. Doradca Supabase: zostały tylko ostrzeżenia `pg_trgm` w schemacie public i „leaked password protection” (ustawienie w panelu Auth — do włączenia przez właściciela).
+- **Testy:** SQL `tests/sql/leads_icp.sql` (19 asercji) + `tests/sql/hardening.sql` (uprawnienia funkcji i tabel; sprawdzony też na bazie z domyślnymi grantami Supabase i kontrolnie bez migracji 11 = czerwony). Jednostkowe 74/74 (walidacja leadów/faktów/ICP, odmiana). Migracje 9–11 wdrożone na „CRM Test”; próba na żywej bazie jako zalogowany użytkownik (wycofana): #8/#9/#10, historia z autorem, DELETE odrzucony.
+- **Backup:** nowe tabele w zrzucie i w `verify-backup.sh`. Naprawiony błąd z Fazy 2: restore odrzucał zapytania (trigger numeracji) — zweryfikowane pozytywnie i negatywnie.
+- **Otwarte:** e2e w przeglądarce na żywym koncie (lead z domeny -> fakt -> wynik -> zapytanie); uzupełnienie profili ICP przez właściciela; „leady do zatwierdzenia” na pulpicie (PRD §5) — dojdą razem z agentem w 3b.
+
+### Następny krok: Faza 3b — research agenta
+Wymaga decyzji właściciela: dostawca modelu AI i klucz API po stronie serwera (np. `ANTHROPIC_API_KEY` w `.env.local`, nigdy w kliencie). Agent zapisuje fakty do `lead_facts` (te same reguły #9), wynik z uzasadnieniem (#10), każde uruchomienie w `agent_runs`.
+
 ## Faza 2 — operacyjny CRM: W TOKU
 
 ### Zrobione

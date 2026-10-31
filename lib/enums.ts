@@ -10,7 +10,9 @@ import type {
   CompanySegment,
   ContactConsent,
   ContactRole,
+  FactConfidence,
   InquirySource,
+  LeadStatus,
   ObjectType,
   OperationalGroup,
   RelationshipStatus,
@@ -81,6 +83,7 @@ export const inquirySourceLabels: Record<InquirySource, string> = {
   targi: 'Targi',
   powrot_klienta: 'Powrót klienta',
   inne: 'Inne',
+  lead: 'Lead',
 };
 
 export const operationalGroupLabels: Record<OperationalGroup, string> = {
@@ -151,3 +154,26 @@ export const salesKpiLabels = {
   wygrane: 'Wygrane',
   przegrane: 'Przegrane',
 } as const;
+
+// Faza 3a: leady, fakty
+export const leadStatusLabels: Record<LeadStatus, string> = {
+  nowy: 'Nowy',
+  do_researchu: 'Do researchu',
+  zbadany: 'Zbadany',
+  do_zatwierdzenia: 'Do zatwierdzenia',
+  gotowy_do_kontaktu: 'Gotowy do kontaktu',
+  kontakt_wyslany: 'Kontakt wysłany',
+  odpowiedzial: 'Odpowiedział',
+  zakwalifikowany: 'Zakwalifikowany',
+  rozmowa_umowiona: 'Rozmowa umówiona',
+  nie_teraz: 'Nie teraz',
+  nie_pasuje: 'Nie pasuje',
+  zakaz_kontaktu: 'Zakaz kontaktu',
+};
+
+export const factConfidenceLabels: Record<FactConfidence, string> = {
+  wysoka: 'Pewność wysoka',
+  srednia: 'Pewność średnia',
+  niska: 'Pewność niska',
+  brak_potwierdzenia: 'Brak potwierdzenia',
+};

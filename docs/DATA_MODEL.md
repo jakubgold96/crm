@@ -138,14 +138,15 @@ Dla sekcji "Aktywność" na karcie zapytania — w MVP Fazy 1 to głównie zapis
 ## [Przygotowanie struktury, bez UI] `projects`
 `id, inquiry_id FK, status, created_at` — placeholder.
 
-## [Faza 3] `icp_profiles`
+## [Faza 3] `icp_profiles` — ZBUDOWANE (migracja 9; 4 profile z PRD tylko z nazwą i segmentem — szczegóły do uzupełnienia w /icp)
 `id, name, segment, countries text[], object_type, min_scope, typical_problem, matching_services text[], positive_criteria text[], exclusion_criteria text[], example_projects text[], preferred_language, message_tone, created_at/by`.
 
-## [Faza 3] `leads`
-`id, company_name, domain, contact_id FK nullable, country, icp_profile_id FK, status enum(nowy, do_researchu, zbadany, do_zatwierdzenia, gotowy_do_kontaktu, kontakt_wyslany, odpowiedzial, zakwalifikowany, rozmowa_umowiona, nie_teraz, nie_pasuje, zakaz_kontaktu), score int, score_rationale text, owner_id FK, researched_at, contact_consent, converted_inquiry_id FK nullable, created_at/by, updated_at/by`.
+## [Faza 3] `leads` — ZBUDOWANE (migracja 9)
+`id, company_name, domain, company_id FK nullable, contact_id FK nullable, country, icp_profile_id FK, status enum(nowy, do_researchu, zbadany, do_zatwierdzenia, gotowy_do_kontaktu, kontakt_wyslany, odpowiedzial, zakwalifikowany, rozmowa_umowiona, nie_teraz, nie_pasuje, zakaz_kontaktu), score int 0–100, score_rationale text, need, proposed_service, owner_id FK, researched_at, contact_consent, converted_inquiry_id FK nullable, is_archived + archived_reason + archived_at, created_at/by, updated_at/by`.
+Constrainty: domena **albo** nazwa firmy (#8); `score` tylko z niepustym `score_rationale` (#10); domena znormalizowana (małe litery, bez protokołu/ścieżki/www); archiwizacja tylko z powodem. `need`/`proposed_service`/`company_id` dodane względem pierwotnego szkicu (PRD §7 wymienia potrzebę i usługę; `company_id` wypełnia konwersja). Konwersja: RPC `convert_lead_to_inquiry(lead_id)` — atomowo firma (jeśli brak) + zapytanie (`source = 'lead'`, następny krok za 2 dni), lead -> `zakwalifikowany`; zablokowana przy zakazie kontaktu, archiwum i ponownej próbie.
 
-## [Faza 3] `lead_facts`
-`id, lead_id FK, fact text, source_url, verified_at, confidence enum(wysoka, srednia, niska, brak_potwierdzenia)`. Każdy fakt z researchu agenta musi mieć źródło — to jest ten rekord.
+## [Faza 3] `lead_facts` — ZBUDOWANE (migracja 9)
+`id, lead_id FK, fact text, source_url, verified_at, confidence enum(wysoka, srednia, niska, brak_potwierdzenia), is_hidden + hidden_reason + hidden_at + hidden_by, created_at/by`. Każdy fakt z researchu agenta musi mieć źródło — to jest ten rekord. Constraint (#9): brak `source_url` => `confidence = brak_potwierdzenia`; źródło tylko `http(s)://`. Fakty niezmienne (trigger) — korekta = nowy fakt + ukrycie starego z powodem.
 
 ## [Faza 4] `email_drafts`
 `id, lead_id FK nullable, inquiry_id FK nullable, direction enum(outbound_cold, reply), body, status enum(do_zatwierdzenia, zatwierdzony, edytowany, odrzucony, odlozony, niepasujacy), approved_by, approved_at, sent_at, draft_version int, sources jsonb, created_at`.

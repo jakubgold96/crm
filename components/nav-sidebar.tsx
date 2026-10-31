@@ -10,6 +10,7 @@ import {
   Archive,
   BarChart3,
   Building2,
+  Crosshair,
   Download,
   Inbox,
   LayoutDashboard,
@@ -35,6 +36,13 @@ export const NAV_SECTIONS: { label: string; items: NavItem[] }[] = [
     ],
   },
   {
+    label: 'Pozyskanie',
+    items: [
+      { href: '/leady', label: 'Leady', icon: Target },
+      { href: '/icp', label: 'Profile ICP', icon: Crosshair },
+    ],
+  },
+  {
     label: 'Baza',
     items: [
       { href: '/firmy', label: 'Firmy', icon: Building2 },
@@ -49,7 +57,6 @@ export const NAV_SECTIONS: { label: string; items: NavItem[] }[] = [
   {
     label: 'Wkrótce',
     items: [
-      { href: '/leady', label: 'Leady', icon: Target, disabled: true },
       { href: '/agent', label: 'Agent INNDES', icon: Sparkles, disabled: true },
       { href: '/raporty', label: 'Raporty', icon: BarChart3, disabled: true },
     ],

@@ -56,7 +56,8 @@ export type InquirySource =
   | 'architekt'
   | 'targi'
   | 'powrot_klienta'
-  | 'inne';
+  | 'inne'
+  | 'lead';
 
 export type OperationalGroup = 'wymaga_dzialania' | 'do_przypomnienia' | 'czekamy_na_klienta';
 
@@ -218,4 +219,84 @@ export interface AuditLogEntry {
   new_value: string | null;
   changed_at: string;
   changed_by: string | null;
+}
+
+// ---------- Faza 3a: profile ICP, leady, fakty (migracja 9) ----------
+
+export type LeadStatus =
+  | 'nowy'
+  | 'do_researchu'
+  | 'zbadany'
+  | 'do_zatwierdzenia'
+  | 'gotowy_do_kontaktu'
+  | 'kontakt_wyslany'
+  | 'odpowiedzial'
+  | 'zakwalifikowany'
+  | 'rozmowa_umowiona'
+  | 'nie_teraz'
+  | 'nie_pasuje'
+  | 'zakaz_kontaktu';
+
+export type FactConfidence = 'wysoka' | 'srednia' | 'niska' | 'brak_potwierdzenia';
+
+export interface IcpProfile {
+  id: string;
+  name: string;
+  segment: CompanySegment | null;
+  countries: string[];
+  object_type: ObjectType | null;
+  min_scope: string | null;
+  typical_problem: string | null;
+  matching_services: string[];
+  positive_criteria: string[];
+  exclusion_criteria: string[];
+  example_projects: string[];
+  preferred_language: string | null;
+  message_tone: string | null;
+  is_archived: boolean;
+  created_at: string;
+  created_by: string | null;
+  updated_at: string;
+  updated_by: string | null;
+}
+
+export interface Lead {
+  id: string;
+  company_name: string | null;
+  domain: string | null;
+  company_id: string | null;
+  contact_id: string | null;
+  country: string | null;
+  icp_profile_id: string | null;
+  status: LeadStatus;
+  score: number | null;
+  score_rationale: string | null;
+  need: string | null;
+  proposed_service: string | null;
+  owner_id: string | null;
+  researched_at: string | null;
+  contact_consent: ContactConsent;
+  converted_inquiry_id: string | null;
+  is_archived: boolean;
+  archived_reason: string | null;
+  archived_at: string | null;
+  created_at: string;
+  created_by: string | null;
+  updated_at: string;
+  updated_by: string | null;
+}
+
+export interface LeadFact {
+  id: string;
+  lead_id: string;
+  fact: string;
+  source_url: string | null;
+  verified_at: string | null;
+  confidence: FactConfidence;
+  is_hidden: boolean;
+  hidden_reason: string | null;
+  hidden_at: string | null;
+  hidden_by: string | null;
+  created_at: string;
+  created_by: string | null;
 }

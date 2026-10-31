@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
-import { greetingName, isDueToday, isOverdue } from '@/lib/utils';
+import { greetingName, isDueToday, isOverdue, plural } from '@/lib/utils';
 
 describe('isOverdue', () => {
   beforeEach(() => {
@@ -74,5 +74,16 @@ describe('greetingName', () => {
   it('pusty profil daje pusty napis', () => {
     expect(greetingName('')).toBe('');
     expect(greetingName(null)).toBe('');
+  });
+});
+
+describe('plural', () => {
+  it('odmienia po polsku', () => {
+    expect(plural(1, 'lead', 'leady', 'leadów')).toBe('1 lead');
+    expect(plural(3, 'lead', 'leady', 'leadów')).toBe('3 leady');
+    expect(plural(5, 'lead', 'leady', 'leadów')).toBe('5 leadów');
+    expect(plural(12, 'lead', 'leady', 'leadów')).toBe('12 leadów');
+    expect(plural(22, 'lead', 'leady', 'leadów')).toBe('22 leady');
+    expect(plural(0, 'lead', 'leady', 'leadów')).toBe('0 leadów');
   });
 });
